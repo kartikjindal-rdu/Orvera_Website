@@ -2934,199 +2934,6 @@ body.theme-clay .leader-tag {
         gap: 30px;
     }
 }
-
-/* Compost Journey Section */
-.journey-section {
-    background: var(--bg-primary);
-    border-top: 1px solid var(--border-color);
-}
-
-.journey-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 24px;
-    padding: 40px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-}
-
-.journey-timeline-nav {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    margin-bottom: 45px;
-    padding: 0 40px;
-}
-
-.journey-timeline-nav::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 40px;
-    right: 40px;
-    height: 4px;
-    background: var(--border-color);
-    transform: translateY(-50%);
-    z-index: 1;
-}
-
-.journey-line-progress {
-    position: absolute;
-    top: 50%;
-    left: 40px;
-    height: 4px;
-    background: var(--accent);
-    transform: translateY(-50%);
-    z-index: 1;
-    width: 0%; /* Updates with JS */
-    transition: width 0.4s ease;
-}
-
-.journey-step-node {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--bg-secondary);
-    border: 3px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-family: var(--font-heading);
-    color: var(--text-muted);
-    cursor: pointer;
-    z-index: 2;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.journey-step-node.active {
-    border-color: var(--accent);
-    background: var(--accent);
-    color: #140e0b;
-    box-shadow: 0 0 15px var(--glow-color);
-    transform: scale(1.15);
-}
-
-body.theme-clay .journey-step-node.active {
-    color: #0f1214;
-}
-
-.journey-content-card {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-    align-items: center;
-    min-height: 280px;
-}
-
-.journey-visual-panel {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    height: 260px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--border-color);
-    position: relative;
-    overflow: hidden;
-}
-
-/* CSS Decay Drawings */
-.decay-illustration {
-    width: 90px;
-    height: 180px;
-    border-radius: 24px;
-    transition: all 0.5s ease;
-    position: relative;
-}
-
-.decay-w1 {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
-    border: 2px solid var(--text-primary);
-    box-shadow: 0 0 20px var(--glow-color);
-}
-
-.decay-w4 {
-    background: linear-gradient(135deg, #a88358 0%, #c29168 100%);
-    border: 2px dashed #e2c092;
-    transform: rotate(5deg) scaleY(0.9);
-    filter: sepia(0.3);
-    opacity: 0.85;
-}
-
-.decay-w8 {
-    background: #5c4436;
-    border: 1.5px dotted var(--border-color);
-    border-radius: 30px 10px 30px 10px;
-    transform: rotate(-10deg) scale(0.75) skewX(5deg);
-    filter: grayscale(0.5);
-    opacity: 0.5;
-}
-
-.decay-w12 {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #271a14;
-    border: none;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    opacity: 0.8;
-}
-
-.decay-w12::after {
-    content: '🌱';
-    font-size: 32px;
-    position: absolute;
-    top: -20px;
-    left: 4px;
-    animation: sprout 2s infinite ease-in-out;
-}
-
-@keyframes sprout {
-    0%, 100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-4px) scale(1.1); }
-}
-
-.journey-text-panel {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: opacity 0.3s ease;
-}
-
-.journey-text-panel h3 {
-    font-family: var(--font-heading);
-    font-size: 26px;
-    color: var(--accent-gold);
-    margin-bottom: 12px;
-}
-
-.journey-text-panel .time-tag {
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-    display: block;
-}
-
-.journey-text-panel p {
-    color: var(--text-secondary);
-    font-size: 15px;
-    line-height: 1.7;
-}
-
-@media(max-width: 768px) {
-    .journey-content-card {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-}
 </style>
 </head>
 
@@ -3318,38 +3125,6 @@ body.theme-clay .journey-step-node.active {
                     <div class="result-num" id="savings-trees">2.3</div>
                     <div class="result-lbl">Equivalent Trees Planted / Year</div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Compost Journey Section -->
-<section class="section journey-section reveal" id="compost-journey">
-    <div class="title-container">
-        <h2 class="title">The Biodegradation Journey</h2>
-        <p class="subtitle">Click on the timeline nodes to see how ORVERA completely returns to the earth in 12 weeks, feeding the soil with zero synthetic traces.</p>
-    </div>
-
-    <div class="journey-container">
-        <div class="journey-timeline-nav">
-            <div class="journey-line-progress" id="journey-progress"></div>
-            <button class="journey-step-node active" data-index="0">1</button>
-            <button class="journey-step-node" data-index="1">4</button>
-            <button class="journey-step-node" data-index="2">8</button>
-            <button class="journey-step-node" data-index="3">12</button>
-        </div>
-
-        <div class="journey-content-card">
-            <!-- Left Side visual illustration representation -->
-            <div class="journey-visual-panel">
-                <div class="decay-illustration decay-w1" id="journey-illustration"></div>
-            </div>
-
-            <!-- Right Side details -->
-            <div class="journey-text-panel" id="journey-text-panel">
-                <span class="time-tag">Week 1</span>
-                <h3>Initial Composting</h3>
-                <p>The bottle is placed in a soil or compost pile. Moisture starts breaking down the organic corn starch binders, causing the fiber shell to soften and absorb environmental microbes.</p>
             </div>
         </div>
     </div>
@@ -3713,16 +3488,16 @@ body.theme-clay .journey-step-node.active {
 
         <div class="stats">
             <div class="stat">
-                <h2 id="live-bottles">142,854</h2>
-                <p>Plastic Bottles Saved</p>
+                <h2>100%</h2>
+                <p>Circular Design</p>
             </div>
             <div class="stat">
-                <h2 id="live-co2">11,828.3</h2>
-                <p>kg CO₂ Offset</p>
+                <h2>80%</h2>
+                <p>CO₂ Reduction</p>
             </div>
             <div class="stat">
-                <h2 id="live-trees">537.6</h2>
-                <p>Equivalent Trees Planted</p>
+                <h2>Target</h2>
+                <p>Zero Waste</p>
             </div>
         </div>
     </div>
@@ -4422,109 +4197,6 @@ function getAIResponse(input) {
     
     // Fallback
     return "That's an interesting question! I am trained specifically on ORVERA's eco-bottle materials, decomposition rates, timeline, and liquid support. Can you ask me about one of those topics, or sign up for our newsletter to get more details?";
-}
-
-// Compost Journey Timeline Switching Logic
-const journeyNodes = document.querySelectorAll(".journey-step-node");
-const journeyProgress = document.getElementById("journey-progress");
-const journeyIllustration = document.getElementById("journey-illustration");
-const journeyTextPanel = document.getElementById("journey-text-panel");
-
-const journeyData = [
-    {
-        week: "Week 1",
-        title: "Initial Composting",
-        desc: "The bottle is placed in a soil or compost pile. Moisture starts breaking down the organic corn starch binders, causing the fiber shell to soften and absorb environmental microbes.",
-        class: "decay-w1",
-        progress: "0%"
-    },
-    {
-        week: "Week 4",
-        title: "Structural Disintegration",
-        desc: "Fibers (rice husk and sugarcane bagasse) start separating as the binder completely dissolves. The biodegradable PCL and nano clay coating starts breaking down into water-soluble monomers.",
-        class: "decay-w4",
-        progress: "33%"
-    },
-    {
-        week: "Week 8",
-        title: "Microbial Consumption",
-        desc: "Fungi and bacteria consume the agri-waste composite. The bottle loses its structure completely and crumbles into rich carbon compounds, leaving zero microplastic residues.",
-        class: "decay-w8",
-        progress: "66%"
-    },
-    {
-        week: "Week 12",
-        title: "Return to the Earth",
-        desc: "The composite is fully converted into organic soil humus. The nutrients from the sugarcane bagasse and rice husk enrich the compost, helping new plants sprout. 100% circular loop completed.",
-        class: "decay-w12",
-        progress: "100%"
-    }
-];
-
-if (journeyNodes.length && journeyProgress && journeyIllustration && journeyTextPanel) {
-    journeyNodes.forEach((node, index) => {
-        node.addEventListener("click", () => {
-            // Update Active Nodes
-            journeyNodes.forEach((n, idx) => {
-                if (idx <= index) {
-                    n.classList.add("active");
-                } else {
-                    n.classList.remove("active");
-                }
-            });
-
-            // Update Progress Bar
-            const data = journeyData[index];
-            journeyProgress.style.width = data.progress;
-
-            // Fade and update content
-            journeyTextPanel.style.opacity = 0;
-            journeyIllustration.style.opacity = 0;
-
-            setTimeout(() => {
-                // Update Illustration
-                journeyIllustration.className = "decay-illustration " + data.class;
-                
-                // Update Text
-                journeyTextPanel.innerHTML = `
-                    <span class="time-tag">${data.week}</span>
-                    <h3>${data.title}</h3>
-                    <p>${data.desc}</p>
-                `;
-                
-                journeyTextPanel.style.opacity = 1;
-                journeyIllustration.style.opacity = 1;
-            }, 300);
-        });
-    });
-}
-
-// Live Impact Tracker ticking loop
-let startBottles = 142854;
-let startCo2 = 11828.3;
-let startTrees = 537.6;
-
-const liveBottlesEl = document.getElementById("live-bottles");
-const liveCo2El = document.getElementById("live-co2");
-const liveTreesEl = document.getElementById("live-trees");
-
-if (liveBottlesEl && liveCo2El && liveTreesEl) {
-    setInterval(() => {
-        // Increment bottles by 1-3 randomly
-        const inc = Math.floor(Math.random() * 3) + 1;
-        startBottles += inc;
-        
-        // Each bottle prevents ~0.0828kg of CO2
-        startCo2 += inc * 0.0828;
-        
-        // 22kg CO2 offset = 1 tree year, so trees = CO2 / 22
-        startTrees = startCo2 / 22;
-        
-        // Format with commas and decimals
-        liveBottlesEl.innerText = startBottles.toLocaleString();
-        liveCo2El.innerText = startCo2.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-        liveTreesEl.innerText = startTrees.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
-    }, 3000); // update every 3 seconds
 }
 </script>
 </body>
