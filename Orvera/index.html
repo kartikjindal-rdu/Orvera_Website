@@ -15,7 +15,7 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
@@ -37,7 +37,7 @@
     --gradient-hero: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent) 100%);
     
     --transition-speed: 0.35s;
-    --font-heading: 'Space Grotesk', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
     --font-body: 'Plus Jakarta Sans', sans-serif;
 }
 
@@ -912,6 +912,14 @@ body.theme-clay .exploded-visual:hover .mock-liner-element {
 
 .exploded-visual:hover .pointer-line {
     width: 70px;
+}
+
+.mobile-exploded-info {
+    display: none;
+}
+
+.mobile-badge {
+    display: none;
 }
 
 /* Product Configurator Section */
@@ -2200,24 +2208,60 @@ body.theme-clay footer {
     
     .exploded-visual {
         height: 380px;
+        margin-top: 10px;
     }
     
     .mock-liner-element {
         width: 130px;
         height: 180px;
+        transform: scale(1.04);
+        background: rgba(154, 210, 109, 0.45);
+        box-shadow: 0 0 20px var(--border-hover);
+    }
+    
+    body.theme-clay .mock-liner-element {
+        background: rgba(214, 140, 104, 0.45);
     }
     
     .mock-shell-half {
         width: 65px;
         height: 180px;
+        position: relative;
+    }
+    
+    .mobile-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 24px;
+        height: 24px;
+        background: var(--accent);
+        color: #140e0b;
+        border-radius: 50%;
+        font-family: var(--font-heading);
+        font-weight: 800;
+        font-size: 11px;
+        border: 1.5px solid var(--bg-primary);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 10px var(--glow-color);
+        z-index: 20;
+    }
+    
+    body.theme-clay .mobile-badge {
+        color: #0f1214;
     }
     
     .shell-left-layer {
         left: 20%;
+        transform: translateX(-45px);
     }
     
     .shell-right-layer {
         right: 20%;
+        transform: translateX(45px);
     }
     
     .mock-cap-element {
@@ -2227,47 +2271,83 @@ body.theme-clay footer {
     
     .cap-layer {
         top: 20%;
+        transform: translateY(-40px);
     }
     
     .liner-layer, .shell-left-layer, .shell-right-layer {
         top: 27%;
     }
     
-    .layer-label-card {
-        width: 140px;
-        padding: 10px;
+    /* Hide desktop absolute labels and lines on mobile */
+    .exploded-visual .pointer-line,
+    .exploded-visual .layer-label-card {
+        display: none !important;
+    }
+
+    /* Mobile Exploded Stacked Info Cards */
+    .mobile-exploded-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 500px;
+        margin-top: 30px;
+        padding: 0 15px;
     }
     
-    .layer-label-card h4 {
+    .mobile-info-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .mobile-info-card:hover {
+        border-color: var(--border-hover);
+        transform: translateY(-2px);
+    }
+    
+    .mobile-info-num {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--bg-secondary);
+        border: 2px solid var(--accent);
+        color: var(--accent);
+        font-family: var(--font-heading);
+        font-weight: 700;
+        font-size: 14px;
+        box-shadow: 0 0 10px rgba(154, 210, 109, 0.15);
+    }
+    
+    body.theme-clay .mobile-info-num {
+        border-color: var(--accent);
+        color: var(--accent);
+        box-shadow: 0 0 10px rgba(214, 140, 104, 0.15);
+    }
+
+    .mobile-info-text h4 {
+        font-family: var(--font-heading);
+        font-size: 16px;
+        color: var(--accent-gold);
+        margin-bottom: 4px;
+        font-weight: 600;
+    }
+    
+    .mobile-info-text p {
         font-size: 13px;
-    }
-    
-    .layer-label-card p {
-        font-size: 10px;
-    }
-    
-    .exploded-visual:hover .shell-left-layer {
-        transform: translateX(-40px);
-    }
-
-    .exploded-visual:hover .shell-right-layer {
-        transform: translateX(40px);
-    }
-    
-    .exploded-visual:hover .cap-layer {
-        transform: translateY(-40px);
-    }
-    
-    .exploded-visual:hover .cap-layer .layer-label-card {
-        left: -110px;
-    }
-
-    .exploded-visual:hover .shell-left-layer .layer-label-card {
-        left: -80px;
-    }
-
-    .exploded-visual:hover .shell-right-layer .layer-label-card {
-        right: -80px;
+        color: var(--text-secondary);
+        line-height: 1.5;
     }
 }
 
@@ -3368,7 +3448,9 @@ body.theme-clay .journey-step-node.active {
                 
                 <!-- Cap Layer (Moves Up) -->
                 <div class="exploded-layer cap-layer">
-                    <div class="mock-cap-element"></div>
+                    <div class="mock-cap-element">
+                        <span class="mobile-badge">1</span>
+                    </div>
                     
                     <div class="pointer-line line-left"></div>
                     <div class="layer-label-card card-left">
@@ -3379,7 +3461,9 @@ body.theme-clay .journey-step-node.active {
                 
                 <!-- Shell Left Layer (Moves Left) -->
                 <div class="shell-left-layer">
-                    <div class="mock-shell-half"></div>
+                    <div class="mock-shell-half">
+                        <span class="mobile-badge">2a</span>
+                    </div>
                     
                     <div class="pointer-line line-left"></div>
                     <div class="layer-label-card card-left">
@@ -3390,7 +3474,9 @@ body.theme-clay .journey-step-node.active {
 
                 <!-- Shell Right Layer (Moves Right) -->
                 <div class="shell-right-layer">
-                    <div class="mock-shell-half"></div>
+                    <div class="mock-shell-half">
+                        <span class="mobile-badge">2b</span>
+                    </div>
                     
                     <div class="pointer-line line-right"></div>
                     <div class="layer-label-card card-right">
@@ -3401,7 +3487,9 @@ body.theme-clay .journey-step-node.active {
 
                 <!-- Liner Layer (Stays Centered / Glows) -->
                 <div class="exploded-layer liner-layer">
-                    <div class="mock-liner-element"></div>
+                    <div class="mock-liner-element">
+                        <span class="mobile-badge">3</span>
+                    </div>
                     
                     <div class="pointer-line line-right"></div>
                     <div class="layer-label-card card-right">
@@ -3410,6 +3498,38 @@ body.theme-clay .journey-step-node.active {
                     </div>
                 </div>
 
+            </div>
+        </div>
+
+        <!-- Mobile Exploded Info (Stacked underneath on phone screens) -->
+        <div class="mobile-exploded-info">
+            <div class="mobile-info-card">
+                <div class="mobile-info-num">1</div>
+                <div class="mobile-info-text">
+                    <h4>Bamboo Cap</h4>
+                    <p>Fully compostable screw cap made from compressed bamboo starch.</p>
+                </div>
+            </div>
+            <div class="mobile-info-card">
+                <div class="mobile-info-num">2a</div>
+                <div class="mobile-info-text">
+                    <h4>Outer Shell (Left)</h4>
+                    <p>India's agricultural waste (rice husk, sugarcane bagasse, paper pulp) bonded with corn starch.</p>
+                </div>
+            </div>
+            <div class="mobile-info-card">
+                <div class="mobile-info-num">2b</div>
+                <div class="mobile-info-text">
+                    <h4>Outer Shell (Right)</h4>
+                    <p>Zero plastic shell engineered for flexibility and drops. 100% biodegradable.</p>
+                </div>
+            </div>
+            <div class="mobile-info-card">
+                <div class="mobile-info-num">3</div>
+                <div class="mobile-info-text">
+                    <h4>Waterproof Liner</h4>
+                    <p>PCL + Nano clay composite waterproof barrier. Achieves an 8-12 month filled shelf life.</p>
+                </div>
             </div>
         </div>
     </div>
