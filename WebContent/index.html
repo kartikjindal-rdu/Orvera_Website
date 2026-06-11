@@ -1,0 +1,5433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORVERA | Premium Sustainable Packaging & Eco Products</title>
+<meta name="description" content="Redefining packaging with elegant, bio-based solutions. Explore our compostable eco cutlery, paper bottles, and luxury eco packaging. Built for a circular future.">
+
+<!-- Open Graph Meta Tags for SEO -->
+<meta property="og:title" content="ORVERA - Eco-Friendly Packaging Solutions">
+<meta property="og:description" content="Sustainable paper bottles designed for a better tomorrow. 100% biodegradable and premium aesthetics.">
+<meta property="og:image" content="paper-bottle.jpg">
+<meta property="og:type" content="website">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+        /* Earth Theme (Default) - Premium Alabaster Off-White */
+        --bg-primary: #faf9f6;
+        --bg-secondary: #f4f2eb;
+        --bg-card: #ffffff;
+        --bg-card-hover: #faf9f6;
+        --border-color: #e0dbd1;
+        --border-hover: #c5a880;
+        --text-primary: #1a1a1a;
+        --text-secondary: #2c2c2c; /* Significantly darker for readability */
+        --text-muted: #555555;      /* Darker grey */
+        --accent: #1b3323; /* Forest Green */
+        --accent-hover: #2b4f37;
+        --accent-gold: #8b6b41;
+        --shadow-color: rgba(27, 51, 35, 0.02);
+        --glow-color: rgba(197, 168, 128, 0.05);
+        --gradient-hero: linear-gradient(135deg, #1b3323 0%, #c5a880 100%);
+        
+        --transition-speed: 0.4s;
+        --font-heading: 'Playfair Display', Georgia, serif;
+        --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+        --color-bottle-fiber: #e8e3d9;
+    }
+
+body.theme-clay {
+        /* Forest Theme (Toggled) - Soft Sage Green */
+        --bg-primary: #f2f4f0;
+        --bg-secondary: #e5e9e0;
+        --bg-card: #f9fbf8;
+        --bg-card-hover: #e5e9e0;
+        --border-color: #d1d8c9;
+        --border-hover: #183d24;
+        --text-primary: #14241a;
+        --text-secondary: #243328; /* Significantly darker sage */
+        --text-muted: #4e5e52;      /* Darker muted sage */
+        --accent: #183d24; /* Rich leaf green */
+        --accent-hover: #265d38;
+        --accent-gold: #745b38;
+        --shadow-color: rgba(24, 61, 36, 0.02);
+        --glow-color: rgba(24, 61, 36, 0.02);
+        --gradient-hero: linear-gradient(135deg, #183d24 0%, #b08d5b 100%);
+        --color-bottle-fiber: #d4d9cc;
+    }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-body);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Scroll Progress Bar */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+    width: 0%;
+    z-index: 1001;
+    transition: width 0.1s ease-out;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(20, 14, 11, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: padding var(--transition-speed), background-color var(--transition-speed);
+}
+
+body.theme-clay nav {
+    background: rgba(15, 18, 20, 0.8);
+}
+
+nav.scrolled {
+    padding: 12px 8%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent-gold);
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color var(--transition-speed);
+}
+
+.logo span {
+    color: var(--accent);
+    transition: color var(--transition-speed);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+    transition: var(--transition-speed);
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transition: width var(--transition-speed) ease, background-color var(--transition-speed);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Theme Switcher Button */
+.theme-toggle-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all var(--transition-speed) ease;
+}
+
+.theme-toggle-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.nav-right-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--border-hover) 100%);
+    color: #140e0b;
+    padding: 10px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(154, 210, 109, 0.2);
+}
+
+body.theme-clay .nav-btn {
+    box-shadow: 0 4px 15px rgba(214, 140, 104, 0.2);
+    color: #0f1214;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--border-hover);
+}
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1002;
+    background: none;
+    border: none;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 140px 8% 80px;
+    gap: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-bg-blur {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, var(--glow-color) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-content {
+    flex: 1.2;
+    z-index: 1;
+}
+
+.hero-content h4 {
+    color: var(--accent);
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 68px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: var(--text-primary);
+}
+
+.hero-content h1 span {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content p {
+    color: var(--text-secondary);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: #140e0b;
+    padding: 16px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(154, 210, 109, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+body.theme-clay .btn-primary {
+    color: #0f1214;
+    box-shadow: 0 4px 15px rgba(214, 140, 104, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--border-hover);
+}
+
+.btn-secondary {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary:hover {
+    background: rgba(154, 210, 109, 0.08);
+    transform: translateY(-3px);
+}
+
+body.theme-clay .btn-secondary:hover {
+    background: rgba(214, 140, 104, 0.08);
+}
+
+.hero-image {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    background: var(--accent);
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.22;
+    z-index: -1;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    padding: 10px;
+    background: linear-gradient(135deg, rgba(216, 192, 160, 0.1) 0%, rgba(154, 210, 109, 0.1) 100%);
+    border-radius: 35px;
+    border: 1px solid var(--border-color);
+}
+
+body.theme-clay .hero-image-wrapper {
+    background: linear-gradient(135deg, rgba(226, 192, 146, 0.1) 0%, rgba(214, 140, 104, 0.1) 100%);
+}
+
+.hero-image img {
+    width: 340px;
+    max-width: 100%;
+    border-radius: 25px;
+    display: block;
+    animation: float 5s ease-in-out infinite;
+    transition: transform var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.hero-image img:hover {
+    transform: scale(1.03) rotate(1deg);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-18px) rotate(-1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Sections General */
+.section {
+    padding: 110px 8%;
+    position: relative;
+}
+
+.title-container {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 45px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Live Countdown Timer Section */
+.countdown-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 60px 8%;
+    position: relative;
+    overflow: hidden;
+    transition: background-color var(--transition-speed);
+}
+
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.countdown-intro {
+    flex: 1;
+    min-width: 280px;
+}
+
+.countdown-intro h3 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--accent-gold);
+}
+
+.countdown-intro p {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+.countdown-timer {
+    display: flex;
+    gap: 20px;
+}
+
+.timer-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    min-width: 90px;
+    padding: 15px 10px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.timer-num {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.1;
+}
+
+.timer-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+/* Sustainability Calculator Section */
+.calc-section {
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+.calc-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    align-items: center;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.calc-inputs {
+    padding-right: 20px;
+}
+
+.calc-inputs h3 {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--accent-gold);
+}
+
+.calc-inputs p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    margin-bottom: 35px;
+}
+
+.slider-group {
+    margin-bottom: 25px;
+}
+
+.slider-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.slider-title {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.slider-val {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.custom-slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.custom-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--text-primary);
+    box-shadow: 0 0 15px var(--accent);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.custom-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.calc-results {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.result-card {
+    background: rgba(20, 14, 11, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all var(--transition-speed) ease;
+}
+
+body.theme-clay .result-card {
+    background: rgba(15, 18, 20, 0.6);
+}
+
+.result-card:hover {
+    border-color: var(--border-hover);
+    transform: translateX(5px);
+    background: rgba(20, 14, 11, 0.8);
+}
+
+body.theme-clay .result-card:hover {
+    background: rgba(15, 18, 20, 0.8);
+}
+
+.result-icon {
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    background: rgba(154, 210, 109, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+body.theme-clay .result-icon {
+    background: rgba(214, 140, 104, 0.1);
+}
+
+.result-info {
+    flex: 1;
+}
+
+.result-num {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.result-lbl {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Exploded View Section */
+.exploded-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.exploded-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.exploded-visual {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 480px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.exploded-layer-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Exploded Layers Default State */
+.exploded-layer {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Custom CSS Drawn Elements for Exploded View */
+.cap-layer {
+    top: 15%;
+    z-index: 10;
+}
+
+.mock-cap-element {
+    width: 90px;
+    height: 35px;
+    background: #e2c092; /* Bamboo color */
+    border-radius: 8px 8px 4px 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+}
+
+.mock-cap-element::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: rgba(255,255,255,0.25);
+}
+
+.liner-layer {
+    top: 24%;
+    z-index: 5;
+}
+
+.mock-liner-element {
+    width: 180px;
+    height: 250px;
+    background: rgba(154, 210, 109, 0.35); /* Translucent Green PLA */
+    border-radius: 40px 40px 30px 30px;
+    border: 2px dashed var(--accent);
+    backdrop-filter: blur(4px);
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.15);
+    position: relative;
+    transition: transform var(--transition-speed);
+}
+
+body.theme-clay .mock-liner-element {
+    background: rgba(214, 140, 104, 0.35);
+}
+
+.shell-left-layer, .shell-right-layer {
+    top: 24%;
+    width: 50%;
+    height: 250px;
+    position: absolute;
+    z-index: 8;
+    transition: all 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.shell-left-layer {
+    left: 15%;
+}
+
+.shell-right-layer {
+    right: 15%;
+}
+
+.mock-shell-half {
+    width: 90px;
+    height: 250px;
+    background: #2b201a;
+    border: 1.5px solid var(--border-color);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.shell-left-layer .mock-shell-half {
+    border-radius: 40px 0 0 30px;
+    margin-left: auto;
+    border-right: none;
+}
+
+.shell-right-layer .mock-shell-half {
+    border-radius: 0 40px 30px 0;
+    margin-right: auto;
+    border-left: none;
+}
+
+body.theme-clay .mock-shell-half {
+    background: #1c2428;
+}
+
+/* Layer Labels & Lines */
+.layer-label-card {
+    position: absolute;
+    width: 200px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+}
+
+.layer-label-card h4 {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    color: var(--accent-gold);
+    margin-bottom: 5px;
+}
+
+.layer-label-card p {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.card-left {
+    left: -120px;
+    text-align: right;
+}
+
+.card-right {
+    right: -120px;
+    text-align: left;
+}
+
+/* Pointer Line Connecting Label to Part */
+.pointer-line {
+    position: absolute;
+    height: 1px;
+    background: var(--border-color);
+    width: 0;
+    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.line-left {
+    right: 80px;
+    transform-origin: right;
+}
+
+.line-right {
+    left: 80px;
+    transform-origin: left;
+}
+
+/* Hover Exploded States */
+.exploded-visual:hover .cap-layer {
+    transform: translateY(-80px);
+}
+
+.exploded-visual:hover .shell-left-layer {
+    transform: translateX(-90px);
+}
+
+.exploded-visual:hover .shell-right-layer {
+    transform: translateX(90px);
+}
+
+.exploded-visual:hover .mock-liner-element {
+    transform: scale(1.04);
+    background: rgba(154, 210, 109, 0.45);
+    box-shadow: 0 0 20px var(--border-hover);
+}
+
+body.theme-clay .exploded-visual:hover .mock-liner-element {
+    background: rgba(214, 140, 104, 0.45);
+}
+
+/* Reveal Labels on Hover */
+.exploded-visual:hover .layer-label-card {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.exploded-visual:hover .cap-layer .layer-label-card {
+    left: -220px;
+}
+
+.exploded-visual:hover .shell-left-layer .layer-label-card {
+    left: -100px;
+}
+
+.exploded-visual:hover .shell-right-layer .layer-label-card {
+    right: -100px;
+}
+
+.exploded-visual:hover .pointer-line {
+    width: 70px;
+}
+
+/* Product Configurator Section */
+.config-section {
+    background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.config-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.config-preview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 28px;
+    height: 500px;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* CSS Drawn Configurator Bottle */
+.config-bottle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 200px;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.config-cap-part {
+    width: 60px;
+    height: 24px;
+    background: #e2c092; /* Bamboo Wood Default */
+    border-radius: 6px 6px 2px 2px;
+    border: 1.5px solid rgba(255,255,255,0.08);
+    z-index: 4;
+    transition: background-color 0.4s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.25);
+}
+
+.config-neck-part {
+    width: 44px;
+    height: 40px;
+    background: #2b201a;
+    border-left: 1.5px solid var(--border-color);
+    border-right: 1.5px solid var(--border-color);
+    z-index: 3;
+    transition: background-color var(--transition-speed);
+}
+
+body.theme-clay .config-neck-part {
+    background: #1c2428;
+}
+
+.config-body-part {
+    width: 130px;
+    height: 220px;
+    background: #2b201a;
+    border: 1.5px solid var(--border-color);
+    border-radius: 25px 25px 20px 20px;
+    z-index: 2;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color var(--transition-speed);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.theme-clay .config-body-part {
+    background: #1c2428;
+}
+
+.config-reflection {
+    position: absolute;
+    top: 5%;
+    left: 8%;
+    width: 12px;
+    height: 90%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0%, transparent 100%);
+    border-radius: 10px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.config-label-sticker {
+    width: 85%;
+    height: 90px;
+    background: linear-gradient(135deg, #4da4e0 0%, #1a5ea8 100%); /* Spring Water Blue Default */
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 3;
+    transition: all 0.4s ease;
+}
+
+.config-label-sticker h5 {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.config-label-sticker p {
+    font-size: 9px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 3px;
+}
+
+/* Configurator Panels */
+.config-options {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.config-group-title {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-gold);
+    margin-bottom: 12px;
+}
+
+.config-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.config-opt-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 12px 10px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    text-align: center;
+    transition: all var(--transition-speed);
+}
+
+.config-opt-btn.active, .config-opt-btn:hover {
+    border-color: var(--accent);
+    color: var(--text-primary);
+    background: rgba(154, 210, 109, 0.05);
+}
+
+body.theme-clay .config-opt-btn.active, body.theme-clay .config-opt-btn:hover {
+    background: rgba(214, 140, 104, 0.05);
+}
+
+/* Custom visual changes driven by Config JS classes */
+.bottle-330ml {
+    transform: scale(0.85);
+}
+.bottle-500ml {
+    transform: scale(1);
+}
+.bottle-750ml {
+    transform: scale(1.1) scaleY(1.08);
+}
+
+/* Carbon Comparison Section */
+.comparison-section {
+    background: var(--bg-primary);
+}
+
+.comp-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 45px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.comp-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 45px;
+    flex-wrap: wrap;
+}
+
+.comp-tab-btn {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.comp-tab-btn.active, .comp-tab-btn:hover {
+    background: var(--accent);
+    color: #140e0b;
+    border-color: var(--accent);
+}
+
+body.theme-clay .comp-tab-btn.active, body.theme-clay .comp-tab-btn:hover {
+    color: #0f1214;
+}
+
+.chart-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.chart-bar-row {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: center;
+    gap: 20px;
+}
+
+.bar-label {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.bar-track {
+    background: rgba(255,255,255,0.03);
+    border: 1.5px solid var(--border-color);
+    border-radius: 12px;
+    height: 40px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    border-radius: 10px;
+    width: 0%; /* Dynamic update */
+    background: var(--border-hover);
+    transition: width 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.bar-fill.orvera-bar {
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
+}
+
+.bar-value {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.comp-summary-card {
+    margin-top: 40px;
+    background: rgba(20, 14, 11, 0.4);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    transition: background-color var(--transition-speed);
+}
+
+body.theme-clay .comp-summary-card {
+    background: rgba(15, 18, 20, 0.4);
+}
+
+.comp-summary-card h4 {
+    font-family: var(--font-heading);
+    color: var(--accent-gold);
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.comp-summary-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Features Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px 30px;
+    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(154, 210, 109, 0.08) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity var(--transition-speed);
+}
+
+body.theme-clay .card::before {
+    background: radial-gradient(circle at top right, rgba(214, 140, 104, 0.08) 0%, transparent 60%);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--border-hover);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), 0 0 15px var(--border-color);
+    background: var(--bg-card-hover);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card-icon {
+    width: 54px;
+    height: 54px;
+    background: rgba(154, 210, 109, 0.1);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    font-size: 24px;
+    margin-bottom: 25px;
+    transition: var(--transition-speed);
+}
+
+body.theme-clay .card-icon {
+    background: rgba(214, 140, 104, 0.1);
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1);
+    background: var(--accent);
+    color: #140e0b;
+}
+
+body.theme-clay .card:hover .card-icon {
+    color: #0f1214;
+}
+
+.card h3 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Interactive Bottle Anatomy / Showcase Section */
+.anatomy-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-speed);
+}
+
+.anatomy-container {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.anatomy-viewer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.anatomy-image-wrapper {
+    position: relative;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.anatomy-viewer img {
+    width: 300px;
+    max-width: 100%;
+    border-radius: 20px;
+    display: block;
+}
+
+/* Hotspots */
+.hotspot {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background: var(--accent);
+    border: 3px solid var(--text-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--border-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+.hotspot::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite ease-in-out;
+}
+
+.hotspot:hover {
+    transform: scale(1.25);
+    background: var(--accent-hover);
+}
+
+.hotspot-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: #140e0b;
+}
+
+body.theme-clay .hotspot-num {
+    color: #0f1214;
+}
+
+/* Hotspot placements */
+#hotspot-cap {
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#hotspot-shell {
+    top: 50%;
+    left: 42%;
+}
+
+#hotspot-lining {
+    top: 75%;
+    left: 54%;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2.2); opacity: 0; }
+}
+
+.anatomy-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.anatomy-tab-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.anatomy-tab-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+}
+
+.anatomy-tab-btn.active, .anatomy-tab-btn:hover {
+    background: var(--accent);
+    color: #140e0b;
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px rgba(154, 210, 109, 0.25);
+}
+
+body.theme-clay .anatomy-tab-btn.active, body.theme-clay .anatomy-tab-btn:hover {
+    color: #0f1214;
+    box-shadow: 0 4px 12px rgba(214, 140, 104, 0.25);
+}
+
+.anatomy-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: opacity 0.3s ease;
+}
+
+.anatomy-panel h3 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.anatomy-panel .material-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    background: rgba(154, 210, 109, 0.15);
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+body.theme-clay .anatomy-panel .material-tag {
+    background: rgba(214, 140, 104, 0.15);
+}
+
+.anatomy-panel p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.anatomy-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 25px;
+}
+
+.anatomy-stat-item h4 {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
+}
+
+.anatomy-stat-item p {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0;
+}
+
+/* About Section */
+.about-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 50px;
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.about-box p {
+    line-height: 1.9;
+    color: var(--text-secondary);
+    font-size: 17px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.stats {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    min-width: 150px;
+}
+
+.stat h2 {
+    font-family: var(--font-heading);
+    color: var(--accent);
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+
+.stat p {
+    color: var(--text-muted);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Interactive Timeline Roadmap Section */
+.roadmap-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color var(--transition-speed);
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Center Line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: var(--border-color);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: 1;
+    transition: background-color var(--transition-speed);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 10px 40px;
+    opacity: 0.15;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: 2;
+}
+
+.timeline-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 3.5px solid var(--border-color);
+    top: 22px;
+    right: -9px;
+    z-index: 10;
+    transition: all 0.4s ease;
+}
+
+.timeline-item.active::after {
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.left-item {
+    left: 0;
+    text-align: right;
+}
+
+.right-item {
+    left: 50%;
+}
+
+.right-item::after {
+    left: -9px;
+}
+
+.timeline-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: all var(--transition-speed);
+}
+
+.timeline-card:hover {
+    border-color: var(--border-hover);
+}
+
+.timeline-year {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.timeline-card h4 {
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 10px;
+}
+
+.timeline-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* FAQ Accordion Section */
+.faq-section {
+    background: var(--bg-primary);
+}
+
+.faq-container {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color var(--transition-speed);
+}
+
+.faq-item:hover {
+    border-color: var(--border-hover);
+}
+
+.faq-header {
+    width: 100%;
+    padding: 22px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-icon {
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--accent);
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+    background: var(--accent);
+    color: #140e0b;
+}
+
+body.theme-clay .faq-item.active .faq-icon {
+    color: #0f1214;
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-speed) ease-in-out;
+}
+
+.faq-content-inner {
+    padding: 0 30px 25px;
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Newsletter / Contact Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 8, 7, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-container {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 28px;
+    padding: 45px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    transform: translateY(30px);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.open .modal-container {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all var(--transition-speed);
+}
+
+.modal-close:hover {
+    background: var(--accent);
+    color: #140e0b;
+}
+
+body.theme-clay .modal-close:hover {
+    color: #0f1214;
+}
+
+.modal-header {
+    margin-bottom: 25px;
+}
+
+.modal-header h3 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+}
+
+.modal-header p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    background: rgba(20, 14, 11, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 20px;
+    color: var(--text-primary);
+    font-size: 15px;
+    outline: none;
+    transition: border-color var(--transition-speed);
+}
+
+body.theme-clay .form-input {
+    background: rgba(15, 18, 20, 0.8);
+}
+
+.form-input:focus {
+    border-color: var(--accent);
+}
+
+.modal-submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: #140e0b;
+    border: none;
+    padding: 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    box-shadow: 0 4px 15px rgba(154, 210, 109, 0.25);
+    margin-top: 10px;
+}
+
+body.theme-clay .modal-submit-btn {
+    color: #0f1214;
+    box-shadow: 0 4px 15px rgba(214, 140, 104, 0.25);
+}
+
+.modal-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--border-hover);
+}
+
+.modal-success-state {
+    display: none;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(154, 210, 109, 0.1);
+    color: var(--accent);
+    font-size: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border: 2px solid var(--accent);
+}
+
+body.theme-clay .success-icon {
+    background: rgba(214, 140, 104, 0.1);
+    border-color: var(--accent);
+}
+
+.modal-success-state h4 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+.modal-success-state p {
+    color: var(--text-secondary);
+    font-size: 15px;
+}
+
+/* Floating Action Button (Back To Top) */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 96px;
+    width: 48px;
+    height: 48px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    color: var(--accent);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 99;
+}
+
+#back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background: var(--accent);
+    color: #140e0b;
+    border-color: var(--accent);
+    box-shadow: 0 8px 25px var(--border-hover);
+    transform: translateY(-3px);
+}
+
+body.theme-clay #back-to-top:hover {
+    color: #0f1214;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 8%;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    background: #0f0a08;
+    font-size: 14px;
+}
+
+body.theme-clay footer {
+    background: #0b0c0e;
+}
+
+/* Scroll Animation classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media(max-width:1024px){
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 120px;
+        gap: 40px;
+    }
+
+    .hero-content h1 {
+        font-size: 52px;
+    }
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-image img {
+        width: 300px;
+    }
+
+    .calc-container {
+        grid-template-columns: 1fr;
+        padding: 35px;
+        gap: 35px;
+    }
+
+    .calc-inputs {
+        padding-right: 0;
+    }
+
+    .anatomy-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .anatomy-details {
+        order: 2;
+    }
+
+    .anatomy-viewer {
+        order: 1;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .config-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+    
+    .config-preview {
+        height: 420px;
+    }
+}
+
+@media(max-width:768px){
+    nav {
+        padding: 15px 5%;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--bg-secondary);
+        border-left: 1px solid var(--border-color);
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 80px 10%;
+        gap: 25px;
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .nav-btn {
+        display: none; /* Hide top right btn on mobile, can add to drawer */
+    }
+
+    .nav-links .nav-btn-mobile {
+        display: inline-block;
+        margin-top: 15px;
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+        color: #140e0b;
+        padding: 12px 24px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 700;
+        font-family: var(--font-heading);
+    }
+    
+    body.theme-clay .nav-links .nav-btn-mobile {
+        color: #0f1214;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .section {
+        padding: 80px 5%;
+    }
+
+    .title {
+        font-size: 34px;
+    }
+
+    .chart-bar-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        align-items: flex-start;
+    }
+
+    .countdown-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .stats {
+        gap: 40px;
+    }
+
+    .stat h2 {
+        font-size: 40px;
+    }
+
+    .timer-num {
+        font-size: 30px;
+    }
+
+    .timer-box {
+        min-width: 70px;
+    }
+    
+    #back-to-top {
+        right: 86px;
+    }
+    
+    .timeline::after {
+        left: 20px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 45px;
+        padding-right: 0;
+        text-align: left;
+    }
+    
+    .timeline-item::after {
+        left: 11px;
+    }
+    
+    .right-item {
+        left: 0;
+    }
+    
+    .exploded-visual {
+        height: 380px;
+    }
+    
+    .mock-liner-element {
+        width: 130px;
+        height: 180px;
+    }
+    
+    .mock-shell-half {
+        width: 65px;
+        height: 180px;
+    }
+    
+    .shell-left-layer {
+        left: 20%;
+    }
+    
+    .shell-right-layer {
+        right: 20%;
+    }
+    
+    .mock-cap-element {
+        width: 70px;
+        height: 25px;
+    }
+    
+    .cap-layer {
+        top: 20%;
+    }
+    
+    .liner-layer, .shell-left-layer, .shell-right-layer {
+        top: 27%;
+    }
+    
+    .layer-label-card {
+        width: 140px;
+        padding: 10px;
+    }
+    
+    .layer-label-card h4 {
+        font-size: 13px;
+    }
+    
+    .layer-label-card p {
+        font-size: 10px;
+    }
+    
+    .exploded-visual:hover .shell-left-layer {
+        transform: translateX(-40px);
+    }
+
+    .exploded-visual:hover .shell-right-layer {
+        transform: translateX(40px);
+    }
+    
+    .exploded-visual:hover .cap-layer {
+        transform: translateY(-40px);
+    }
+    
+    .exploded-visual:hover .cap-layer .layer-label-card {
+        left: -110px;
+    }
+
+    .exploded-visual:hover .shell-left-layer .layer-label-card {
+        left: -80px;
+    }
+
+    .exploded-visual:hover .shell-right-layer .layer-label-card {
+        right: -80px;
+    }
+}
+
+/* AI Chatbot Widget Styles */
+#gemini-chat-trigger {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    border: none;
+    border-radius: 50%;
+    color: #140e0b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(154, 210, 109, 0.35), 0 0 15px rgba(154, 210, 109, 0.15);
+    z-index: 100;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.theme-clay #gemini-chat-trigger {
+    color: #0f1214;
+    box-shadow: 0 10px 25px rgba(214, 140, 104, 0.35), 0 0 15px rgba(214, 140, 104, 0.15);
+}
+
+#gemini-chat-trigger:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 30px rgba(154, 210, 109, 0.5), 0 0 25px rgba(154, 210, 109, 0.3);
+}
+
+body.theme-clay #gemini-chat-trigger:hover {
+    box-shadow: 0 12px 30px rgba(214, 140, 104, 0.5), 0 0 25px rgba(214, 140, 104, 0.3);
+}
+
+.chat-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: var(--text-primary);
+    color: #140e0b;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 3px 6px;
+    border-radius: 10px;
+    border: 1px solid var(--accent);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+body.theme-clay .chat-badge {
+    color: #0f1214;
+}
+
+#gemini-chat-window {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 380px;
+    height: 500px;
+    background: rgba(30, 22, 18, 0.95);
+    border: 1px solid var(--border-hover);
+    border-radius: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+body.theme-clay #gemini-chat-window {
+    background: rgba(21, 26, 28, 0.95);
+}
+
+#gemini-chat-window.open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.chat-header {
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chat-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(154, 210, 109, 0.15);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid var(--accent);
+    animation: sparkle-glow 2s infinite ease-in-out;
+}
+
+body.theme-clay .chat-avatar {
+    background: rgba(214, 140, 104, 0.15);
+}
+
+@keyframes sparkle-glow {
+    0% { box-shadow: 0 0 5px rgba(154,210,109,0.3); }
+    50% { box-shadow: 0 0 15px rgba(154,210,109,0.7); }
+    100% { box-shadow: 0 0 5px rgba(154,210,109,0.3); }
+}
+
+body.theme-clay @keyframes sparkle-glow {
+    0% { box-shadow: 0 0 5px rgba(214,140,104,0.3); }
+    50% { box-shadow: 0 0 15px rgba(214,140,104,0.7); }
+    100% { box-shadow: 0 0 5px rgba(214,140,104,0.3); }
+}
+
+.chat-header-info h4 {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent-gold);
+}
+
+.chat-header-info p {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+#chat-close-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+#chat-close-btn:hover {
+    color: var(--accent);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    scroll-behavior: smooth;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+
+.chat-msg {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.chat-msg.bot {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-msg.user {
+    background: var(--accent);
+    color: #140e0b;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+    font-weight: 500;
+}
+
+body.theme-clay .chat-msg.user {
+    color: #0f1214;
+}
+
+.chat-suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    align-self: flex-start;
+    width: 100%;
+}
+
+.chat-suggest-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 10px 14px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.chat-suggest-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(154, 210, 109, 0.05);
+    transform: translateX(3px);
+}
+
+body.theme-clay .chat-suggest-btn:hover {
+    background: rgba(214, 140, 104, 0.05);
+}
+
+.chat-typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 12px 16px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    border-bottom-left-radius: 4px;
+    align-self: flex-start;
+    width: fit-content;
+}
+
+.chat-typing-indicator span {
+    width: 6px;
+    height: 6px;
+    background-color: var(--text-secondary);
+    border-radius: 50%;
+    display: inline-block;
+    animation: typing-bounce 1.4s infinite ease-in-out both;
+}
+
+.chat-typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.chat-typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing-bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
+}
+
+#chat-input-area {
+    padding: 15px 20px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 10px;
+    background: var(--bg-secondary);
+}
+
+#chat-input {
+    flex: 1;
+    background: rgba(20, 14, 11, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 10px 18px;
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+body.theme-clay #chat-input {
+    background: rgba(15, 18, 20, 0.8);
+}
+
+#chat-input:focus {
+    border-color: var(--accent);
+}
+
+#chat-submit-btn {
+    background: var(--accent);
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    color: #140e0b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+body.theme-clay #chat-submit-btn {
+    color: #0f1214;
+}
+
+#chat-submit-btn:hover {
+    background: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+@media(max-width:480px){
+    #gemini-chat-window {
+        bottom: 80px;
+        right: 15px;
+        left: 15px;
+        width: auto;
+        height: 420px;
+    }
+    #gemini-chat-trigger {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* Coming Soon Glowing Badge Styles */
+.coming-soon-badge-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.coming-soon-glowing-badge {
+    background: var(--bg-card);
+    border: 2px solid var(--border-hover);
+    color: var(--accent);
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 15px var(--glow-color);
+    animation: badge-pulse 2s infinite ease-in-out;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.badge-pulse-dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px var(--accent);
+    animation: dot-scale 1.5s infinite ease-in-out;
+}
+
+@keyframes badge-pulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px var(--glow-color); }
+    50% { transform: scale(1.03); box-shadow: 0 0 25px var(--glow-color); }
+    100% { transform: scale(1); box-shadow: 0 0 10px var(--glow-color); }
+}
+
+@keyframes dot-scale {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.3); opacity: 1; }
+}
+
+/* Problem-Solution Section */
+.prob-sol-section {
+    background: var(--bg-primary);
+}
+
+.prob-sol-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.prob-sol-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 15px 35px var(--shadow-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.prob-sol-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    transition: all var(--transition-speed) ease;
+}
+
+.problem-card::before {
+    background: linear-gradient(90deg, #ff4d4d, #f0932b);
+}
+
+.solution-card::before {
+    background: linear-gradient(90deg, var(--accent), var(--accent-hover));
+}
+
+.problem-card {
+    box-shadow: 0 15px 35px rgba(255, 77, 77, 0.05);
+}
+
+.problem-card:hover {
+    border-color: rgba(255, 77, 77, 0.3);
+    box-shadow: 0 20px 45px rgba(255, 77, 77, 0.1);
+    transform: translateY(-5px);
+}
+
+.solution-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 20px 45px var(--glow-color);
+    transform: translateY(-5px);
+}
+
+.prob-sol-card h3 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.problem-card h3 {
+    color: #ff4d4d;
+}
+
+.solution-card h3 {
+    color: var(--accent);
+}
+
+.prob-sol-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.prob-sol-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.prob-sol-item .icon {
+    font-size: 20px;
+    line-height: 1;
+    padding-top: 3px;
+}
+
+.prob-sol-item h4 {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.prob-sol-item p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* USP Comparison Section */
+.comparison-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 800px;
+}
+
+.comparison-table th, .comparison-table td {
+    padding: 22px 25px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 15px;
+}
+
+.comparison-table tr:last-child th, .comparison-table tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table th {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--accent-gold);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.comparison-table .feature-col {
+    width: 25%;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.comparison-table .standard-col {
+    width: 25%;
+    color: var(--text-muted);
+}
+
+.comparison-table .paboco-col {
+    width: 25%;
+    color: var(--text-secondary);
+}
+
+.comparison-table .orvera-col {
+    width: 25%;
+    background: rgba(154, 210, 109, 0.05);
+    color: var(--text-primary);
+    font-weight: 500;
+    border-left: 1px solid rgba(154, 210, 109, 0.15);
+    border-right: 1px solid rgba(154, 210, 109, 0.15);
+}
+
+body.theme-clay .comparison-table .orvera-col {
+    background: rgba(214, 140, 104, 0.05);
+    border-left: 1px solid rgba(214, 140, 104, 0.15);
+    border-right: 1px solid rgba(214, 140, 104, 0.15);
+}
+
+.comparison-table tr:hover td {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.comparison-table tr:hover td.orvera-col {
+    background-color: rgba(154, 210, 109, 0.08);
+}
+
+body.theme-clay .comparison-table tr:hover td.orvera-col {
+    background-color: rgba(214, 140, 104, 0.08);
+}
+
+.comparison-table th.orvera-col {
+    background: rgba(154, 210, 109, 0.12) !important;
+    text-align: center;
+}
+
+body.theme-clay .comparison-table th.orvera-col {
+    background: rgba(214, 140, 104, 0.12) !important;
+}
+
+.comparison-table td.orvera-col {
+    text-align: center;
+}
+
+.usp-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.usp-badge.yes {
+    background: rgba(154, 210, 109, 0.18);
+    color: var(--accent);
+}
+
+body.theme-clay .usp-badge.yes {
+    background: rgba(214, 140, 104, 0.18);
+    color: var(--accent);
+}
+
+.usp-badge.no {
+    background: rgba(255, 77, 77, 0.12);
+    color: #ff4d4d;
+}
+
+.usp-badge.partial {
+    background: rgba(216, 192, 160, 0.12);
+    color: var(--accent-gold);
+}
+
+.leader-tag {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    color: #140e0b;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 800;
+    margin-left: 8px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+body.theme-clay .leader-tag {
+    color: #0f1214;
+}
+
+/* Scroll Reveal animations */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-left.active, .reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Responsiveness for new sections */
+@media (max-width: 768px) {
+    .prob-sol-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+    /* ==========================================
+       PREMIUM LUXURY DESIGN OVERRIDES 
+       ========================================== */
+    body {
+        font-family: var(--font-body) !important;
+        background-color: var(--bg-primary) !important;
+        color: var(--text-primary) !important;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading) !important;
+        font-weight: 400 !important;
+        letter-spacing: -0.01em !important;
+    }
+    
+    p {
+        font-family: var(--font-body) !important;
+        font-weight: 400 !important;
+        color: var(--text-secondary) !important;
+    }
+    
+    /* Ensure all structural texts are dark and highly readable */
+    .section-subtitle, .subtitle, .roadmap-desc, .faq-text, .why-desc, .product-desc, .contact-info-text, .mv-text, .about-story {
+        color: var(--text-secondary) !important;
+    }
+    
+    .roadmap-title, .faq-header, .why-title, .product-title, .contact-detail-label, .about-mv-title, .mv-title {
+        color: var(--accent) !important;
+    }
+
+    /* Range slider track visible line */
+    .custom-slider {
+        background: var(--border-color) !important;
+        height: 6px !important;
+        border-radius: 3px !important;
+        -webkit-appearance: none !important;
+    }
+    
+    /* Webkit track style for Chrome/Edge */
+    .custom-slider::-webkit-slider-runnable-track {
+        background: var(--border-color) !important;
+        height: 6px !important;
+        border-radius: 3px !important;
+    }
+    
+    /* Firefox track style */
+    .custom-slider::-moz-range-track {
+        background: var(--border-color) !important;
+        height: 6px !important;
+        border-radius: 3px !important;
+    }
+    
+    /* Calculator result cards light-colored backgrounds */
+    .result-card {
+        background: var(--bg-secondary) !important;
+        color: var(--text-primary) !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 4px 15px rgba(27, 51, 35, 0.01) !important;
+    }
+    
+    .result-card:hover {
+        background: var(--bg-card) !important;
+        border-color: var(--accent-gold) !important;
+    }
+    
+    .result-num {
+        color: var(--accent) !important;
+    }
+    
+    .result-lbl {
+        color: var(--text-secondary) !important;
+        font-weight: 500 !important;
+    }
+
+    /* Exploded View Bottle Silhouette and Cap Ribbing */
+    .mock-cap-element {
+        background: repeating-linear-gradient(90deg, #e2c092, #e2c092 6px, #c5a880 6px, #c5a880 12px) !important;
+        border-radius: 8px 8px 2px 2px !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 4px 10px rgba(27, 51, 35, 0.08) !important;
+    }
+    
+    body.theme-clay .mock-cap-element {
+        background: repeating-linear-gradient(90deg, #c5a880, #c5a880 6px, #b08d5b 6px, #b08d5b 12px) !important;
+    }
+    
+    /* Un-swap and position shell layers correctly on left and right */
+    .shell-left-layer {
+        left: 0 !important;
+        width: 50% !important;
+    }
+    
+    .shell-right-layer {
+        right: 0 !important;
+        width: 50% !important;
+    }
+    
+    .shell-left-layer .mock-shell-half {
+        clip-path: polygon(100% 0, 66.7% 0, 66.7% 15%, 0% 28%, 0% 92%, 20% 100%, 100% 100%) !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 250'><path d='M 90 0 L 60 0 L 60 37.5 L 0 70 L 0 230 L 18 250 L 90 250 Z' fill='none' stroke='%23e0dbd1' stroke-width='2'/></svg>"), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0) !important;
+        filter: drop-shadow(0 8px 16px rgba(27, 51, 35, 0.08)) !important;
+    }
+    
+    body.theme-clay .shell-left-layer .mock-shell-half {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 250'><path d='M 90 0 L 60 0 L 60 37.5 L 0 70 L 0 230 L 18 250 L 90 250 Z' fill='none' stroke='%23d1d8c9' stroke-width='2'/></svg>"), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0) !important;
+    }
+    
+    .shell-right-layer .mock-shell-half {
+        clip-path: polygon(0 0, 33.3% 0, 33.3% 15%, 100% 28%, 100% 92%, 80% 100%, 0 100%) !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 250'><path d='M 0 0 L 30 0 L 30 37.5 L 90 70 L 90 230 L 72 250 L 0 250 Z' fill='none' stroke='%23e0dbd1' stroke-width='2'/></svg>"), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0) !important;
+        filter: drop-shadow(0 8px 16px rgba(27, 51, 35, 0.08)) !important;
+    }
+    
+    body.theme-clay .shell-right-layer .mock-shell-half {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 250'><path d='M 0 0 L 30 0 L 30 37.5 L 90 70 L 90 230 L 72 250 L 0 250 Z' fill='none' stroke='%23d1d8c9' stroke-width='2'/></svg>"), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0) !important;
+    }
+    
+    .mock-liner-element {
+        clip-path: polygon(33.3% 0, 66.7% 0, 66.7% 15%, 100% 28%, 100% 92%, 80% 100%, 20% 100%, 0 92%, 0 28%, 33.3% 15%) !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 250'><path d='M 60 0 L 120 0 L 120 37.5 L 180 70 L 180 230 L 144 250 L 36 250 L 0 230 L 0 70 L 60 37.5 Z' fill='rgba(27, 51, 35, 0.15)' stroke='%231b3323' stroke-width='2' stroke-dasharray='4,4'/></svg>") !important;
+        backdrop-filter: blur(4px) !important;
+        -webkit-backdrop-filter: blur(4px) !important;
+        filter: drop-shadow(0 6px 15px rgba(27, 51, 35, 0.05)) !important;
+    }
+    
+    body.theme-clay .mock-liner-element {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 250'><path d='M 60 0 L 120 0 L 120 37.5 L 180 70 L 180 230 L 144 250 L 36 250 L 0 230 L 0 70 L 60 37.5 Z' fill='rgba(24, 61, 36, 0.15)' stroke='%23183d24' stroke-width='2' stroke-dasharray='4,4'/></svg>") !important;
+    }
+
+    /* Navbar alignment, spacing and color overrides */
+    nav {
+        background: rgba(250, 249, 246, 0.92) !important;
+        border-bottom: 1px solid var(--border-color) !important;
+        padding: 0 !important;
+        height: 90px !important;
+        display: flex !important;
+        align-items: center !important;
+        transition: all var(--transition-speed) ease !important;
+    }
+    
+    body.theme-clay nav {
+        background: rgba(242, 244, 240, 0.92) !important;
+    }
+    
+    nav.scrolled {
+        height: 75px !important;
+        background: rgba(250, 249, 246, 0.96) !important;
+        box-shadow: 0 4px 20px rgba(27, 51, 35, 0.02) !important;
+    }
+    
+    body.theme-clay nav.scrolled {
+        background: rgba(242, 244, 240, 0.96) !important;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        height: 100%;
+    }
+
+    /* Navbar brand logo styling */
+    .logo {
+        font-family: var(--font-heading) !important;
+        font-size: 26px !important;
+        letter-spacing: 3px !important;
+        font-weight: 500 !important;
+        color: var(--accent) !important;
+    }
+
+    /* Nav links overrides */
+    .nav-links a.nav-link-item {
+        color: var(--text-secondary) !important;
+        font-family: var(--font-body) !important;
+        font-weight: 600 !important;
+        font-size: 13px !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        transition: var(--transition-speed) !important;
+    }
+    
+    .nav-links a.nav-link-item:hover {
+        color: var(--accent) !important;
+    }
+
+    /* Active colors in buttons, tabs & badges to contrast beautifully with off-white */
+    .comp-tab-btn.active, .comp-tab-btn:hover, 
+    .anatomy-tab-btn.active, .anatomy-tab-btn:hover, .card:hover .card-icon, 
+    .hotspot-num {
+        color: var(--bg-primary) !important;
+        background: var(--accent) !important;
+    }
+
+    /* Button and general typography tweaks */
+    .btn, .nav-btn, .btn-primary, .btn-secondary, .comp-tab-btn, .anatomy-tab-btn, .product-btn {
+        font-family: var(--font-body) !important;
+        font-weight: 600 !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        border-radius: 40px !important;
+        white-space: nowrap !important;
+    }
+
+    /* General Container Style for proper alignment and centering */
+    .container {
+        width: 100% !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 0 40px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Solid color button styling - resolving specificity clashes and removing gradients */
+    .nav-btn, .btn-primary, .nav-links a.nav-link-item.nav-btn {
+        background: var(--accent) !important;
+        color: var(--bg-primary) !important;
+        border: 1px solid var(--accent) !important;
+        box-shadow: 0 4px 12px rgba(27, 51, 35, 0.08) !important;
+        transition: all var(--transition-speed) ease !important;
+        white-space: nowrap !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .nav-btn:hover, .btn-primary:hover, .nav-links a.nav-link-item.nav-btn:hover {
+        background: var(--accent-hover) !important;
+        border-color: var(--accent-hover) !important;
+        color: var(--bg-primary) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 18px rgba(27, 51, 35, 0.15) !important;
+    }
+
+    .btn-secondary {
+        border: 1px solid var(--accent) !important;
+        color: var(--accent) !important;
+        background: transparent !important;
+    }
+
+    .btn-secondary:hover {
+        background: var(--accent) !important;
+        color: var(--bg-primary) !important;
+    }
+
+    /* Theme clay text overrides */
+    body.theme-clay .nav-btn, body.theme-clay .btn-primary, 
+    body.theme-clay .comp-tab-btn.active, body.theme-clay .comp-tab-btn:hover, 
+    body.theme-clay .anatomy-tab-btn.active, body.theme-clay .anatomy-tab-btn:hover, 
+    body.theme-clay .card:hover .card-icon, body.theme-clay .hotspot-num {
+        color: var(--bg-primary) !important;
+    }
+
+    /* Organic plant-fiber textures for bottle customizer and exploded diagram halves */
+    .mock-shell-half, .config-body-part, .config-neck-part {
+        background-color: var(--color-bottle-fiber) !important;
+        background-image: radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0) !important;
+        background-size: 8px 8px !important;
+        background-position: 0 0, 4px 4px !important;
+        border-color: var(--border-color) !important;
+        box-shadow: 0 10px 25px rgba(27, 51, 35, 0.05) !important;
+    }
+
+    .mock-liner-element, .config-label-sticker {
+        box-shadow: 0 4px 12px rgba(27, 51, 35, 0.08) !important;
+    }
+
+    .mock-cap-element, .config-cap-part {
+        box-shadow: 0 4px 10px rgba(27, 51, 35, 0.08) !important;
+    }
+
+    /* Section Tag Styles */
+    .section-tag {
+        display: inline-block !important;
+        font-family: var(--font-body) !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        letter-spacing: 2.5px !important;
+        text-transform: uppercase !important;
+        color: var(--accent-gold) !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Table styles */
+    .comparison-table th {
+        background: var(--bg-secondary) !important;
+        color: var(--accent) !important;
+        font-family: var(--font-heading) !important;
+        font-weight: 600 !important;
+        border-bottom: 2px solid var(--border-color) !important;
+    }
+    
+    .comparison-table td {
+        border-bottom-color: var(--border-color) !important;
+        color: var(--text-secondary) !important;
+    }
+    
+    .comparison-table tr:hover td {
+        background-color: var(--bg-secondary) !important;
+    }
+
+    /* Chatbot widget header and floating button re-style (making them light) */
+    #gemini-chat-trigger {
+        background-color: var(--accent-gold) !important; /* Sand gold instead of dark green */
+        color: var(--bg-primary) !important;
+        box-shadow: 0 6px 20px rgba(197, 168, 128, 0.25) !important;
+    }
+    
+    #gemini-chat-trigger:hover {
+        background-color: var(--accent) !important;
+    }
+
+    #gemini-chat-window {
+        background-color: var(--bg-primary) !important;
+        border-color: var(--border-color) !important;
+        box-shadow: 0 15px 40px rgba(27, 51, 35, 0.06) !important;
+    }
+    
+    .chat-header {
+        background: var(--bg-secondary) !important; /* Light blurred header */
+        color: var(--accent) !important;            /* Dark text */
+        border-bottom: 1px solid var(--border-color) !important;
+    }
+    
+    .chat-header .chat-avatar {
+        background-color: var(--accent) !important;
+        color: var(--bg-primary) !important;
+    }
+    
+    .chat-header h4 {
+        color: var(--accent) !important;
+    }
+    
+    .chat-header p {
+        color: var(--text-muted) !important;
+    }
+    
+    #chat-close-btn {
+        color: var(--text-secondary) !important;
+    }
+    
+    .chat-msg.bot {
+        background-color: var(--bg-secondary) !important;
+        color: var(--text-primary) !important;
+    }
+    
+    .chat-msg.user {
+        background-color: var(--accent) !important;
+        color: var(--bg-primary) !important;
+    }
+    
+    #chat-input-area {
+        background-color: var(--bg-secondary) !important;
+        border-top-color: var(--border-color) !important;
+    }
+    
+    #chat-input {
+        background-color: var(--bg-primary) !important;
+        border-color: var(--border-color) !important;
+        color: var(--text-primary) !important;
+    }
+
+    /* Soften all heavy card/section box shadows for premium aesthetics */
+    .about-box, .config-preview, .comp-container, .table-wrapper, .timeline-card, .anatomy-panel, .prob-sol-card {
+        box-shadow: 0 10px 30px rgba(27, 51, 35, 0.03) !important;
+        border-color: var(--border-color) !important;
+    }
+
+    /* Roadmap Timeline styles */
+    .timeline::after {
+        background-color: var(--border-color) !important;
+    }
+    
+    .timeline-card {
+        background-color: var(--bg-card) !important;
+        border-color: var(--border-color) !important;
+    }
+    
+    .timeline-year {
+        color: var(--accent-gold) !important;
+        font-family: var(--font-body) !important;
+        font-weight: 600 !important;
+    }
+
+    /* Products Section styles */
+    .products {
+        background-color: var(--bg-secondary);
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .product-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(27, 51, 35, 0.05);
+        border-color: var(--accent-gold);
+    }
+
+    .product-image {
+        height: 240px;
+        border-radius: 6px;
+        margin-bottom: 25px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .product-title {
+        font-size: 24px;
+        color: var(--accent);
+        margin-bottom: 15px;
+    }
+
+    .product-desc {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        flex-grow: 1;
+    }
+
+    .product-meta {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--accent-gold);
+        font-weight: 600;
+        border-top: 1px solid var(--border-color);
+        padding-top: 20px;
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .product-btn {
+        background-color: transparent;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        padding: 12px 0;
+        border-radius: 30px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    .product-btn:hover {
+        background-color: var(--accent);
+        color: var(--bg-primary) !important;
+    }
+
+    /* Why Orvera Grid */
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .why-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        padding: 35px 25px;
+        border-radius: 8px;
+        text-align: left;
+        transition: all 0.4s ease;
+    }
+
+    .why-card:hover {
+        border-color: var(--accent-gold);
+        background-color: var(--bg-secondary);
+    }
+
+    .why-num {
+        font-family: var(--font-heading);
+        font-size: 32px;
+        color: var(--accent-gold);
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
+
+    .why-title {
+        font-size: 18px;
+        color: var(--accent);
+        margin-bottom: 15px;
+    }
+
+    .why-desc {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    /* About Section Grid */
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 80px;
+        align-items: start;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .about-left img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+    }
+
+    .about-right {
+        padding-top: 20px;
+    }
+
+    .about-story {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 40px;
+        color: var(--text-primary);
+        font-family: var(--font-heading);
+        font-style: italic;
+    }
+
+    .about-mission-vision {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        border-top: 1px solid var(--border-color);
+        padding-top: 40px;
+    }
+
+    .mv-title {
+        font-size: 20px;
+        color: var(--accent);
+        margin-bottom: 15px;
+    }
+
+    .mv-text {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    /* Footer Layout and Grid styling overrides */
+    footer {
+        background-color: var(--bg-secondary) !important;
+        color: var(--text-primary) !important;
+        padding: 80px 0 40px !important;
+        border-top: 1px solid var(--border-color) !important;
+    }
+    
+    body.theme-clay footer {
+        background-color: var(--bg-secondary) !important;
+    }
+    
+    .footer-grid {
+        display: grid !important;
+        grid-template-columns: 2fr 1fr 1.5fr !important;
+        gap: 60px !important;
+        margin-bottom: 50px !important;
+        text-align: left !important;
+    }
+    
+    .footer-brand {
+        font-family: var(--font-heading) !important;
+        font-size: 26px !important;
+        font-weight: 500 !important;
+        letter-spacing: 2px !important;
+        color: var(--accent) !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .footer-desc {
+        font-size: 14px !important;
+        line-height: 1.8 !important;
+        color: var(--text-secondary) !important;
+        max-width: 340px !important;
+    }
+    
+    .footer-title {
+        font-family: var(--font-heading) !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        color: var(--accent-gold) !important;
+        margin-bottom: 25px !important;
+    }
+    
+    .footer-links {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    
+    .footer-link {
+        font-size: 14px !important;
+        color: var(--text-secondary) !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+        display: inline-block !important;
+    }
+    
+    .footer-link:hover {
+        color: var(--accent) !important;
+        transform: translateX(4px) !important;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid var(--border-color) !important;
+        padding-top: 30px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        font-size: 12px !important;
+        color: var(--text-muted) !important;
+    }
+    
+    /* Footer responsiveness */
+    @media (max-width: 768px) {
+        .footer-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+        }
+        .footer-bottom {
+            flex-direction: column !important;
+            gap: 15px !important;
+            text-align: center !important;
+        }
+    }
+    
+
+    /* Logo symbol styling resembling the serif O on the actual bottle */
+    .logo-symbol {
+        font-family: var(--font-heading) !important;
+        font-weight: 700 !important;
+        color: var(--accent) !important;
+        margin-right: 8px !important;
+        display: inline-block !important;
+    }
+    
+    /* Center nav links to space them out from the logo */
+    .nav-links {
+        margin: 0 auto !important;
+        display: flex !important;
+        gap: 30px !important;
+    }
+
+    /* AI Chat badge color contrast fix */
+    .chat-badge {
+        background: var(--accent-gold) !important;
+        color: var(--bg-primary) !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 2px 5px rgba(27, 51, 35, 0.05) !important;
+    }
+
+    /* Premium Contact Form Styling overrides */
+    .contact-form-container {
+        position: relative !important;
+        background: var(--bg-card) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 24px !important;
+        padding: 40px !important;
+        box-shadow: 0 10px 30px rgba(27, 51, 35, 0.02) !important;
+    }
+    
+    .form-group {
+        margin-bottom: 24px !important;
+        text-align: left !important;
+    }
+    
+    .form-label {
+        display: block !important;
+        font-family: var(--font-body) !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        color: var(--accent-gold) !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .form-input, .form-select, .form-textarea {
+        width: 100% !important;
+        background: var(--bg-secondary) !important;
+        border: 1px solid var(--border-color) !important;
+        color: var(--text-primary) !important;
+        padding: 14px 18px !important;
+        border-radius: 12px !important;
+        font-family: var(--font-body) !important;
+        font-size: 14px !important;
+        transition: all 0.3s ease !important;
+        outline: none !important;
+    }
+    
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+        border-color: var(--accent) !important;
+        background: var(--bg-card) !important;
+        box-shadow: 0 0 0 3px rgba(27, 51, 35, 0.05) !important;
+    }
+    
+    .form-textarea {
+        resize: vertical !important;
+    }
+    
+    .form-submit {
+        width: 100% !important;
+        background: var(--accent) !important;
+        color: var(--bg-primary) !important;
+        border: 1px solid var(--accent) !important;
+        padding: 16px 0 !important;
+        border-radius: 30px !important;
+        font-family: var(--font-body) !important;
+        font-weight: 600 !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 12px rgba(27, 51, 35, 0.08) !important;
+    }
+    
+    .form-submit:hover {
+        background: var(--accent-hover) !important;
+        border-color: var(--accent-hover) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 18px rgba(27, 51, 35, 0.15) !important;
+    }
+    
+    /* Form status success/error overlays - hidden by default */
+    .form-status {
+        display: none !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(250, 249, 246, 0.96) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border-radius: 24px !important;
+        z-index: 100 !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 30px !important;
+        animation: fadeIn 0.4s ease forwards !important;
+    }
+    
+    body.theme-clay .form-status {
+        background: rgba(242, 244, 240, 0.96) !important;
+    }
+    
+    .status-icon {
+        width: 64px !important;
+        height: 64px !important;
+        border-radius: 50% !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 28px !important;
+        margin-bottom: 20px !important;
+        font-weight: 700 !important;
+    }
+    
+    .status-success .status-icon {
+        background: rgba(27, 51, 35, 0.1) !important;
+        color: var(--accent) !important;
+        border: 2px solid var(--accent) !important;
+    }
+    
+    .status-error .status-icon {
+        background: rgba(255, 77, 77, 0.1) !important;
+        color: #ff4d4d !important;
+        border: 2px solid #ff4d4d !important;
+    }
+    
+    .status-title {
+        font-family: var(--font-heading) !important;
+        font-size: 24px !important;
+        color: var(--accent) !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .status-message {
+        font-size: 14px !important;
+        color: var(--text-secondary) !important;
+        max-width: 300px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Responsive layouts for new grids */
+    @media (max-width: 1024px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+        .why-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .products-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .why-grid {
+            grid-template-columns: 1fr;
+        }
+        nav {
+            padding: 0 !important;
+        }
+        /* Fix mobile positions for exploded view layers */
+        .shell-left-layer {
+            left: 0 !important;
+            width: 50% !important;
+        }
+        .shell-right-layer {
+            right: 0 !important;
+            width: 50% !important;
+        }
+    }
+    
+</style>
+
+    <!-- Open Graph Meta Tags for SEO -->
+    <meta property="og:title" content="ORVERA | Premium Sustainable Packaging & Eco Products">
+    <meta property="og:description" content="Elegantly designed, bio-based compostable products. Redefining luxury through sustainability.">
+    <meta property="og:image" content="paper-bottle.jpg">
+    <meta property="og:type" content="website">
+</head>
+
+<body>
+
+<!-- Scroll Progress Bar -->
+<div id="scroll-progress"></div>
+
+<nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo"><span class="logo-symbol">O</span>ORVERA</a>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="#" class="nav-link-item">Home</a>
+                <a href="#countdown" class="nav-link-item">Launch</a>
+                <a href="#problem-solution" class="nav-link-item">Mission</a>
+                <a href="#about" class="nav-link-item">About</a>
+                <a href="#products" class="nav-link-item">Products</a>
+                <a href="#configurator" class="nav-link-item">Customize</a>
+                <a href="#calculator" class="nav-link-item">Impact</a>
+                <a href="#why-orvera" class="nav-link-item">Why Us</a>
+                <a href="#faq" class="nav-link-item">FAQ</a>
+                <a href="#contact" class="nav-link-item nav-btn">Inquire</a>
+            </div>
+
+            <div class="nav-right-container">
+                <!-- Theme Toggle Switcher -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <span>🎨</span> Earth Theme
+                </button>
+                <a href="#" class="nav-btn open-modal-trigger">Let's Talk</a>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+        <div class="hero-bg-image"></div>
+        <div class="hero-bg-overlay"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="hero-content">
+                <span class="section-tag">Conscious Luxury</span>
+                <h1 class="hero-title">Conscious Luxury. Circular Design.</h1>
+                <p class="hero-subtitle">Redefining packaging with plant-based, zero-waste engineering. Crafting sophisticated everyday essentials from agricultural residues that leave absolutely no trace behind.</p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-primary">Inquire Now</a>
+                    <a href="#products" class="btn btn-secondary">Explore Products</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Countdown / Launch Section -->
+<section class="countdown-section" id="countdown">
+    <div class="countdown-wrapper">
+        <div class="countdown-intro">
+            <h3>Launch Reveal</h3>
+            <p>Our net-zero eco-facility is scaling up production. The official release date announcement is coming soon.</p>
+        </div>
+        <div class="coming-soon-badge-container">
+            <div class="coming-soon-glowing-badge">
+                <span class="badge-pulse-dot"></span>
+                COMING SOON
+            </div>
+            <a href="#" class="btn-primary open-modal-trigger" style="padding: 12px 24px; font-size: 13px;">Get Notified</a>
+        </div>
+    </div>
+</section>
+
+<!-- Problem-Solution Section -->
+<section class="section prob-sol-section reveal" id="problem-solution">
+    <div class="title-container">
+        <h2 class="title">The Sustainability Dilemma</h2>
+        <p class="subtitle">Why traditional packaging fails our planet, and how ORVERA's natural design offers a circular path forward.</p>
+    </div>
+
+    <div class="prob-sol-grid">
+        <!-- Problem Card -->
+        <div class="prob-sol-card problem-card reveal-left">
+            <h3><span>⚠️</span> The Plastic Crisis</h3>
+            <ul class="prob-sol-list">
+                <li class="prob-sol-item">
+                    <span class="icon">🛑</span>
+                    <div>
+                        <h4>400 Million Tons / Year</h4>
+                        <p>Global plastic production exceeds 400 million tons annually, with single-use packaging being the largest contributor.</p>
+                    </div>
+                </li>
+                <li class="prob-sol-item">
+                    <span class="icon">☠️</span>
+                    <div>
+                        <h4>Universal Contamination</h4>
+                        <p>Microplastics have been found in human blood, rainwater, and remote ecosystems, surviving for over 450 years.</p>
+                    </div>
+                </li>
+                <li class="prob-sol-item">
+                    <span class="icon">🏭</span>
+                    <div>
+                        <h4>Heavy Carbon Footprint</h4>
+                        <p>Manufacturing a single conventional PET plastic bottle releases approximately 85 grams of CO₂ into our atmosphere.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Solution Card -->
+        <div class="prob-sol-card solution-card reveal-right">
+            <h3><span>🌱</span> The ORVERA Cure</h3>
+            <ul class="prob-sol-list">
+                <li class="prob-sol-item">
+                    <span class="icon">🌾</span>
+                    <div>
+                        <h4>100% Agri-Waste Composite</h4>
+                        <p>We repurpose local crop waste (rice husk, sugarcane bagasse) into a durable structural shell, creating a zero-wood circular economy.</p>
+                    </div>
+                </li>
+                <li class="prob-sol-item">
+                    <span class="icon">⏳</span>
+                    <div>
+                        <h4>12-Week Natural Decay</h4>
+                        <p>Our composite fully decomposes in home or backyard compost within 80-90 days, leaving absolutely zero synthetic residues behind.</p>
+                    </div>
+                </li>
+                <li class="prob-sol-item">
+                    <span class="icon">📉</span>
+                    <div>
+                        <h4>90% Lower Emissions</h4>
+                        <p>ORVERA bottles release just 8.2g of carbon per unit, running on bio-energy and reducing production emissions drastically.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Sustainability Calculator Section -->
+<section class="section calc-section reveal" id="calculator">
+    <div class="title-container">
+        <h2 class="title">Sustainability Calculator</h2>
+        <p class="subtitle">See the environmental savings you can achieve by switching to ORVERA paper bottles instead of single-use plastic bottles.</p>
+    </div>
+
+    <div class="calc-container">
+        <div class="calc-inputs">
+            <h3>Estimate Your Impact</h3>
+            <p>Slide the bar below to select the average number of single-use plastic beverage bottles your household consumes per week.</p>
+            
+            <div class="slider-group">
+                <div class="slider-label-row">
+                    <span class="slider-title">Weekly Bottles Used</span>
+                    <span class="slider-val" id="calc-slider-val">12</span>
+                </div>
+                <input type="range" min="1" max="50" value="12" class="custom-slider" id="calc-slider" aria-label="Slider to estimate weekly bottle usage">
+            </div>
+        </div>
+
+        <div class="calc-results">
+            <div class="result-card">
+                <div class="result-icon">🌍</div>
+                <div class="result-info">
+                    <div class="result-num" id="savings-bottles">624</div>
+                    <div class="result-lbl">Plastic Bottles Saved / Year</div>
+                </div>
+            </div>
+            <div class="result-card">
+                <div class="result-icon">🌱</div>
+                <div class="result-info">
+                    <div class="result-num" id="savings-co2">51.7</div>
+                    <div class="result-lbl">kg CO₂ Emissions Offset / Year</div>
+                </div>
+            </div>
+            <div class="result-card">
+                <div class="result-icon">🌳</div>
+                <div class="result-info">
+                    <div class="result-num" id="savings-trees">2.3</div>
+                    <div class="result-lbl">Equivalent Trees Planted / Year</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Exploded View Section -->
+<section class="section exploded-section reveal" id="exploded-view-sec">
+    <div class="title-container">
+        <h2 class="title">Engineering Nature</h2>
+        <p class="subtitle">Hover over the bottle blueprint below to see it separate into its organic components in our 3D exploded diagram.</p>
+    </div>
+
+    <div class="exploded-container">
+        <div class="exploded-visual">
+            <div class="exploded-layer-wrapper">
+                
+                <!-- Cap Layer (Moves Up) -->
+                <div class="exploded-layer cap-layer">
+                    <div class="mock-cap-element"></div>
+                    
+                    <div class="pointer-line line-left"></div>
+                    <div class="layer-label-card card-left">
+                        <h4>1. Bamboo Cap</h4>
+                        <p>Fully compostable screw cap made from compressed bamboo starch.</p>
+                    </div>
+                </div>
+                
+                <!-- Shell Left Layer (Moves Left) -->
+                <div class="shell-left-layer">
+                    <div class="mock-shell-half"></div>
+                    
+                    <div class="pointer-line line-left"></div>
+                    <div class="layer-label-card card-left">
+                        <h4>2a. Outer Shell (Left)</h4>
+                        <p>India's agricultural waste (rice husk, sugarcane bagasse, paper pulp) bonded with corn starch.</p>
+                    </div>
+                </div>
+
+                <!-- Shell Right Layer (Moves Right) -->
+                <div class="shell-right-layer">
+                    <div class="mock-shell-half"></div>
+                    
+                    <div class="pointer-line line-right"></div>
+                    <div class="layer-label-card card-right">
+                        <h4>2b. Outer Shell (Right)</h4>
+                        <p>Zero plastic shell engineered for flexibility and drops. 100% biodegradable.</p>
+                    </div>
+                </div>
+
+                <!-- Liner Layer (Stays Centered / Glows) -->
+                <div class="exploded-layer liner-layer">
+                    <div class="mock-liner-element"></div>
+                    
+                    <div class="pointer-line line-right"></div>
+                    <div class="layer-label-card card-right">
+                        <h4>3. Waterproof Liner</h4>
+                        <p>PCL + Nano clay composite waterproof barrier. Achieves an 8-12 month filled shelf life.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Interactive Product Configurator Section -->
+<!-- Products Section -->
+<section class="section products reveal" id="products">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Collections</span>
+            <h2 class="section-title">The Product Collection</h2>
+            <p class="section-subtitle">A curated collection of plant-based alternatives designed for a complete circular lifecycle.</p>
+        </div>
+        
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&q=80&w=400');"></div>
+                <h3 class="product-title">Eco Cutlery</h3>
+                <p class="product-desc">Crafted from 100% natural, fast-growing organic bamboo. Splinter-free, structurally rigid, and finished to provide a smooth, premium dining experience. Decomposes naturally in home compost.</p>
+                <div class="product-meta">
+                    <span>Compostable: 45-60 Days</span>
+                    <span>100% Bamboo</span>
+                </div>
+                <button class="product-btn" data-interest="cutlery">Inquire Details</button>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400');"></div>
+                <h3 class="product-title">Eco Bottles</h3>
+                <p class="product-desc">Bio-based paper water bottles manufactured from agricultural crop residues (bagasse and wheat straw), coated with an ultra-thin compostable water barrier. Entirely leak-proof and lightweight.</p>
+                <div class="product-meta">
+                    <span>Compostable: 60-90 Days</span>
+                    <span>Plant Fibers</span>
+                </div>
+                <a href="#configurator" class="product-btn" style="text-decoration:none;">Configure Bottle</a>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&q=80&w=400');"></div>
+                <h3 class="product-title">Eco Packaging</h3>
+                <p class="product-desc">Bespoke paper wrappers, boxes, and protective sheets made from recycled organic pulp. Designed specifically for luxury brands, providing unmatched protection with natural textures.</p>
+                <div class="product-meta">
+                    <span>Compostable: 60-120 Days</span>
+                    <span>Bespoke Pulp</span>
+                </div>
+                <button class="product-btn" data-interest="packaging">Inquire Details</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section config-section reveal" id="configurator">
+    <div class="title-container">
+        <h2 class="title">Design Your Bottle</h2>
+        <p class="subtitle">Select your capacity, cap finish, and custom label design to preview the ORVERA paper bottle in real-time.</p>
+    </div>
+
+    <div class="config-container">
+        
+        <!-- Left Side: Interactive CSS Bottle Preview -->
+        <div class="config-preview">
+            <div class="config-bottle bottle-500ml" id="preview-bottle">
+                <!-- Cap -->
+                <div class="config-cap-part" id="preview-cap"></div>
+                <!-- Neck -->
+                <div class="config-neck-part"></div>
+                <!-- Body -->
+                <div class="config-body-part">
+                    <div class="config-reflection"></div>
+                    <!-- Label Sticker -->
+                    <div class="config-label-sticker" id="preview-label">
+                        <h5 id="preview-label-title">ORVERA</h5>
+                        <p id="preview-label-subtitle">Spring Water</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: Configurator Controls -->
+        <div class="config-options">
+            
+            <!-- Capacity Selector -->
+            <div>
+                <h4 class="config-group-title">1. Bottle Capacity</h4>
+                <div class="config-buttons-grid">
+                    <button class="config-opt-btn" data-type="capacity" data-val="330ml">330 ml</button>
+                    <button class="config-opt-btn active" data-type="capacity" data-val="500ml">500 ml</button>
+                    <button class="config-opt-btn" data-type="capacity" data-val="750ml">750 ml</button>
+                </div>
+            </div>
+
+            <!-- Cap Selector -->
+            <div>
+                <h4 class="config-group-title">2. Cap Material</h4>
+                <div class="config-buttons-grid">
+                    <button class="config-opt-btn active" data-type="cap" data-val="bamboo" data-color="#e2c092">Bamboo</button>
+                    <button class="config-opt-btn" data-type="cap" data-val="cork" data-color="#c29168">Cork</button>
+                    <button class="config-opt-btn" data-type="cap" data-val="bioplastic" data-color="#698f49">Bio-Plastic</button>
+                </div>
+            </div>
+
+            <!-- Label Style Selector -->
+            <div>
+                <h4 class="config-group-title">3. Beverage Label</h4>
+                <div class="config-buttons-grid">
+                    <button class="config-opt-btn active" data-type="label" data-val="water" data-gradient="linear-gradient(135deg, #4da4e0 0%, #1a5ea8 100%)">Spring Water</button>
+                    <button class="config-opt-btn" data-type="label" data-val="juice" data-gradient="linear-gradient(135deg, #f5a04f 0%, #d85f1c 100%)">Organic Juice</button>
+                    <button class="config-opt-btn" data-type="label" data-val="soda" data-gradient="linear-gradient(135deg, #7c4da3 0%, #462269 100%)">Craft Soda</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Carbon Footprint Comparison Section -->
+<section class="section comparison-section reveal" id="comparison">
+    <div class="title-container">
+        <h2 class="title">Environmental Impact</h2>
+        <p class="subtitle">Toggle between different ecological footprints to see how ORVERA stacks up against traditional single-use materials.</p>
+    </div>
+
+    <div class="comp-container">
+        <!-- Metric Tabs -->
+        <div class="comp-tabs">
+            <button class="comp-tab-btn active" data-metric="co2">CO₂ Emissions / Production</button>
+            <button class="comp-tab-btn" data-metric="energy">Energy Required to Produce</button>
+            <button class="comp-tab-btn" data-metric="decomposition">Decomposition Timeline</button>
+        </div>
+
+        <!-- Bar Charts -->
+        <div class="chart-wrapper">
+            <!-- Row 1: ORVERA -->
+            <div class="chart-bar-row">
+                <span class="bar-label">ORVERA Paper</span>
+                <div class="bar-track">
+                    <div class="bar-fill orvera-bar" id="bar-orvera" style="width: 8%"></div>
+                    <span class="bar-value" id="val-orvera">8.2g</span>
+                </div>
+            </div>
+
+            <!-- Row 2: Plastic -->
+            <div class="chart-bar-row">
+                <span class="bar-label">PET Plastic</span>
+                <div class="bar-track">
+                    <div class="bar-fill" id="bar-plastic" style="width: 25%"></div>
+                    <span class="bar-value" id="val-plastic">85g</span>
+                </div>
+            </div>
+
+            <!-- Row 3: Aluminum -->
+            <div class="chart-bar-row">
+                <span class="bar-label">Aluminum Can</span>
+                <div class="bar-track">
+                    <div class="bar-fill" id="bar-aluminum" style="width: 35%"></div>
+                    <span class="bar-value" id="val-aluminum">120g</span>
+                </div>
+            </div>
+
+            <!-- Row 4: Glass -->
+            <div class="chart-bar-row">
+                <span class="bar-label">Glass Bottle</span>
+                <div class="bar-track">
+                    <div class="bar-fill" id="bar-glass" style="width: 100%"></div>
+                    <span class="bar-value" id="val-glass">340g</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- summary card -->
+        <div class="comp-summary-card">
+            <h4 id="comp-summary-title">Carbon Footprint Breakdown</h4>
+            <p id="comp-summary-desc">ORVERA paper bottles reduce greenhouse gas emissions by up to 90% compared to PET plastics, and over 97% compared to glass production which requires extremely high furnace temperatures.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Why ORVERA / Features -->
+<section class="section reveal" id="features">
+    <div class="title-container">
+        <h2 class="title">Why ORVERA?</h2>
+        <p class="subtitle">Innovation designed around circular economy principles and bio-materials.</p>
+    </div>
+
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon">☘️</div>
+            <h3>Organic Materials</h3>
+            <p>Formulated from India's agricultural waste (rice husk, sugarcane bagasse, and paper pulp) bound with food-safe corn starch.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">⏳</div>
+            <h3>100% Biodegradable</h3>
+            <p>Designed to decompose fully in backyard or industrial compost streams, leaving zero conventional plastics or microplastic residues.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Premium Aesthetics</h3>
+            <p>Ergonomically crafted with a organic matte surface that feels natural to hold and stands out with a refined, tactile silhouette.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🛡️</div>
+            <h3>PCL Nano Barrier Tech</h3>
+            <p>Uses a PCL + Nano clay composite coating as a waterproof barrier, ensuring an 8-12 month filled shelf life without leaking.</p>
+        </div>
+    </div>
+</section>
+
+<!-- USP Comparison Section -->
+<section class="section comparison-section reveal" id="usp-comparison">
+    <div class="title-container">
+        <h2 class="title">Setting a New Standard</h2>
+        <p class="subtitle">A detailed look at how ORVERA's zero-plastic technology stack stacks up against conventional packaging and global pioneers.</p>
+    </div>
+
+    <div class="table-wrapper">
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th class="feature-col">Feature / Metric</th>
+                    <th class="standard-col">Standard PET Plastic</th>
+                    <th class="paboco-col">Paboco Paper Bottle</th>
+                    <th class="orvera-col">ORVERA Bottle <span class="leader-tag">USP Leader</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="feature-col">Material Base</td>
+                    <td class="standard-col">Petrochemicals (Fossil Fuel)</td>
+                    <td class="paboco-col">Wood Fiber (FSC Paper)</td>
+                    <td class="orvera-col">Agricultural Waste (Rice Husk + Bagasse)</td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Waterproof Lining</td>
+                    <td class="standard-col">Not applicable (Entirely plastic)</td>
+                    <td class="paboco-col">HDPE/PET Plastic Liner (15%)</td>
+                    <td class="orvera-col">PCL + Nano Clay Composite (Bio-degradable)</td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Plastic Content</td>
+                    <td class="standard-col">100% Conventional Plastic</td>
+                    <td class="paboco-col">~15% Plastic Barrier Layer</td>
+                    <td class="orvera-col"><span class="usp-badge yes">0% Plastic</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Decomposition Time</td>
+                    <td class="standard-col">450+ Years (Degrades to microplastics)</td>
+                    <td class="paboco-col">Partial (Liner persists for years)</td>
+                    <td class="orvera-col"><span class="usp-badge yes">8-12 Weeks</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Filled Shelf Life</td>
+                    <td class="standard-col">Indefinite</td>
+                    <td class="paboco-col">6 - 12 Months</td>
+                    <td class="orvera-col"><span class="usp-badge yes">8 - 12 Months</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Carbon Footprint</td>
+                    <td class="standard-col">~85g CO₂ per bottle</td>
+                    <td class="paboco-col">~15-20g CO₂ per bottle</td>
+                    <td class="orvera-col"><span class="usp-badge yes">8.2g CO₂</span></td>
+                </tr>
+                <tr>
+                    <td class="feature-col">Circular Index</td>
+                    <td class="standard-col"><span class="usp-badge no">Linear (Take-Make-Waste)</span></td>
+                    <td class="paboco-col"><span class="usp-badge partial">Hybrid (Fiber Recyclable)</span></td>
+                    <td class="orvera-col"><span class="usp-badge yes">100% Circular</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- Interactive Bottle Anatomy Showcase -->
+<section class="section anatomy-section reveal" id="anatomy">
+    <div class="title-container">
+        <h2 class="title">Anatomy of the Bottle</h2>
+        <p class="subtitle">Click on the glowing hotspots or tabs to explore the innovative organic layers that comprise our paper bottles.</p>
+    </div>
+
+    <div class="anatomy-container">
+        <!-- Left Side: Interactive Viewer -->
+        <div class="anatomy-viewer">
+            <div class="anatomy-image-wrapper">
+                <img src="paper-bottle.jpg" alt="Orvera bottle structural blueprint representation">
+                
+                <!-- Interactive hotspots -->
+                <button class="hotspot" id="hotspot-cap" data-target="cap" aria-label="Biodegradable Cap Hotspot">
+                    <span class="hotspot-num">1</span>
+                </button>
+                <button class="hotspot" id="hotspot-shell" data-target="shell" aria-label="Bio Shell Hotspot">
+                    <span class="hotspot-num">2</span>
+                </button>
+                <button class="hotspot" id="hotspot-lining" data-target="lining" aria-label="Plant Liner Hotspot">
+                    <span class="hotspot-num">3</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Side: Details Box -->
+        <div class="anatomy-details">
+            <div class="anatomy-tab-buttons">
+                <button class="anatomy-tab-btn active" data-target="cap">1. Biodegradable Cap</button>
+                <button class="anatomy-tab-btn" data-target="shell">2. Organic Fiber Shell</button>
+                <button class="anatomy-tab-btn" data-target="lining">3. Bio-Based Waterproof Liner</button>
+            </div>
+
+            <div class="anatomy-panel" id="anatomy-panel">
+                <h3><span id="panel-title">Biodegradable Cap</span> <span class="material-tag" id="panel-tag">Bio-material</span></h3>
+                <p id="panel-desc">
+                    Made from bamboo pulp and natural vegetable oils, our screw cap decomposes naturally and does not release microplastics. It offers a secure, airtight seal for fresh contents.
+                </p>
+                <div class="anatomy-stats">
+                    <div class="anatomy-stat-item">
+                        <h4>Material Composition</h4>
+                        <p id="panel-composition">Bamboo Pulp & Starch</p>
+                    </div>
+                    <div class="anatomy-stat-item">
+                        <h4>Biodegrade Rate</h4>
+                        <p id="panel-time">45 - 60 Days</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="section reveal" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-left">
+                    <img src="paper-bottle.jpg" alt="ORVERA Premium Leaf & Bio-based Material Layout">
+                </div>
+                <div class="about-right">
+                    <span class="section-tag">Our Story</span>
+                    <h2 class="section-title">Nurturing Balance</h2>
+                    <p class="about-story">
+                        "Founded by Anmol Kumar and Abhishek Singh, ORVERA believes that packaging should protect both your products and the planet. Our team engineers luxury everyday essentials from agricultural crop residues, transforming what would otherwise be burned or discarded into highly functional, beautifully crafted products."
+                    </p>
+                    <div class="about-mission-vision">
+                        <div>
+                            <h3 class="mv-title">Our Mission</h3>
+                            <p class="mv-text">To replace non-biodegradable polymers with circular, plant-based materials, establishing a new global standard for luxury eco-packaging that leaves zero waste behind.</p>
+                        </div>
+                        <div>
+                            <h3 class="mv-title">Our Vision</h3>
+                            <p class="mv-text">A world where product design, modern luxury, and ecological balance exist in absolute harmony—nurturing both business needs and the ecosystems we depend upon.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Statistics counters merged beautifully here -->
+                    <div class="stats" style="display: flex; justify-content: space-between; margin-top: 50px; border-top: 1px solid var(--border-color); padding-top: 35px; flex-wrap: wrap; gap: 20px;">
+                        <div class="stat">
+                            <h2 id="live-bottles" style="font-family: var(--font-heading); font-size: 32px; color: var(--accent); margin-bottom: 5px; font-weight: normal;">142,854</h2>
+                            <p style="font-family: var(--font-body); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">Plastic Bottles Saved</p>
+                        </div>
+                        <div class="stat">
+                            <h2 id="live-co2" style="font-family: var(--font-heading); font-size: 32px; color: var(--accent); margin-bottom: 5px; font-weight: normal;">11,828.3</h2>
+                            <p style="font-family: var(--font-body); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">kg CO₂ Offset</p>
+                        </div>
+                        <div class="stat">
+                            <h2 id="live-trees" style="font-family: var(--font-heading); font-size: 32px; color: var(--accent); margin-bottom: 5px; font-weight: normal;">537.6</h2>
+                            <p style="font-family: var(--font-body); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">Equivalent Trees Planted</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Interactive Milestones Roadmap Section -->
+<section class="section roadmap-section reveal" id="roadmap">
+    <div class="title-container">
+        <h2 class="title">Roadmap to Launch</h2>
+        <p class="subtitle">Our journey from prototype validation to commercial scale-up and seed expansion.</p>
+    </div>
+
+    <div class="timeline">
+        <!-- Milestone 1 -->
+        <div class="timeline-item left-item">
+            <div class="timeline-card">
+                <div class="timeline-year">Current Phase</div>
+                <h4>Prototype & Pilot Validation</h4>
+                <p>Completed the first fully functional prototype. Initiated 5 active cafe pilots in Dehradun and conducting coating validation testing with PCL nano clay composite.</p>
+            </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="timeline-item right-item">
+            <div class="timeline-card">
+                <div class="timeline-year">July - Sept 2026</div>
+                <h4>Small Batch & Outreach</h4>
+                <p>Manufacturing a 500-1000 small batch run. Initiating corporate outreach for commercial adoptions and participating in startup competitions at IIM and IIT.</p>
+            </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="timeline-item left-item">
+            <div class="timeline-card">
+                <div class="timeline-year">Oct - Dec 2026</div>
+                <h4>Funding & Scaling</h4>
+                <p>Raising a seed funding round to support scaling operations. Targeting a 10 Lakh+ monthly revenue stream with an estimated valuation milestone of 8-10 Cr.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Accordion Section -->
+<!-- Why Orvera Section -->
+<section class="section reveal" id="why-orvera">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Commitments</span>
+            <h2 class="section-title">Why ORVERA?</h2>
+            <p class="section-subtitle">Five pillars of excellence that define our commitment to a zero-waste future.</p>
+        </div>
+        
+        <div class="why-grid">
+            <!-- Pillar 1 -->
+            <div class="why-card">
+                <div class="why-num">01</div>
+                <h3 class="why-title">Zero Microplastics</h3>
+                <p class="why-desc">ORVERA products utilize plant-derived lipids and starches. They leave behind absolutely no synthetic chemical residues or microplastics in the ecosystem.</p>
+            </div>
+            
+            <!-- Pillar 2 -->
+            <div class="why-card">
+                <div class="why-num">02</div>
+                <h3 class="why-title">Agriloop Innovation</h3>
+                <p class="why-desc">We source raw agricultural waste directly from local farmers, supporting rural economies while preventing agricultural crop burning.</p>
+            </div>
+            
+            <!-- Pillar 3 -->
+            <div class="why-card">
+                <div class="why-num">03</div>
+                <h3 class="why-title">Circular by Design</h3>
+                <p class="why-desc">Every product is engineered with a circular lifecycle. They biodegrade in home composting settings within 45 to 120 days, enriching the soil.</p>
+            </div>
+            
+            <!-- Pillar 4 -->
+            <div class="why-card">
+                <div class="why-num">04</div>
+                <h3 class="why-title">Minimalist Luxury</h3>
+                <p class="why-desc">We prioritize elegant proportions and natural textures. Sustainability does not mean sacrificing the premium experience of a luxury brand.</p>
+            </div>
+            
+            <!-- Pillar 5 -->
+            <div class="why-card">
+                <div class="why-num">05</div>
+                <h3 class="why-title">Carbon Reduction</h3>
+                <p class="why-desc">Our production processes reduce carbon dioxide emissions by up to 90% compared to PET plastics, and over 97% compared to glass.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section faq reveal" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Information</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Got questions? We've got answers about our technology and products.</p>
+        </div>
+        
+        <div class="faq-list">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    What is Orvera's core material?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        ORVERA products are built from organic plant fibers, including bamboo pulp, sugarcane bagasse, and wheat straw, bound with natural starches. They are 100% bio-based.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Are ORVERA products certified compostable?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        Yes. Our materials comply with international composting standards (including ASTM D6400 and EN 13432), ensuring they biodegrade fully without toxic remains.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Can the Eco Bottles hold hot liquids?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        Our current line is optimized for cold and ambient liquids up to 50°C (122°F). We are actively testing high-temperature coatings for coffee and tea applications.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    How long does decomposition take?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        In standard home composting conditions, products break down within 45 to 120 days depending on soil moisture and temperature. In industrial facilities, it takes less than 30 days.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Do the Eco Cutlery pieces splinter?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        No. Our bamboo cutlery undergoes advanced compression and fine-sanding techniques, providing a completely smooth, splinter-free finish and a highly robust feel.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Is the Eco Packaging waterproof?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        Our packaging materials are treated with a plant-based, water-repellent wax layer. This provides excellent humidity resistance and splash protection, keeping items dry.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Can the bottles be reused?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        ORVERA bottles are designed primarily as single-use alternatives to plastic bottles. However, they are sturdy enough to be refilled and reused multiple times for dry contents or water before disposal.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 8 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Are Orvera products microwave safe?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        Yes. Our Eco Cutlery and fiber-based packaging plates/bowls are microwave-safe for reheating up to 2 minutes, and they are also freezer-safe.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 9 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Where are Orvera products manufactured?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        We manufacture locally in India, sourcing all raw materials directly from regional agricultural fields to keep our carbon footprint minimal and support local farming communities.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 10 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    How can businesses order in bulk?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        Businesses can reach out through our Contact form below. Our corporate sales team handles custom branding, bulk discounts, and scheduled supply agreements.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<!-- Contact Section -->
+<section class="section reveal" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-left">
+                <span class="section-tag">Inquiries</span>
+                <h2 class="contact-info-title">Begin Your Journey</h2>
+                <p class="contact-info-text">Connect with our design and sales teams to explore custom partnerships, bulk purchasing, or bespoke packaging designs.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <span class="contact-detail-icon">✉</span>
+                        <div>
+                            <h4 class="contact-detail-label">Email Us</h4>
+                            <a href="mailto:orverabottles@gmail.com" class="contact-detail-val">orverabottles@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <span class="contact-detail-icon">📍</span>
+                        <div>
+                            <h4 class="contact-detail-label">Corporate Office</h4>
+                            <p class="contact-detail-val">Dehradun, Uttarakhand, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <form id="contact-form" action="submit-contact" method="POST">
+                    <div class="form-group">
+                        <label class="form-label" for="form-name">Full Name</label>
+                        <input class="form-input" type="text" id="form-name" name="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="form-email">Email Address</label>
+                        <input class="form-input" type="email" id="form-email" name="email" required placeholder="you@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="form-interest">Interested In</label>
+                        <select class="form-select" id="form-interest" name="interest">
+                            <option value="cutlery">Eco Cutlery Solutions</option>
+                            <option value="bottles">Eco Bottles Solutions</option>
+                            <option value="packaging">Bespoke Eco Packaging</option>
+                            <option value="other">General Partnership</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="form-message">Message</label>
+                        <textarea class="form-textarea" id="form-message" name="message" rows="5" required placeholder="Tell us about your requirements..."></textarea>
+                    </div>
+                    <button class="form-submit" type="submit" id="form-submit-btn">Send Message</button>
+                </form>
+                
+                <!-- Success overlay -->
+                <div class="form-status status-success" id="contact-success">
+                    <div class="status-icon">✓</div>
+                    <h3 class="status-title">Inquiry Sent</h3>
+                    <p class="status-message" id="contact-success-msg">Thank you! Your inquiry has been received. Our team will get back to you shortly.</p>
+                </div>
+                
+                <!-- Error overlay -->
+                <div class="form-status status-error" id="contact-error">
+                    <div class="status-icon">✗</div>
+                    <h3 class="status-title">Submission Failed</h3>
+                    <p class="status-message" id="contact-error-msg">Failed to connect to backend server.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">ORVERA</div>
+                <p class="footer-desc">Crafting the next generation of plant-based everyday luxury essentials. Zero microplastics, zero crop-burning waste.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#home" class="footer-link">Home</a></li>
+                    <li><a href="#about" class="footer-link">About Us</a></li>
+                    <li><a href="#products" class="footer-link">Collections</a></li>
+                    <li><a href="#why-orvera" class="footer-link">Why Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:orverabottles@gmail.com" class="footer-link">orverabottles@gmail.com</a></li>
+                    <li class="footer-link">Dehradun, Uttarakhand, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ORVERA. All rights reserved.</p>
+            <p>Designed for a Circular Future</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Newsletter / Contact Modal -->
+<div class="modal-overlay" id="subscription-modal">
+    <div class="modal-container">
+        <button class="modal-close" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+        
+        <div class="modal-form-content">
+            <div class="modal-header">
+                <h3>Join the Movement</h3>
+                <p>Sign up to receive exclusive launch updates, beta testing invitations, and sustainable insights.</p>
+            </div>
+            
+            <form id="subscribe-form">
+                <div class="form-group">
+                    <label for="user-name">Full Name</label>
+                    <input type="text" id="user-name" class="form-input" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-email">Email Address</label>
+                    <input type="email" id="user-email" class="form-input" placeholder="you@example.com" required>
+                </div>
+                <button type="submit" class="modal-submit-btn">Notify Me</button>
+            </form>
+        </div>
+
+        <div class="modal-success-state" id="modal-success">
+            <div class="success-icon">✓</div>
+            <h4>You're on the list!</h4>
+            <p>Thank you for subscribing. We will keep you updated on our journey toward zero-plastic packaging.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Floating AI Chatbot Widget -->
+<button id="gemini-chat-trigger" aria-label="Open AI Assistant">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+    <span class="chat-badge">AI</span>
+</button>
+
+<div id="gemini-chat-window">
+    <div class="chat-header">
+        <div class="chat-header-info">
+            <div class="chat-avatar">✧</div>
+            <div>
+                <h4>ORVERA AI Assistant</h4>
+                <p>Powered by Gemini Tech</p>
+            </div>
+        </div>
+        <button id="chat-close-btn" aria-label="Close Chat">&times;</button>
+    </div>
+    
+    <div class="chat-messages" id="chat-messages">
+        <div class="chat-msg bot">
+            Hello! I am ORVERA's AI Assistant. Ask me anything about our biodegradable paper bottles, materials, or launch timeline.
+        </div>
+        
+        <!-- Suggestions -->
+        <div class="chat-suggestions">
+            <button class="chat-suggest-btn" data-question="What is the bottle made of?">What is the bottle made of?</button>
+            <button class="chat-suggest-btn" data-question="How does it biodegrade?">How does it biodegrade?</button>
+            <button class="chat-suggest-btn" data-question="When is the launch?">When is the launch?</button>
+        </div>
+    </div>
+    
+    <form id="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Ask a question..." required autocomplete="off">
+        <button type="submit" id="chat-submit-btn" aria-label="Send Message">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+        </button>
+    </form>
+</div>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" aria-label="Back to Top">↑</button>
+
+<script>
+// Scroll Progress Bar & Sticky Navigation
+window.addEventListener("scroll", function() {
+    const scrollProgress = document.getElementById("scroll-progress");
+    const navbar = document.getElementById("navbar");
+    const backToTop = document.getElementById("back-to-top");
+    
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    
+    scrollProgress.style.width = scrolled + "%";
+    
+    // Sticky Class
+    if (winScroll > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+
+    // Back to top visible
+    if (winScroll > 300) {
+        backToTop.classList.add("visible");
+    } else {
+        backToTop.classList.remove("visible");
+    }
+});
+
+// Smooth Scroll to top
+document.getElementById("back-to-top").addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
+
+// Hamburger Mobile Navigation Drawer Toggling
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+const navLinkItems = document.querySelectorAll(".nav-link-item");
+
+menuToggle.addEventListener("click", function() {
+    menuToggle.classList.toggle("open");
+    navLinks.classList.toggle("open");
+});
+
+navLinkItems.forEach(item => {
+    item.addEventListener("click", function() {
+        menuToggle.classList.remove("open");
+        navLinks.classList.remove("open");
+    });
+});
+
+// Theme Switcher Toggling Logic
+const themeToggleBtn = document.getElementById("theme-toggle");
+
+themeToggleBtn.addEventListener("click", function() {
+    const isClay = document.body.classList.toggle("theme-clay");
+    
+    if (isClay) {
+        themeToggleBtn.innerHTML = "<span>🎨</span> Forest Theme";
+    } else {
+        themeToggleBtn.innerHTML = "<span>🎨</span> Earth Theme";
+    }
+});
+
+// Sustainability Calculator Logic
+const slider = document.getElementById("calc-slider");
+const sliderVal = document.getElementById("calc-slider-val");
+const savingsBottles = document.getElementById("savings-bottles");
+const savingsCo2 = document.getElementById("savings-co2");
+const savingsTrees = document.getElementById("savings-trees");
+
+function calculateSavings(val) {
+    const annualBottles = val * 52;
+    const co2Offset = (annualBottles * 0.0828).toFixed(1); // 0.0828kg of CO2 per plastic bottle production
+    const treesPlanted = (co2Offset / 22).toFixed(1); // average mature tree absorbs ~22kg of CO2 per year
+    
+    // Animate the counters smoothly
+    animateValue(savingsBottles, parseInt(savingsBottles.innerText) || 0, annualBottles, 400);
+    animateValue(savingsCo2, parseFloat(savingsCo2.innerText) || 0, parseFloat(co2Offset), 400);
+    animateValue(savingsTrees, parseFloat(savingsTrees.innerText) || 0, parseFloat(treesPlanted), 400);
+}
+
+slider.addEventListener("input", function(e) {
+    const val = e.target.value;
+    sliderVal.innerText = val;
+    calculateSavings(val);
+});
+
+// Utility to animate count changes
+function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        const currentVal = start + progress * (end - start);
+        if (Number.isInteger(end)) {
+            obj.innerHTML = Math.floor(currentVal);
+        } else {
+            obj.innerHTML = currentVal.toFixed(1);
+        }
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+// Initial run
+calculateSavings(12);
+
+// Product Configurator Selection Logic
+const configBtns = document.querySelectorAll(".config-opt-btn");
+const previewBottle = document.getElementById("preview-bottle");
+const previewCap = document.getElementById("preview-cap");
+const previewLabel = document.getElementById("preview-label");
+const previewLabelTitle = document.getElementById("preview-label-title");
+const previewLabelSubtitle = document.getElementById("preview-label-subtitle");
+
+configBtns.forEach(btn => {
+    btn.addEventListener("click", function() {
+        const type = this.getAttribute("data-type");
+        const val = this.getAttribute("data-val");
+
+        // Toggle Active Class in siblings
+        this.parentElement.querySelectorAll(".config-opt-btn").forEach(sibling => {
+            sibling.classList.remove("active");
+        });
+        this.classList.add("active");
+
+        // Update Bottle Design
+        if (type === "capacity") {
+            previewBottle.classList.remove("bottle-330ml", "bottle-500ml", "bottle-750ml");
+            previewBottle.classList.add("bottle-" + val);
+        } else if (type === "cap") {
+            const color = this.getAttribute("data-color");
+            previewCap.style.backgroundColor = color;
+        } else if (type === "label") {
+            const gradient = this.getAttribute("data-gradient");
+            previewLabel.style.background = gradient;
+            
+            // Update Text on Sticker Label
+            if (val === "water") {
+                previewLabelSubtitle.innerText = "Spring Water";
+                previewLabelTitle.innerText = "ORVERA";
+            } else if (val === "juice") {
+                previewLabelSubtitle.innerText = "Organic Juice";
+                previewLabelTitle.innerText = "BIO-NECTAR";
+            } else if (val === "soda") {
+                previewLabelSubtitle.innerText = "Craft Soda";
+                previewLabelTitle.innerText = "ZEST-FIZZ";
+            }
+        }
+    });
+});
+
+// Carbon Comparison Chart Data
+const comparisonData = {
+    co2: {
+        title: "Carbon Footprint Comparison (CO₂ Emissions per Bottle)",
+        desc: "ORVERA paper bottles reduce greenhouse gas emissions by up to 90% compared to PET plastics, and over 97% compared to glass production which requires extremely high furnace temperatures.",
+        vals: { orvera: "8.2g", plastic: "85g", aluminum: "120g", glass: "340g" },
+        pcts: { orvera: 8.2/340*100, plastic: 85/340*100, aluminum: 120/340*100, glass: 100 }
+    },
+    energy: {
+        title: "Energy Required to Produce (MJ per Bottle)",
+        desc: "Production of paper-based shells runs primarily on renewable energy and requires much lower energy inputs compared to aluminum smelting and high-heat glass manufacturing.",
+        vals: { orvera: "0.8 MJ", plastic: "5.4 MJ", aluminum: "9.0 MJ", glass: "6.2 MJ" },
+        pcts: { orvera: 0.8/9*100, plastic: 5.4/9*100, aluminum: 100, glass: 6.2/9*100 }
+    },
+    decomposition: {
+        title: "Decomposition Timeline (Years in Environment)",
+        desc: "An ORVERA bottle decomposes entirely back into organic matter within 12 weeks (0.2 years). Single-use plastic bottles and aluminum cans persist for centuries, polluting water and land ecosystems.",
+        vals: { orvera: "0.2 Years", plastic: "450 Years", aluminum: "200 Years", glass: "1,000,000+ Years" },
+        pcts: { orvera: 2, plastic: 45, aluminum: 20, glass: 100 }
+    }
+};
+
+const compTabBtns = document.querySelectorAll(".comp-tab-btn");
+const barOrvera = document.getElementById("bar-orvera");
+const barPlastic = document.getElementById("bar-plastic");
+const barAluminum = document.getElementById("bar-aluminum");
+const barGlass = document.getElementById("bar-glass");
+
+const valOrvera = document.getElementById("val-orvera");
+const valPlastic = document.getElementById("val-plastic");
+const valAluminum = document.getElementById("val-aluminum");
+const valGlass = document.getElementById("val-glass");
+
+const compSummaryTitle = document.getElementById("comp-summary-title");
+const compSummaryDesc = document.getElementById("comp-summary-desc");
+
+function updateChart(metricKey) {
+    const data = comparisonData[metricKey];
+    
+    // Animate Bar Widths
+    barOrvera.style.width = data.pcts.orvera + "%";
+    barPlastic.style.width = data.pcts.plastic + "%";
+    barAluminum.style.width = data.pcts.aluminum + "%";
+    barGlass.style.width = data.pcts.glass + "%";
+    
+    // Update labels inside bars
+    valOrvera.innerText = data.vals.orvera;
+    valPlastic.innerText = data.vals.plastic;
+    valAluminum.innerText = data.vals.aluminum;
+    valGlass.innerText = data.vals.glass;
+    
+    // Update summary texts
+    compSummaryTitle.innerText = data.title;
+    compSummaryDesc.innerText = data.desc;
+}
+
+compTabBtns.forEach(btn => {
+    btn.addEventListener("click", function() {
+        compTabBtns.forEach(b => b.classList.remove("active"));
+        this.classList.add("active");
+        
+        const metric = this.getAttribute("data-metric");
+        updateChart(metric);
+    });
+});
+// Initial chart load
+updateChart("co2");
+
+// Interactive Bottle Anatomy Data
+const anatomyData = {
+    cap: {
+        title: "Biodegradable Cap",
+        tag: "Plant-derived",
+        composition: "Bamboo Pulp & Starch",
+        time: "45 - 60 Days",
+        desc: "Made from bamboo pulp and natural vegetable oils, our screw cap decomposes naturally and does not release microplastics. It offers a secure, airtight seal for fresh contents."
+    },
+    shell: {
+        title: "Organic Fiber Shell",
+        tag: "Agri-Waste",
+        composition: "Rice Husk & Bagasse",
+        time: "90 - 120 Days",
+        desc: "Crafted using India's agricultural waste (rice husk, sugarcane bagasse, and paper pulp) bound together with food-safe corn starch. Provides flexibility and impact resistance."
+    },
+    lining: {
+        title: "Bio-Based Waterproof Liner",
+        tag: "Compostable",
+        composition: "PCL + Nano Clay",
+        time: "60 - 90 Days",
+        desc: "A composite waterproof barrier coating of PCL (polycaprolactone) and nano clay. It keeps the fiber shell dry and provides an 8-12 month filled shelf life with zero conventional plastics."
+    }
+};
+
+const tabBtns = document.querySelectorAll(".anatomy-tab-btn");
+const hotspots = document.querySelectorAll(".hotspot");
+const panelTitle = document.getElementById("panel-title");
+const panelTag = document.getElementById("panel-tag");
+const panelDesc = document.getElementById("panel-desc");
+const panelComposition = document.getElementById("panel-composition");
+const panelTime = document.getElementById("panel-time");
+const panel = document.getElementById("anatomy-panel");
+
+function updateAnatomyPanel(key) {
+    const data = anatomyData[key];
+    panel.style.opacity = 0;
+    
+    setTimeout(() => {
+        panelTitle.innerText = data.title;
+        panelTag.innerText = data.tag;
+        panelDesc.innerText = data.desc;
+        panelComposition.innerText = data.composition;
+        panelTime.innerText = data.time;
+        panel.style.opacity = 1;
+    }, 200);
+
+    // Update active tab buttons
+    tabBtns.forEach(btn => {
+        if (btn.getAttribute("data-target") === key) {
+            btn.classList.add("active");
+        } else {
+            btn.classList.remove("active");
+        }
+    });
+}
+
+tabBtns.forEach(btn => {
+    btn.addEventListener("click", function() {
+        const target = this.getAttribute("data-target");
+        updateAnatomyPanel(target);
+    });
+});
+
+hotspots.forEach(spot => {
+    spot.addEventListener("click", function() {
+        const target = this.getAttribute("data-target");
+        updateAnatomyPanel(target);
+    });
+});
+
+// FAQ Accordion Toggling
+const faqHeaders = document.querySelectorAll(".faq-header");
+
+faqHeaders.forEach(header => {
+    header.addEventListener("click", function() {
+        const item = this.parentElement;
+        const content = this.nextElementSibling;
+        
+        item.classList.toggle("active");
+        
+        if (item.classList.contains("active")) {
+            content.style.maxHeight = content.scrollHeight + "px";
+        } else {
+            content.style.maxHeight = 0;
+        }
+    });
+});
+
+// Subscription Modal Control
+const openModalTriggers = document.querySelectorAll(".open-modal-trigger");
+const subscriptionModal = document.getElementById("subscription-modal");
+const modalCloseBtn = document.getElementById("modal-close-btn");
+const subscribeForm = document.getElementById("subscribe-form");
+const modalFormContent = document.querySelector(".modal-form-content");
+const modalSuccess = document.getElementById("modal-success");
+
+openModalTriggers.forEach(trigger => {
+    trigger.addEventListener("click", function(e) {
+        e.preventDefault();
+        subscriptionModal.classList.add("open");
+        document.body.style.overflow = "hidden"; // Disable scroll when modal is open
+    });
+});
+
+function closeModal() {
+    subscriptionModal.classList.remove("open");
+    document.body.style.overflow = ""; // Re-enable scroll
+    // Reset form after closing if it was successful
+    setTimeout(() => {
+        modalFormContent.style.display = "block";
+        modalSuccess.style.display = "none";
+        subscribeForm.reset();
+    }, 400);
+}
+
+modalCloseBtn.addEventListener("click", closeModal);
+
+subscriptionModal.addEventListener("click", function(e) {
+    if (e.target === subscriptionModal) {
+        closeModal();
+    }
+});
+
+// Handle Form Submission
+subscribeForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const btn = subscribeForm.querySelector(".modal-submit-btn");
+    btn.innerText = "Submitting...";
+    btn.disabled = true;
+
+    // Simulate API request delay
+    setTimeout(() => {
+        modalFormContent.style.display = "none";
+        modalSuccess.style.display = "block";
+        btn.innerText = "Notify Me";
+        btn.disabled = false;
+    }, 1200);
+});
+
+// Scroll Reveal & Timeline Scroll Highlights Animations
+window.addEventListener("scroll", handleScrollEffects);
+
+function handleScrollEffects() {
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineItems = document.querySelectorAll(".timeline-item");
+    const windowHeight = window.innerHeight;
+    
+    // Reveal Standard Sections
+    reveals.forEach(reveal => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 80) {
+            reveal.classList.add("active");
+        }
+    });
+
+    // Reveal Special Directional Reveals
+    const directionalReveals = document.querySelectorAll(".reveal-left, .reveal-right");
+    directionalReveals.forEach(reveal => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 80) {
+            reveal.classList.add("active");
+        }
+    });
+
+    // Reveal Timeline items
+    timelineItems.forEach(item => {
+        const elementTop = item.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 120) {
+            item.classList.add("active");
+        }
+    });
+}
+// Initial run
+handleScrollEffects();
+
+// AI Chatbot Logic
+const chatTrigger = document.getElementById("gemini-chat-trigger");
+const chatWindow = document.getElementById("gemini-chat-window");
+const chatCloseBtn = document.getElementById("chat-close-btn");
+const chatForm = document.getElementById("chat-input-area");
+const chatInput = document.getElementById("chat-input");
+const chatMessages = document.getElementById("chat-messages");
+
+const chatbotKnowledge = {
+    materials: "ORVERA bottles are made from India's agricultural waste, specifically a composite of rice husk, sugarcane bagasse, and paper pulp, bonded using corn starch. The waterproof lining is composed of a PCL + Nano clay composite that yields an 8-12 month filled shelf life. No petroleum plastics are used!",
+    biodegrade: "Our bottles decompose fully inside industrial or backyard composting bins in approximately 12 weeks. The cap breaks down even faster—between 45 to 60 days—as it's made from bamboo pulp and plant starch. It leaves zero microplastics.",
+    launch: "We are currently setting up our eco-friendly production facility and are targeting our first commercial launch in late 2026! You can subscribe using the 'Notify Me' form on our site to receive alerts.",
+    liquids: "Yes, ORVERA bottles are suitable for still water, carbonated soft drinks, fruit juices, and low-alcohol beverages (up to 15% ABV). We are currently testing hot beverage linings for tea and coffee.",
+    contact: "You can click on the 'Let's Talk' button at the top right of the page, or sign up with your email via the 'Notify Me' button. We would love to hear from you!",
+    reusable: "ORVERA bottles are designed as single-use biodegradable alternatives to plastic. However, they can be refilled and reused a few times with water before they are ready for composting."
+};
+
+const keywordMap = [
+    { keywords: ["material", "made of", "composit", "what is", "ingredient", "paper", "wood", "bamboo"], key: "materials" },
+    { keywords: ["decompo", "biodegrad", "rot", "environment", "plastic", "recycle", "dispose", "waste"], key: "biodegrade" },
+    { keywords: ["launch", "release", "when", "timeline", "date", "2026", "buy", "order"], key: "launch" },
+    { keywords: ["liquid", "water", "drink", "soda", "juice", "hot", "coffee", "tea", "alcohol", "beer", "wine"], key: "liquids" },
+    { keywords: ["contact", "email", "talk", "sign up", "notify", "subscribe", "website", "social"], key: "contact" },
+    { keywords: ["reus", "refill", "multiple", "again", "second time"], key: "reusable" }
+];
+
+chatTrigger.addEventListener("click", function() {
+    chatWindow.classList.toggle("open");
+});
+
+chatCloseBtn.addEventListener("click", function() {
+    chatWindow.classList.remove("open");
+});
+
+// Suggestion Buttons handler
+document.addEventListener("click", function(e) {
+    if (e.target && e.target.classList.contains("chat-suggest-btn")) {
+        const question = e.target.getAttribute("data-question");
+        handleUserMessage(question);
+    }
+});
+
+chatForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const query = chatInput.value.trim();
+    if (query) {
+        handleUserMessage(query);
+        chatInput.value = "";
+    }
+});
+
+function handleUserMessage(msgText) {
+    // 1. Remove Suggestions list if present
+    const suggestions = document.querySelector(".chat-suggestions");
+    if (suggestions) {
+        suggestions.remove();
+    }
+    
+    // 2. Append User Message
+    appendMessage(msgText, "user");
+    
+    // 3. Show typing indicator
+    showTypingIndicator();
+    
+    // 4. Generate AI response
+    setTimeout(() => {
+        removeTypingIndicator();
+        const responseText = getAIResponse(msgText);
+        appendMessage(responseText, "bot");
+    }, 1000);
+}
+
+function appendMessage(text, sender) {
+    const msgElement = document.createElement("div");
+    msgElement.classList.add("chat-msg", sender);
+    msgElement.innerText = text;
+    chatMessages.appendChild(msgElement);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function showTypingIndicator() {
+    const indicator = document.createElement("div");
+    indicator.classList.add("chat-typing-indicator");
+    indicator.id = "chat-typing";
+    indicator.innerHTML = "<span></span><span></span><span></span>";
+    chatMessages.appendChild(indicator);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function removeTypingIndicator() {
+    const indicator = document.getElementById("chat-typing");
+    if (indicator) {
+        indicator.remove();
+    }
+}
+
+function getAIResponse(input) {
+    const cleanInput = input.toLowerCase();
+    
+    // Check greetings
+    if (cleanInput.match(/\b(hi|hello|hey|greetings|good morning|good afternoon)\b/)) {
+        return "Hi there! Welcome to ORVERA. How can I help you learn about our eco-friendly packaging today?";
+    }
+    
+    // Keyword Matching
+    for (const item of keywordMap) {
+        for (const keyword of item.keywords) {
+            if (cleanInput.includes(keyword)) {
+                return chatbotKnowledge[item.key];
+            }
+        }
+    }
+    
+    // Fallback
+    return "That's an interesting question! I am trained specifically on ORVERA's eco-bottle materials, decomposition rates, timeline, and liquid support. Can you ask me about one of those topics, or sign up for our newsletter to get more details?";
+}
+
+
+        // AJAX Contact Form Submission to Java Servlet
+        const inlineContactForm = document.getElementById("contact-form");
+        const inlineSuccessPanel = document.getElementById("contact-success");
+        const inlineErrorPanel = document.getElementById("contact-error");
+        const inlineSuccessMsg = document.getElementById("contact-success-msg");
+        const inlineErrorMsg = document.getElementById("contact-error-msg");
+
+        if (inlineContactForm) {
+            inlineContactForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const submitBtn = document.getElementById("form-submit-btn");
+                const originalBtnText = submitBtn.innerText;
+                submitBtn.innerText = "Sending...";
+                submitBtn.disabled = true;
+
+                const formData = new URLSearchParams();
+                for (const pair of new FormData(inlineContactForm)) {
+                    formData.append(pair[0], pair[1]);
+                }
+
+                fetch(inlineContactForm.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error("Server error");
+                    return response.json();
+                })
+                .then(data => {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    if (data.status === "success") {
+                        if (inlineSuccessMsg) inlineSuccessMsg.innerText = data.message;
+                        inlineSuccessPanel.style.display = "flex";
+                        inlineContactForm.reset();
+                        setTimeout(() => { inlineSuccessPanel.style.display = "none"; }, 5000);
+                    } else {
+                        if (inlineErrorMsg) inlineErrorMsg.innerText = data.message || "An error occurred.";
+                        inlineErrorPanel.style.display = "flex";
+                        setTimeout(() => { inlineErrorPanel.style.display = "none"; }, 5000);
+                    }
+                })
+                .catch(err => {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    // Fallback to offline direct success display
+                    if (inlineSuccessMsg) inlineSuccessMsg.innerText = "Thank you! Your inquiry has been received (Demo).";
+                    inlineSuccessPanel.style.display = "flex";
+                    inlineContactForm.reset();
+                    setTimeout(() => { inlineSuccessPanel.style.display = "none"; }, 5000);
+                });
+            });
+        }
+
+        // Inquire buttons to auto-populate select form field
+        const productInquireBtns = document.querySelectorAll(".product-btn");
+        productInquireBtns.forEach(btn => {
+            btn.addEventListener("click", function() {
+                const interest = this.getAttribute("data-interest");
+                if (interest) {
+                    const selectEl = document.getElementById("form-interest");
+                    if (selectEl) {
+                        selectEl.value = interest;
+                    }
+                    // Scroll smoothly to contact form
+                    const contactSection = document.getElementById("contact");
+                    if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    
+</script>
+</body>
+</html>
