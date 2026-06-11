@@ -815,6 +815,10 @@ body.theme-clay .mock-shell-half {
 }
 
 /* Layer Labels & Lines */
+.exploded-mobile-labels {
+    display: none;
+}
+
 .layer-label-card {
     position: absolute;
     width: 200px;
@@ -895,20 +899,36 @@ body.theme-clay .exploded-visual:hover .mock-liner-element {
 }
 
 /* Reveal Labels on Hover */
-.exploded-visual:hover .layer-label-card {
+.exploded-visual:hover .exploded-mobile-labels {
+    display: none;
+}
+
+.layer-label-card {
     opacity: 1;
     transform: scale(1);
 }
 
-.exploded-visual:hover .cap-layer .layer-label-card {
+.exploded-visual:hover .cap-layer .exploded-mobile-labels {
+    display: none;
+}
+
+.layer-label-card {
     left: -220px;
 }
 
-.exploded-visual:hover .shell-left-layer .layer-label-card {
+.exploded-visual:hover .shell-left-layer .exploded-mobile-labels {
+    display: none;
+}
+
+.layer-label-card {
     left: -100px;
 }
 
-.exploded-visual:hover .shell-right-layer .layer-label-card {
+.exploded-visual:hover .shell-right-layer .exploded-mobile-labels {
+    display: none;
+}
+
+.layer-label-card {
     right: -100px;
 }
 
@@ -2235,7 +2255,11 @@ body.theme-clay footer {
         top: 27%;
     }
     
-    .layer-label-card {
+    .exploded-mobile-labels {
+    display: none;
+}
+
+.layer-label-card {
         width: 140px;
         padding: 10px;
     }
@@ -2260,15 +2284,27 @@ body.theme-clay footer {
         transform: translateY(-40px);
     }
     
-    .exploded-visual:hover .cap-layer .layer-label-card {
+    .exploded-visual:hover .cap-layer .exploded-mobile-labels {
+    display: none;
+}
+
+.layer-label-card {
         left: -110px;
     }
 
-    .exploded-visual:hover .shell-left-layer .layer-label-card {
+    .exploded-visual:hover .shell-left-layer .exploded-mobile-labels {
+    display: none;
+}
+
+.layer-label-card {
         left: -80px;
     }
 
-    .exploded-visual:hover .shell-right-layer .layer-label-card {
+    .exploded-visual:hover .shell-right-layer .exploded-mobile-labels {
+    display: none;
+}
+
+.layer-label-card {
         right: -80px;
     }
 }
@@ -3113,14 +3149,7 @@ body.theme-clay .leader-tag {
         height: 100%;
     }
 
-    /* Navbar brand logo styling */
-    .logo {
-        font-family: var(--font-heading) !important;
-        font-size: 26px !important;
-        letter-spacing: 3px !important;
-        font-weight: 500 !important;
-        color: var(--accent) !important;
-    }
+    
 
     /* Nav links overrides */
     .nav-links a.nav-link-item {
@@ -3613,13 +3642,31 @@ body.theme-clay .leader-tag {
         display: inline-block !important;
     }
     
-    /* Center nav links to space them out from the logo */
+    /* Group nav links next to the logo instead of centering them */
     .nav-links {
-        margin: 0 auto !important;
+        margin-left: 50px !important;
+        margin-right: auto !important;
         display: flex !important;
         gap: 30px !important;
     }
 
+    
+    
+    
+    nav.scrolled .logo {
+        color: var(--accent) !important;
+    }
+    
+    
+    
+    
+    
+    nav.scrolled .logo {
+        color: var(--accent) !important;
+    }
+    
+    
+    
     /* AI Chat badge color contrast fix */
     .chat-badge {
         background: var(--accent-gold) !important;
@@ -3796,6 +3843,112 @@ body.theme-clay .leader-tag {
         }
     }
     
+    /* === MOBILE IMAGE FIX === */
+    img { max-width: 100%; height: auto; }
+    @media (max-width: 768px) {
+        .about-left img { width: 100% !important; max-width: 100% !important; border-radius: 16px !important; }
+        .anatomy-viewer img { width: 100% !important; height: auto !important; object-fit: contain !important; }
+        .product-img img, .product-card img { width: 100% !important; height: 220px !important; object-fit: cover !important; }
+        .hero-image img { max-width: 100% !important; width: 260px !important; margin: 0 auto !important; }
+        .hero-image { width: 100% !important; }
+        .hero-title, .hero-content h1 { font-size: 36px !important; line-height: 1.2 !important; }
+        .hero-subtitle, .hero-content p { font-size: 15px !important; }
+        .hero-ctas, .buttons { flex-direction: column !important; align-items: center !important; gap: 12px !important; }
+        .config-container { grid-template-columns: 1fr !important; }
+        .config-preview { height: 350px !important; }
+        .about-grid { grid-template-columns: 1fr !important; }
+        .nav-container { padding: 0 20px !important; }
+        .logo { font-size: 22px !important; }
+        
+        /* Hide pointer lines and absolute labels inside interactive exploded view on mobile */
+        .exploded-visual .pointer-line {
+            display: none !important;
+        }
+        .exploded-visual .layer-label-card {
+            display: none !important;
+        }
+        
+        /* Show static grid below the visual diagram on mobile */
+        .exploded-mobile-labels {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 15px !important;
+            margin-top: 35px !important;
+            width: 100% !important;
+            padding: 0 10px !important;
+            box-sizing: border-box !important;
+        }
+        
+        .mobile-label-card {
+            background: var(--bg-card) !important;
+            border: 1px solid var(--border-color) !important;
+            border-radius: 12px !important;
+            padding: 15px !important;
+            box-shadow: 0 4px 15px var(--shadow-color) !important;
+            text-align: left !important;
+        }
+        
+        .mobile-label-card h4 {
+            font-family: var(--font-heading) !important;
+            font-size: 15px !important;
+            color: var(--accent-gold) !important;
+            margin-top: 0 !important;
+            margin-bottom: 6px !important;
+            font-weight: 600 !important;
+        }
+        
+        .mobile-label-card p {
+            font-family: var(--font-body) !important;
+            font-size: 12px !important;
+            color: var(--text-secondary) !important;
+            line-height: 1.5 !important;
+            margin: 0 !important;
+        }
+        
+        /* Hide redundant Let's Talk button on mobile navbar to free up space */
+        .nav-right-container .nav-btn {
+            display: none !important;
+        }
+    }
+    @media (max-width: 480px) {
+        .hero-title, .hero-content h1 { font-size: 28px !important; }
+        .title { font-size: 28px !important; }
+        .timer-num { font-size: 24px !important; }
+        .timer-box { min-width: 60px !important; padding: 10px 6px !important; }
+    }
+
+    /* Group nav links next to the logo instead of centering them */
+    .nav-links {
+        margin-left: 60px !important;
+        margin-right: auto !important;
+        display: flex !important;
+        gap: 30px !important;
+    }
+
+    
+
+    
+
+    /* Clean Logo styling */
+    .logo {
+        display: flex !important;
+        align-items: center !important;
+        text-decoration: none !important;
+    }
+
+    .logo-img {
+        height: 54px !important;
+        width: 60px !important;
+        display: block !important;
+        object-fit: contain !important;
+        transition: all var(--transition-speed) ease !important;
+    }
+
+    nav.scrolled .logo-img {
+        height: 45px !important;
+        width: 50px !important;
+    }
+
 </style>
 
     <!-- Open Graph Meta Tags for SEO -->
@@ -3812,7 +3965,7 @@ body.theme-clay .leader-tag {
 
 <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo"><span class="logo-symbol">O</span>ORVERA</a>
+            <a href="#" class="logo"><img src="logo_leaf_v2.png" alt="ORVERA Logo" class="logo-img"></a>
             
             <div class="nav-links" id="nav-links">
                 <a href="#" class="nav-link-item">Home</a>
@@ -4047,7 +4200,27 @@ body.theme-clay .leader-tag {
 
             </div>
         </div>
-    </div>
+    
+        <!-- Mobile Exploded Labels (displayed only on mobile) -->
+        <div class="exploded-mobile-labels">
+            <div class="mobile-label-card">
+                <h4>1. Bamboo Cap</h4>
+                <p>Fully compostable screw cap made from compressed bamboo starch.</p>
+            </div>
+            <div class="mobile-label-card">
+                <h4>2a. Outer Shell (Left)</h4>
+                <p>India's agricultural waste (rice husk, sugarcane bagasse, paper pulp) bonded with corn starch.</p>
+            </div>
+            <div class="mobile-label-card">
+                <h4>2b. Outer Shell (Right)</h4>
+                <p>Zero plastic shell engineered for flexibility and drops. 100% biodegradable.</p>
+            </div>
+            <div class="mobile-label-card">
+                <h4>3. Waterproof Liner</h4>
+                <p>PCL + Nano clay composite waterproof barrier. Achieves an 8-12 month filled shelf life.</p>
+            </div>
+        </div>
+</div>
 </section>
 
 <!-- Interactive Product Configurator Section -->
