@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ORVERA - Eco-Friendly Packaging Solutions</title>
-<meta name="description" content="ORVERA is creating sustainable, bio-based paper bottles inspired by nature. Discover our modern design, plastic-free materials, and vision for a greener tomorrow.">
+<title>ORVERA | Premium Sustainable Packaging & Eco Products</title>
+<meta name="description" content="Redefining packaging with elegant, bio-based solutions. Explore our compostable eco cutlery, paper bottles, and luxury eco packaging. Built for a circular future.">
 
 <!-- Open Graph Meta Tags for SEO -->
 <meta property="og:title" content="ORVERA - Eco-Friendly Packaging Solutions">
@@ -15,50 +15,52 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    /* Forest Theme (Default) */
-    --bg-primary: #140e0b;
-    --bg-secondary: #1d1511;
-    --bg-card: rgba(43, 32, 26, 0.65);
-    --bg-card-hover: rgba(59, 44, 36, 0.85);
-    --border-color: rgba(216, 192, 160, 0.12);
-    --border-hover: rgba(154, 210, 109, 0.45);
-    --text-primary: #f5e6cf;
-    --text-secondary: #cbbca9;
-    --text-muted: #a4937f;
-    --accent: #9ad26d;
-    --accent-hover: #b2e685;
-    --accent-gold: #d8c0a0;
-    --shadow-color: rgba(0, 0, 0, 0.55);
-    --glow-color: rgba(154, 210, 109, 0.12);
-    --gradient-hero: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent) 100%);
-    
-    --transition-speed: 0.35s;
-    --font-heading: 'Space Grotesk', sans-serif;
-    --font-body: 'Plus Jakarta Sans', sans-serif;
-}
+        /* Earth Theme (Default) - Premium Alabaster Off-White */
+        --bg-primary: #faf9f6;
+        --bg-secondary: #f4f2eb;
+        --bg-card: #ffffff;
+        --bg-card-hover: #faf9f6;
+        --border-color: #e0dbd1;
+        --border-hover: #c5a880;
+        --text-primary: #1a1a1a;
+        --text-secondary: #2c2c2c; /* Significantly darker for readability */
+        --text-muted: #555555;      /* Darker grey */
+        --accent: #1b3323; /* Forest Green */
+        --accent-hover: #2b4f37;
+        --accent-gold: #8b6b41;
+        --shadow-color: rgba(27, 51, 35, 0.02);
+        --glow-color: rgba(197, 168, 128, 0.05);
+        --gradient-hero: linear-gradient(135deg, #1b3323 0%, #c5a880 100%);
+        
+        --transition-speed: 0.4s;
+        --font-heading: 'Playfair Display', Georgia, serif;
+        --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+        --color-bottle-fiber: #e8e3d9;
+    }
 
 body.theme-clay {
-    /* Earth Clay Theme */
-    --bg-primary: #0f1214;
-    --bg-secondary: #151a1c;
-    --bg-card: rgba(29, 36, 39, 0.65);
-    --bg-card-hover: rgba(41, 51, 56, 0.85);
-    --border-color: rgba(214, 140, 104, 0.15);
-    --border-hover: rgba(214, 140, 104, 0.45);
-    --text-primary: #e6edf2;
-    --text-secondary: #b8c7d1;
-    --text-muted: #8b9ea8;
-    --accent: #d68c68;
-    --accent-hover: #e59f7d;
-    --accent-gold: #e2c092;
-    --shadow-color: rgba(0, 0, 0, 0.65);
-    --glow-color: rgba(214, 140, 104, 0.12);
-    --gradient-hero: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent) 100%);
-}
+        /* Forest Theme (Toggled) - Soft Sage Green */
+        --bg-primary: #f2f4f0;
+        --bg-secondary: #e5e9e0;
+        --bg-card: #f9fbf8;
+        --bg-card-hover: #e5e9e0;
+        --border-color: #d1d8c9;
+        --border-hover: #183d24;
+        --text-primary: #14241a;
+        --text-secondary: #243328; /* Significantly darker sage */
+        --text-muted: #4e5e52;      /* Darker muted sage */
+        --accent: #183d24; /* Rich leaf green */
+        --accent-hover: #265d38;
+        --accent-gold: #745b38;
+        --shadow-color: rgba(24, 61, 36, 0.02);
+        --glow-color: rgba(24, 61, 36, 0.02);
+        --gradient-hero: linear-gradient(135deg, #183d24 0%, #b08d5b 100%);
+        --color-bottle-fiber: #d4d9cc;
+    }
 
 * {
     margin: 0;
@@ -2934,7 +2936,885 @@ body.theme-clay .leader-tag {
         gap: 30px;
     }
 }
+
+    /* ==========================================
+       PREMIUM LUXURY DESIGN OVERRIDES 
+       ========================================== */
+    body {
+        font-family: var(--font-body) !important;
+        background-color: var(--bg-primary) !important;
+        color: var(--text-primary) !important;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-heading) !important;
+        font-weight: 400 !important;
+        letter-spacing: -0.01em !important;
+    }
+    
+    p {
+        font-family: var(--font-body) !important;
+        font-weight: 400 !important;
+        color: var(--text-secondary) !important;
+    }
+    
+    /* Ensure all structural texts are dark and highly readable */
+    .section-subtitle, .subtitle, .roadmap-desc, .faq-text, .why-desc, .product-desc, .contact-info-text, .mv-text, .about-story {
+        color: var(--text-secondary) !important;
+    }
+    
+    .roadmap-title, .faq-header, .why-title, .product-title, .contact-detail-label, .about-mv-title, .mv-title {
+        color: var(--accent) !important;
+    }
+
+    /* Range slider track visible line */
+    .custom-slider {
+        background: var(--border-color) !important;
+        height: 6px !important;
+        border-radius: 3px !important;
+        -webkit-appearance: none !important;
+    }
+    
+    /* Webkit track style for Chrome/Edge */
+    .custom-slider::-webkit-slider-runnable-track {
+        background: var(--border-color) !important;
+        height: 6px !important;
+        border-radius: 3px !important;
+    }
+    
+    /* Firefox track style */
+    .custom-slider::-moz-range-track {
+        background: var(--border-color) !important;
+        height: 6px !important;
+        border-radius: 3px !important;
+    }
+    
+    /* Calculator result cards light-colored backgrounds */
+    .result-card {
+        background: var(--bg-secondary) !important;
+        color: var(--text-primary) !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 4px 15px rgba(27, 51, 35, 0.01) !important;
+    }
+    
+    .result-card:hover {
+        background: var(--bg-card) !important;
+        border-color: var(--accent-gold) !important;
+    }
+    
+    .result-num {
+        color: var(--accent) !important;
+    }
+    
+    .result-lbl {
+        color: var(--text-secondary) !important;
+        font-weight: 500 !important;
+    }
+
+    /* Exploded View Bottle Silhouette and Cap Ribbing */
+    .mock-cap-element {
+        background: repeating-linear-gradient(90deg, #e2c092, #e2c092 6px, #c5a880 6px, #c5a880 12px) !important;
+        border-radius: 8px 8px 2px 2px !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 4px 10px rgba(27, 51, 35, 0.08) !important;
+    }
+    
+    body.theme-clay .mock-cap-element {
+        background: repeating-linear-gradient(90deg, #c5a880, #c5a880 6px, #b08d5b 6px, #b08d5b 12px) !important;
+    }
+    
+    /* Un-swap and position shell layers correctly on left and right */
+    .shell-left-layer {
+        left: 0 !important;
+        width: 50% !important;
+    }
+    
+    .shell-right-layer {
+        right: 0 !important;
+        width: 50% !important;
+    }
+    
+    .shell-left-layer .mock-shell-half {
+        clip-path: polygon(100% 0, 66.7% 0, 66.7% 15%, 0% 28%, 0% 92%, 20% 100%, 100% 100%) !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 250'><path d='M 90 0 L 60 0 L 60 37.5 L 0 70 L 0 230 L 18 250 L 90 250 Z' fill='none' stroke='%23e0dbd1' stroke-width='2'/></svg>"), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0) !important;
+        filter: drop-shadow(0 8px 16px rgba(27, 51, 35, 0.08)) !important;
+    }
+    
+    body.theme-clay .shell-left-layer .mock-shell-half {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 250'><path d='M 90 0 L 60 0 L 60 37.5 L 0 70 L 0 230 L 18 250 L 90 250 Z' fill='none' stroke='%23d1d8c9' stroke-width='2'/></svg>"), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0) !important;
+    }
+    
+    .shell-right-layer .mock-shell-half {
+        clip-path: polygon(0 0, 33.3% 0, 33.3% 15%, 100% 28%, 100% 92%, 80% 100%, 0 100%) !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 250'><path d='M 0 0 L 30 0 L 30 37.5 L 90 70 L 90 230 L 72 250 L 0 250 Z' fill='none' stroke='%23e0dbd1' stroke-width='2'/></svg>"), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0) !important;
+        filter: drop-shadow(0 8px 16px rgba(27, 51, 35, 0.08)) !important;
+    }
+    
+    body.theme-clay .shell-right-layer .mock-shell-half {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 250'><path d='M 0 0 L 30 0 L 30 37.5 L 90 70 L 90 230 L 72 250 L 0 250 Z' fill='none' stroke='%23d1d8c9' stroke-width='2'/></svg>"), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0) !important;
+    }
+    
+    .mock-liner-element {
+        clip-path: polygon(33.3% 0, 66.7% 0, 66.7% 15%, 100% 28%, 100% 92%, 80% 100%, 20% 100%, 0 92%, 0 28%, 33.3% 15%) !important;
+        border-radius: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 250'><path d='M 60 0 L 120 0 L 120 37.5 L 180 70 L 180 230 L 144 250 L 36 250 L 0 230 L 0 70 L 60 37.5 Z' fill='rgba(27, 51, 35, 0.15)' stroke='%231b3323' stroke-width='2' stroke-dasharray='4,4'/></svg>") !important;
+        backdrop-filter: blur(4px) !important;
+        -webkit-backdrop-filter: blur(4px) !important;
+        filter: drop-shadow(0 6px 15px rgba(27, 51, 35, 0.05)) !important;
+    }
+    
+    body.theme-clay .mock-liner-element {
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 250'><path d='M 60 0 L 120 0 L 120 37.5 L 180 70 L 180 230 L 144 250 L 36 250 L 0 230 L 0 70 L 60 37.5 Z' fill='rgba(24, 61, 36, 0.15)' stroke='%23183d24' stroke-width='2' stroke-dasharray='4,4'/></svg>") !important;
+    }
+
+    /* Navbar alignment, spacing and color overrides */
+    nav {
+        background: rgba(250, 249, 246, 0.92) !important;
+        border-bottom: 1px solid var(--border-color) !important;
+        padding: 0 !important;
+        height: 90px !important;
+        display: flex !important;
+        align-items: center !important;
+        transition: all var(--transition-speed) ease !important;
+    }
+    
+    body.theme-clay nav {
+        background: rgba(242, 244, 240, 0.92) !important;
+    }
+    
+    nav.scrolled {
+        height: 75px !important;
+        background: rgba(250, 249, 246, 0.96) !important;
+        box-shadow: 0 4px 20px rgba(27, 51, 35, 0.02) !important;
+    }
+    
+    body.theme-clay nav.scrolled {
+        background: rgba(242, 244, 240, 0.96) !important;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        height: 100%;
+    }
+
+    /* Navbar brand logo styling */
+    .logo {
+        font-family: var(--font-heading) !important;
+        font-size: 26px !important;
+        letter-spacing: 3px !important;
+        font-weight: 500 !important;
+        color: var(--accent) !important;
+    }
+
+    /* Nav links overrides */
+    .nav-links a.nav-link-item {
+        color: var(--text-secondary) !important;
+        font-family: var(--font-body) !important;
+        font-weight: 600 !important;
+        font-size: 13px !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        transition: var(--transition-speed) !important;
+    }
+    
+    .nav-links a.nav-link-item:hover {
+        color: var(--accent) !important;
+    }
+
+    /* Active colors in buttons, tabs & badges to contrast beautifully with off-white */
+    .comp-tab-btn.active, .comp-tab-btn:hover, 
+    .anatomy-tab-btn.active, .anatomy-tab-btn:hover, .card:hover .card-icon, 
+    .hotspot-num {
+        color: var(--bg-primary) !important;
+        background: var(--accent) !important;
+    }
+
+    /* Button and general typography tweaks */
+    .btn, .nav-btn, .btn-primary, .btn-secondary, .comp-tab-btn, .anatomy-tab-btn, .product-btn {
+        font-family: var(--font-body) !important;
+        font-weight: 600 !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        border-radius: 40px !important;
+        white-space: nowrap !important;
+    }
+
+    /* General Container Style for proper alignment and centering */
+    .container {
+        width: 100% !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 0 40px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Solid color button styling - resolving specificity clashes and removing gradients */
+    .nav-btn, .btn-primary, .nav-links a.nav-link-item.nav-btn {
+        background: var(--accent) !important;
+        color: var(--bg-primary) !important;
+        border: 1px solid var(--accent) !important;
+        box-shadow: 0 4px 12px rgba(27, 51, 35, 0.08) !important;
+        transition: all var(--transition-speed) ease !important;
+        white-space: nowrap !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .nav-btn:hover, .btn-primary:hover, .nav-links a.nav-link-item.nav-btn:hover {
+        background: var(--accent-hover) !important;
+        border-color: var(--accent-hover) !important;
+        color: var(--bg-primary) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 18px rgba(27, 51, 35, 0.15) !important;
+    }
+
+    .btn-secondary {
+        border: 1px solid var(--accent) !important;
+        color: var(--accent) !important;
+        background: transparent !important;
+    }
+
+    .btn-secondary:hover {
+        background: var(--accent) !important;
+        color: var(--bg-primary) !important;
+    }
+
+    /* Theme clay text overrides */
+    body.theme-clay .nav-btn, body.theme-clay .btn-primary, 
+    body.theme-clay .comp-tab-btn.active, body.theme-clay .comp-tab-btn:hover, 
+    body.theme-clay .anatomy-tab-btn.active, body.theme-clay .anatomy-tab-btn:hover, 
+    body.theme-clay .card:hover .card-icon, body.theme-clay .hotspot-num {
+        color: var(--bg-primary) !important;
+    }
+
+    /* Organic plant-fiber textures for bottle customizer and exploded diagram halves */
+    .mock-shell-half, .config-body-part, .config-neck-part {
+        background-color: var(--color-bottle-fiber) !important;
+        background-image: radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0), radial-gradient(rgba(0,0,0,0.015) 1px, transparent 0) !important;
+        background-size: 8px 8px !important;
+        background-position: 0 0, 4px 4px !important;
+        border-color: var(--border-color) !important;
+        box-shadow: 0 10px 25px rgba(27, 51, 35, 0.05) !important;
+    }
+
+    .mock-liner-element, .config-label-sticker {
+        box-shadow: 0 4px 12px rgba(27, 51, 35, 0.08) !important;
+    }
+
+    .mock-cap-element, .config-cap-part {
+        box-shadow: 0 4px 10px rgba(27, 51, 35, 0.08) !important;
+    }
+
+    /* Section Tag Styles */
+    .section-tag {
+        display: inline-block !important;
+        font-family: var(--font-body) !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        letter-spacing: 2.5px !important;
+        text-transform: uppercase !important;
+        color: var(--accent-gold) !important;
+        margin-bottom: 15px !important;
+    }
+
+    /* Table styles */
+    .comparison-table th {
+        background: var(--bg-secondary) !important;
+        color: var(--accent) !important;
+        font-family: var(--font-heading) !important;
+        font-weight: 600 !important;
+        border-bottom: 2px solid var(--border-color) !important;
+    }
+    
+    .comparison-table td {
+        border-bottom-color: var(--border-color) !important;
+        color: var(--text-secondary) !important;
+    }
+    
+    .comparison-table tr:hover td {
+        background-color: var(--bg-secondary) !important;
+    }
+
+    /* Chatbot widget header and floating button re-style (making them light) */
+    #gemini-chat-trigger {
+        background-color: var(--accent-gold) !important; /* Sand gold instead of dark green */
+        color: var(--bg-primary) !important;
+        box-shadow: 0 6px 20px rgba(197, 168, 128, 0.25) !important;
+    }
+    
+    #gemini-chat-trigger:hover {
+        background-color: var(--accent) !important;
+    }
+
+    #gemini-chat-window {
+        background-color: var(--bg-primary) !important;
+        border-color: var(--border-color) !important;
+        box-shadow: 0 15px 40px rgba(27, 51, 35, 0.06) !important;
+    }
+    
+    .chat-header {
+        background: var(--bg-secondary) !important; /* Light blurred header */
+        color: var(--accent) !important;            /* Dark text */
+        border-bottom: 1px solid var(--border-color) !important;
+    }
+    
+    .chat-header .chat-avatar {
+        background-color: var(--accent) !important;
+        color: var(--bg-primary) !important;
+    }
+    
+    .chat-header h4 {
+        color: var(--accent) !important;
+    }
+    
+    .chat-header p {
+        color: var(--text-muted) !important;
+    }
+    
+    #chat-close-btn {
+        color: var(--text-secondary) !important;
+    }
+    
+    .chat-msg.bot {
+        background-color: var(--bg-secondary) !important;
+        color: var(--text-primary) !important;
+    }
+    
+    .chat-msg.user {
+        background-color: var(--accent) !important;
+        color: var(--bg-primary) !important;
+    }
+    
+    #chat-input-area {
+        background-color: var(--bg-secondary) !important;
+        border-top-color: var(--border-color) !important;
+    }
+    
+    #chat-input {
+        background-color: var(--bg-primary) !important;
+        border-color: var(--border-color) !important;
+        color: var(--text-primary) !important;
+    }
+
+    /* Soften all heavy card/section box shadows for premium aesthetics */
+    .about-box, .config-preview, .comp-container, .table-wrapper, .timeline-card, .anatomy-panel, .prob-sol-card {
+        box-shadow: 0 10px 30px rgba(27, 51, 35, 0.03) !important;
+        border-color: var(--border-color) !important;
+    }
+
+    /* Roadmap Timeline styles */
+    .timeline::after {
+        background-color: var(--border-color) !important;
+    }
+    
+    .timeline-card {
+        background-color: var(--bg-card) !important;
+        border-color: var(--border-color) !important;
+    }
+    
+    .timeline-year {
+        color: var(--accent-gold) !important;
+        font-family: var(--font-body) !important;
+        font-weight: 600 !important;
+    }
+
+    /* Products Section styles */
+    .products {
+        background-color: var(--bg-secondary);
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .product-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        overflow: hidden;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .product-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(27, 51, 35, 0.05);
+        border-color: var(--accent-gold);
+    }
+
+    .product-image {
+        height: 240px;
+        border-radius: 6px;
+        margin-bottom: 25px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .product-title {
+        font-size: 24px;
+        color: var(--accent);
+        margin-bottom: 15px;
+    }
+
+    .product-desc {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        flex-grow: 1;
+    }
+
+    .product-meta {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--accent-gold);
+        font-weight: 600;
+        border-top: 1px solid var(--border-color);
+        padding-top: 20px;
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .product-btn {
+        background-color: transparent;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        padding: 12px 0;
+        border-radius: 30px;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.4s ease;
+    }
+
+    .product-btn:hover {
+        background-color: var(--accent);
+        color: var(--bg-primary) !important;
+    }
+
+    /* Why Orvera Grid */
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .why-card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        padding: 35px 25px;
+        border-radius: 8px;
+        text-align: left;
+        transition: all 0.4s ease;
+    }
+
+    .why-card:hover {
+        border-color: var(--accent-gold);
+        background-color: var(--bg-secondary);
+    }
+
+    .why-num {
+        font-family: var(--font-heading);
+        font-size: 32px;
+        color: var(--accent-gold);
+        margin-bottom: 20px;
+        font-weight: 300;
+    }
+
+    .why-title {
+        font-size: 18px;
+        color: var(--accent);
+        margin-bottom: 15px;
+    }
+
+    .why-desc {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    /* About Section Grid */
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 80px;
+        align-items: start;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .about-left img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+    }
+
+    .about-right {
+        padding-top: 20px;
+    }
+
+    .about-story {
+        font-size: 18px;
+        line-height: 1.8;
+        margin-bottom: 40px;
+        color: var(--text-primary);
+        font-family: var(--font-heading);
+        font-style: italic;
+    }
+
+    .about-mission-vision {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        border-top: 1px solid var(--border-color);
+        padding-top: 40px;
+    }
+
+    .mv-title {
+        font-size: 20px;
+        color: var(--accent);
+        margin-bottom: 15px;
+    }
+
+    .mv-text {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    /* Footer Layout and Grid styling overrides */
+    footer {
+        background-color: var(--bg-secondary) !important;
+        color: var(--text-primary) !important;
+        padding: 80px 0 40px !important;
+        border-top: 1px solid var(--border-color) !important;
+    }
+    
+    body.theme-clay footer {
+        background-color: var(--bg-secondary) !important;
+    }
+    
+    .footer-grid {
+        display: grid !important;
+        grid-template-columns: 2fr 1fr 1.5fr !important;
+        gap: 60px !important;
+        margin-bottom: 50px !important;
+        text-align: left !important;
+    }
+    
+    .footer-brand {
+        font-family: var(--font-heading) !important;
+        font-size: 26px !important;
+        font-weight: 500 !important;
+        letter-spacing: 2px !important;
+        color: var(--accent) !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .footer-desc {
+        font-size: 14px !important;
+        line-height: 1.8 !important;
+        color: var(--text-secondary) !important;
+        max-width: 340px !important;
+    }
+    
+    .footer-title {
+        font-family: var(--font-heading) !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        color: var(--accent-gold) !important;
+        margin-bottom: 25px !important;
+    }
+    
+    .footer-links {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+    }
+    
+    .footer-link {
+        font-size: 14px !important;
+        color: var(--text-secondary) !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+        display: inline-block !important;
+    }
+    
+    .footer-link:hover {
+        color: var(--accent) !important;
+        transform: translateX(4px) !important;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid var(--border-color) !important;
+        padding-top: 30px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        font-size: 12px !important;
+        color: var(--text-muted) !important;
+    }
+    
+    /* Footer responsiveness */
+    @media (max-width: 768px) {
+        .footer-grid {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+        }
+        .footer-bottom {
+            flex-direction: column !important;
+            gap: 15px !important;
+            text-align: center !important;
+        }
+    }
+    
+
+    /* Logo symbol styling resembling the serif O on the actual bottle */
+    .logo-symbol {
+        font-family: var(--font-heading) !important;
+        font-weight: 700 !important;
+        color: var(--accent) !important;
+        margin-right: 8px !important;
+        display: inline-block !important;
+    }
+    
+    /* Center nav links to space them out from the logo */
+    .nav-links {
+        margin: 0 auto !important;
+        display: flex !important;
+        gap: 30px !important;
+    }
+
+    .logo-img {
+        height: 42px !important;
+        width: auto !important;
+        display: block !important;
+        object-fit: contain !important;
+        transition: filter var(--transition-speed) !important;
+    }
+
+    nav.scrolled .logo-img {
+        filter: brightness(0.18) contrast(1.1) !important;
+    }
+
+    /* AI Chat badge color contrast fix */
+    .chat-badge {
+        background: var(--accent-gold) !important;
+        color: var(--bg-primary) !important;
+        border: 1px solid var(--border-color) !important;
+        box-shadow: 0 2px 5px rgba(27, 51, 35, 0.05) !important;
+    }
+
+    /* Premium Contact Form Styling overrides */
+    .contact-form-container {
+        position: relative !important;
+        background: var(--bg-card) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 24px !important;
+        padding: 40px !important;
+        box-shadow: 0 10px 30px rgba(27, 51, 35, 0.02) !important;
+    }
+    
+    .form-group {
+        margin-bottom: 24px !important;
+        text-align: left !important;
+    }
+    
+    .form-label {
+        display: block !important;
+        font-family: var(--font-body) !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        color: var(--accent-gold) !important;
+        margin-bottom: 8px !important;
+    }
+    
+    .form-input, .form-select, .form-textarea {
+        width: 100% !important;
+        background: var(--bg-secondary) !important;
+        border: 1px solid var(--border-color) !important;
+        color: var(--text-primary) !important;
+        padding: 14px 18px !important;
+        border-radius: 12px !important;
+        font-family: var(--font-body) !important;
+        font-size: 14px !important;
+        transition: all 0.3s ease !important;
+        outline: none !important;
+    }
+    
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+        border-color: var(--accent) !important;
+        background: var(--bg-card) !important;
+        box-shadow: 0 0 0 3px rgba(27, 51, 35, 0.05) !important;
+    }
+    
+    .form-textarea {
+        resize: vertical !important;
+    }
+    
+    .form-submit {
+        width: 100% !important;
+        background: var(--accent) !important;
+        color: var(--bg-primary) !important;
+        border: 1px solid var(--accent) !important;
+        padding: 16px 0 !important;
+        border-radius: 30px !important;
+        font-family: var(--font-body) !important;
+        font-weight: 600 !important;
+        letter-spacing: 1.5px !important;
+        text-transform: uppercase !important;
+        cursor: pointer !important;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 12px rgba(27, 51, 35, 0.08) !important;
+    }
+    
+    .form-submit:hover {
+        background: var(--accent-hover) !important;
+        border-color: var(--accent-hover) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 6px 18px rgba(27, 51, 35, 0.15) !important;
+    }
+    
+    /* Form status success/error overlays - hidden by default */
+    .form-status {
+        display: none !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(250, 249, 246, 0.96) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        border-radius: 24px !important;
+        z-index: 100 !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        padding: 30px !important;
+        animation: fadeIn 0.4s ease forwards !important;
+    }
+    
+    body.theme-clay .form-status {
+        background: rgba(242, 244, 240, 0.96) !important;
+    }
+    
+    .status-icon {
+        width: 64px !important;
+        height: 64px !important;
+        border-radius: 50% !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 28px !important;
+        margin-bottom: 20px !important;
+        font-weight: 700 !important;
+    }
+    
+    .status-success .status-icon {
+        background: rgba(27, 51, 35, 0.1) !important;
+        color: var(--accent) !important;
+        border: 2px solid var(--accent) !important;
+    }
+    
+    .status-error .status-icon {
+        background: rgba(255, 77, 77, 0.1) !important;
+        color: #ff4d4d !important;
+        border: 2px solid #ff4d4d !important;
+    }
+    
+    .status-title {
+        font-family: var(--font-heading) !important;
+        font-size: 24px !important;
+        color: var(--accent) !important;
+        margin-bottom: 10px !important;
+    }
+    
+    .status-message {
+        font-size: 14px !important;
+        color: var(--text-secondary) !important;
+        max-width: 300px !important;
+        line-height: 1.6 !important;
+    }
+
+    /* Responsive layouts for new grids */
+    @media (max-width: 1024px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+        .why-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .products-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .why-grid {
+            grid-template-columns: 1fr;
+        }
+        nav {
+            padding: 0 !important;
+        }
+        /* Fix mobile positions for exploded view layers */
+        .shell-left-layer {
+            left: 0 !important;
+            width: 50% !important;
+        }
+        .shell-right-layer {
+            right: 0 !important;
+            width: 50% !important;
+        }
+    }
+    
 </style>
+
+    <!-- Open Graph Meta Tags for SEO -->
+    <meta property="og:title" content="ORVERA | Premium Sustainable Packaging & Eco Products">
+    <meta property="og:description" content="Elegantly designed, bio-based compostable products. Redefining luxury through sustainability.">
+    <meta property="og:image" content="paper-bottle.jpg">
+    <meta property="og:type" content="website">
 </head>
 
 <body>
@@ -2943,62 +3823,54 @@ body.theme-clay .leader-tag {
 <div id="scroll-progress"></div>
 
 <nav id="navbar">
-    <a href="#" class="logo">ORVE<span>RA</span></a>
-    
-    <div class="nav-links" id="nav-links">
-        <a href="#" class="nav-link-item">Home</a>
-        <a href="#countdown" class="nav-link-item">Launch Info</a>
-        <a href="#calculator" class="nav-link-item">Impact</a>
-        <a href="#configurator" class="nav-link-item">Customize</a>
-        <a href="#features" class="nav-link-item">Features</a>
-        <a href="#anatomy" class="nav-link-item">Anatomy</a>
-        <a href="#about" class="nav-link-item">About</a>
-        <a href="#faq" class="nav-link-item">FAQ</a>
-        <a href="#" class="nav-btn-mobile open-modal-trigger">Let's Talk</a>
-    </div>
+        <div class="nav-container">
+            <a href="#" class="logo"><img src="logo_transparent.png" alt="ORVERA Logo" class="logo-img"></a>
+            
+            <div class="nav-links" id="nav-links">
+                <a href="#" class="nav-link-item">Home</a>
+                <a href="#countdown" class="nav-link-item">Launch</a>
+                <a href="#problem-solution" class="nav-link-item">Mission</a>
+                <a href="#about" class="nav-link-item">About</a>
+                <a href="#products" class="nav-link-item">Products</a>
+                <a href="#configurator" class="nav-link-item">Customize</a>
+                <a href="#calculator" class="nav-link-item">Impact</a>
+                <a href="#why-orvera" class="nav-link-item">Why Us</a>
+                <a href="#faq" class="nav-link-item">FAQ</a>
+                <a href="#contact" class="nav-link-item nav-btn">Inquire</a>
+            </div>
 
-    <div class="nav-right-container">
-        <!-- Theme Toggle Switcher -->
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-            <span>🎨</span> Earth Theme
-        </button>
-        <a href="#" class="nav-btn open-modal-trigger">Let's Talk</a>
-    </div>
+            <div class="nav-right-container">
+                <!-- Theme Toggle Switcher -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <span>🎨</span> Earth Theme
+                </button>
+                <a href="#" class="nav-btn open-modal-trigger">Let's Talk</a>
+            </div>
 
-    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-</nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
 <!-- Hero Section -->
-<section class="hero">
-    <div class="hero-bg-blur"></div>
-    <div class="hero-content">
-        <h4>WELCOME TO ORVERA</h4>
-        <h1>Eco-Friendly Bottles For A <span>Better Tomorrow</span></h1>
-        <p>
-            ORVERA is pioneering bio-based, 100% biodegradable packaging solutions inspired directly by nature. 
-            Beautiful premium design, responsible raw materials, and zero plastic impact.
-        </p>
-        <div class="buttons">
-            <a href="#" class="btn-primary open-modal-trigger">
-                Notify Me
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-            </a>
-            <a href="#calculator" class="btn-secondary">
-                Calculate Impact
-            </a>
+<section class="hero" id="home">
+        <div class="hero-bg-image"></div>
+        <div class="hero-bg-overlay"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <div class="hero-content">
+                <span class="section-tag">Conscious Luxury</span>
+                <h1 class="hero-title">Conscious Luxury. Circular Design.</h1>
+                <p class="hero-subtitle">Redefining packaging with plant-based, zero-waste engineering. Crafting sophisticated everyday essentials from agricultural residues that leave absolutely no trace behind.</p>
+                <div class="hero-ctas">
+                    <a href="#contact" class="btn btn-primary">Inquire Now</a>
+                    <a href="#products" class="btn btn-secondary">Explore Products</a>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div class="hero-image">
-        <div class="hero-image-wrapper">
-            <img src="paper-bottle.jpg" alt="ORVERA paper bottle concept design">
-        </div>
-    </div>
-</section>
+    </section>
 
 <!-- Countdown / Launch Section -->
 <section class="countdown-section" id="countdown">
@@ -3191,6 +4063,55 @@ body.theme-clay .leader-tag {
 </section>
 
 <!-- Interactive Product Configurator Section -->
+<!-- Products Section -->
+<section class="section products reveal" id="products">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Collections</span>
+            <h2 class="section-title">The Product Collection</h2>
+            <p class="section-subtitle">A curated collection of plant-based alternatives designed for a complete circular lifecycle.</p>
+        </div>
+        
+        <div class="products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&q=80&w=400');"></div>
+                <h3 class="product-title">Eco Cutlery</h3>
+                <p class="product-desc">Crafted from 100% natural, fast-growing organic bamboo. Splinter-free, structurally rigid, and finished to provide a smooth, premium dining experience. Decomposes naturally in home compost.</p>
+                <div class="product-meta">
+                    <span>Compostable: 45-60 Days</span>
+                    <span>100% Bamboo</span>
+                </div>
+                <button class="product-btn" data-interest="cutlery">Inquire Details</button>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&q=80&w=400');"></div>
+                <h3 class="product-title">Eco Bottles</h3>
+                <p class="product-desc">Bio-based paper water bottles manufactured from agricultural crop residues (bagasse and wheat straw), coated with an ultra-thin compostable water barrier. Entirely leak-proof and lightweight.</p>
+                <div class="product-meta">
+                    <span>Compostable: 60-90 Days</span>
+                    <span>Plant Fibers</span>
+                </div>
+                <a href="#configurator" class="product-btn" style="text-decoration:none;">Configure Bottle</a>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url('https://images.unsplash.com/photo-1530587191325-3db32d826c18?auto=format&fit=crop&q=80&w=400');"></div>
+                <h3 class="product-title">Eco Packaging</h3>
+                <p class="product-desc">Bespoke paper wrappers, boxes, and protective sheets made from recycled organic pulp. Designed specifically for luxury brands, providing unmatched protection with natural textures.</p>
+                <div class="product-meta">
+                    <span>Compostable: 60-120 Days</span>
+                    <span>Bespoke Pulp</span>
+                </div>
+                <button class="product-btn" data-interest="packaging">Inquire Details</button>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="section config-section reveal" id="configurator">
     <div class="title-container">
         <h2 class="title">Design Your Bottle</h2>
@@ -3473,35 +4394,47 @@ body.theme-clay .leader-tag {
 
 <!-- About Section -->
 <section class="section reveal" id="about">
-    <div class="title-container">
-        <h2 class="title">About ORVERA</h2>
-        <p class="subtitle">Our mission is to eliminate single-use plastic waste through nature-inspired engineering.</p>
-    </div>
-
-    <div class="about-box">
-        <p>
-            Founded by Anmol Kumar and Abhishek Singh, ORVERA believes packaging should protect both products and the planet.
-            Our innovative bottle concept is designed to reduce waste while maintaining
-            premium quality and performance. We combine sustainability, design and innovation
-            to create a greener tomorrow.
-        </p>
-
-        <div class="stats">
-            <div class="stat">
-                <h2>100%</h2>
-                <p>Circular Design</p>
-            </div>
-            <div class="stat">
-                <h2>80%</h2>
-                <p>CO₂ Reduction</p>
-            </div>
-            <div class="stat">
-                <h2>Target</h2>
-                <p>Zero Waste</p>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-left">
+                    <img src="paper-bottle.jpg" alt="ORVERA Premium Leaf & Bio-based Material Layout">
+                </div>
+                <div class="about-right">
+                    <span class="section-tag">Our Story</span>
+                    <h2 class="section-title">Nurturing Balance</h2>
+                    <p class="about-story">
+                        "Founded by Anmol Kumar and Abhishek Singh, ORVERA believes that packaging should protect both your products and the planet. Our team engineers luxury everyday essentials from agricultural crop residues, transforming what would otherwise be burned or discarded into highly functional, beautifully crafted products."
+                    </p>
+                    <div class="about-mission-vision">
+                        <div>
+                            <h3 class="mv-title">Our Mission</h3>
+                            <p class="mv-text">To replace non-biodegradable polymers with circular, plant-based materials, establishing a new global standard for luxury eco-packaging that leaves zero waste behind.</p>
+                        </div>
+                        <div>
+                            <h3 class="mv-title">Our Vision</h3>
+                            <p class="mv-text">A world where product design, modern luxury, and ecological balance exist in absolute harmony—nurturing both business needs and the ecosystems we depend upon.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Statistics counters merged beautifully here -->
+                    <div class="stats" style="display: flex; justify-content: space-between; margin-top: 50px; border-top: 1px solid var(--border-color); padding-top: 35px; flex-wrap: wrap; gap: 20px;">
+                        <div class="stat">
+                            <h2 id="live-bottles" style="font-family: var(--font-heading); font-size: 32px; color: var(--accent); margin-bottom: 5px; font-weight: normal;">142,854</h2>
+                            <p style="font-family: var(--font-body); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">Plastic Bottles Saved</p>
+                        </div>
+                        <div class="stat">
+                            <h2 id="live-co2" style="font-family: var(--font-heading); font-size: 32px; color: var(--accent); margin-bottom: 5px; font-weight: normal;">11,828.3</h2>
+                            <p style="font-family: var(--font-body); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">kg CO₂ Offset</p>
+                        </div>
+                        <div class="stat">
+                            <h2 id="live-trees" style="font-family: var(--font-heading); font-size: 32px; color: var(--accent); margin-bottom: 5px; font-weight: normal;">537.6</h2>
+                            <p style="font-family: var(--font-body); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 500;">Equivalent Trees Planted</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 <!-- Interactive Milestones Roadmap Section -->
 <section class="section roadmap-section reveal" id="roadmap">
@@ -3541,57 +4474,190 @@ body.theme-clay .leader-tag {
 </section>
 
 <!-- FAQ Accordion Section -->
-<section class="section faq-section reveal" id="faq">
-    <div class="title-container">
-        <h2 class="title">Frequently Asked Questions</h2>
-        <p class="subtitle">Got questions? We've got answers about our technology and release timeline.</p>
+<!-- Why Orvera Section -->
+<section class="section reveal" id="why-orvera">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Commitments</span>
+            <h2 class="section-title">Why ORVERA?</h2>
+            <p class="section-subtitle">Five pillars of excellence that define our commitment to a zero-waste future.</p>
+        </div>
+        
+        <div class="why-grid">
+            <!-- Pillar 1 -->
+            <div class="why-card">
+                <div class="why-num">01</div>
+                <h3 class="why-title">Zero Microplastics</h3>
+                <p class="why-desc">ORVERA products utilize plant-derived lipids and starches. They leave behind absolutely no synthetic chemical residues or microplastics in the ecosystem.</p>
+            </div>
+            
+            <!-- Pillar 2 -->
+            <div class="why-card">
+                <div class="why-num">02</div>
+                <h3 class="why-title">Agriloop Innovation</h3>
+                <p class="why-desc">We source raw agricultural waste directly from local farmers, supporting rural economies while preventing agricultural crop burning.</p>
+            </div>
+            
+            <!-- Pillar 3 -->
+            <div class="why-card">
+                <div class="why-num">03</div>
+                <h3 class="why-title">Circular by Design</h3>
+                <p class="why-desc">Every product is engineered with a circular lifecycle. They biodegrade in home composting settings within 45 to 120 days, enriching the soil.</p>
+            </div>
+            
+            <!-- Pillar 4 -->
+            <div class="why-card">
+                <div class="why-num">04</div>
+                <h3 class="why-title">Minimalist Luxury</h3>
+                <p class="why-desc">We prioritize elegant proportions and natural textures. Sustainability does not mean sacrificing the premium experience of a luxury brand.</p>
+            </div>
+            
+            <!-- Pillar 5 -->
+            <div class="why-card">
+                <div class="why-num">05</div>
+                <h3 class="why-title">Carbon Reduction</h3>
+                <p class="why-desc">Our production processes reduce carbon dioxide emissions by up to 90% compared to PET plastics, and over 97% compared to glass.</p>
+            </div>
+        </div>
     </div>
+</section>
 
-    <div class="faq-container">
-        <div class="faq-item">
-            <button class="faq-header">
-                Are ORVERA bottles reusable?
-                <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-content">
-                <div class="faq-content-inner">
-                    ORVERA bottles are designed primarily as single-use biodegradable alternatives to plastic beverage bottles. However, they can be refilled and reused multiple times for water or dry ingredients before composting.
+<section class="section faq reveal" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Information</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Got questions? We've got answers about our technology and products.</p>
+        </div>
+        
+        <div class="faq-list">
+            <!-- FAQ 1 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    What is Orvera's core material?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        ORVERA products are built from organic plant fibers, including bamboo pulp, sugarcane bagasse, and wheat straw, bound with natural starches. They are 100% bio-based.
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="faq-item">
-            <button class="faq-header">
-                What happens if the bottle gets wet on the outside?
-                <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-content">
-                <div class="faq-content-inner">
-                    The external fiber shell is treated with a natural, plant-based water-repellent coating. This prevents the outer shell from absorbing condensation, humidity, or splashes, keeping the bottle sturdy during use.
+            <!-- FAQ 2 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Are ORVERA products certified compostable?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        Yes. Our materials comply with international composting standards (including ASTM D6400 and EN 13432), ensuring they biodegrade fully without toxic remains.
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="faq-item">
-            <button class="faq-header">
-                How do I dispose of an ORVERA bottle?
-                <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-content">
-                <div class="faq-content-inner">
-                    You can simply toss it into your household food waste bin, a backyard compost bin, or an industrial composting stream. Because it is 100% bio-based, it degrades safely without toxic residues.
+            <!-- FAQ 3 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Can the Eco Bottles hold hot liquids?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        Our current line is optimized for cold and ambient liquids up to 50°C (122°F). We are actively testing high-temperature coatings for coffee and tea applications.
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="faq-item">
-            <button class="faq-header">
-                What liquids can these bottles hold?
-                <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-content">
-                <div class="faq-content-inner">
-                    Our current lining supports still water, carbonated soft drinks, juices, and low-alcohol beverages (up to 15% ABV). We are currently testing hot beverage liners for tea and coffee.
+            <!-- FAQ 4 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    How long does decomposition take?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        In standard home composting conditions, products break down within 45 to 120 days depending on soil moisture and temperature. In industrial facilities, it takes less than 30 days.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Do the Eco Cutlery pieces splinter?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        No. Our bamboo cutlery undergoes advanced compression and fine-sanding techniques, providing a completely smooth, splinter-free finish and a highly robust feel.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Is the Eco Packaging waterproof?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        Our packaging materials are treated with a plant-based, water-repellent wax layer. This provides excellent humidity resistance and splash protection, keeping items dry.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Can the bottles be reused?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        ORVERA bottles are designed primarily as single-use alternatives to plastic bottles. However, they are sturdy enough to be refilled and reused multiple times for dry contents or water before disposal.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 8 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Are Orvera products microwave safe?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        Yes. Our Eco Cutlery and fiber-based packaging plates/bowls are microwave-safe for reheating up to 2 minutes, and they are also freezer-safe.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 9 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    Where are Orvera products manufactured?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        We manufacture locally in India, sourcing all raw materials directly from regional agricultural fields to keep our carbon footprint minimal and support local farming communities.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 10 -->
+            <div class="faq-item">
+                <button class="faq-header">
+                    How can businesses order in bulk?
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-content">
+                    <div class="faq-text">
+                        Businesses can reach out through our Contact form below. Our corporate sales team handles custom branding, bulk discounts, and scheduled supply agreements.
+                    </div>
                 </div>
             </div>
         </div>
@@ -3599,8 +4665,106 @@ body.theme-clay .leader-tag {
 </section>
 
 <!-- Footer -->
+<!-- Contact Section -->
+<section class="section reveal" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-left">
+                <span class="section-tag">Inquiries</span>
+                <h2 class="contact-info-title">Begin Your Journey</h2>
+                <p class="contact-info-text">Connect with our design and sales teams to explore custom partnerships, bulk purchasing, or bespoke packaging designs.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <span class="contact-detail-icon">✉</span>
+                        <div>
+                            <h4 class="contact-detail-label">Email Us</h4>
+                            <a href="mailto:orverabottles@gmail.com" class="contact-detail-val">orverabottles@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-detail-item">
+                        <span class="contact-detail-icon">📍</span>
+                        <div>
+                            <h4 class="contact-detail-label">Corporate Office</h4>
+                            <p class="contact-detail-val">Dehradun, Uttarakhand, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container">
+                <form id="contact-form" action="submit-contact" method="POST">
+                    <div class="form-group">
+                        <label class="form-label" for="form-name">Full Name</label>
+                        <input class="form-input" type="text" id="form-name" name="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="form-email">Email Address</label>
+                        <input class="form-input" type="email" id="form-email" name="email" required placeholder="you@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="form-interest">Interested In</label>
+                        <select class="form-select" id="form-interest" name="interest">
+                            <option value="cutlery">Eco Cutlery Solutions</option>
+                            <option value="bottles">Eco Bottles Solutions</option>
+                            <option value="packaging">Bespoke Eco Packaging</option>
+                            <option value="other">General Partnership</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="form-message">Message</label>
+                        <textarea class="form-textarea" id="form-message" name="message" rows="5" required placeholder="Tell us about your requirements..."></textarea>
+                    </div>
+                    <button class="form-submit" type="submit" id="form-submit-btn">Send Message</button>
+                </form>
+                
+                <!-- Success overlay -->
+                <div class="form-status status-success" id="contact-success">
+                    <div class="status-icon">✓</div>
+                    <h3 class="status-title">Inquiry Sent</h3>
+                    <p class="status-message" id="contact-success-msg">Thank you! Your inquiry has been received. Our team will get back to you shortly.</p>
+                </div>
+                
+                <!-- Error overlay -->
+                <div class="form-status status-error" id="contact-error">
+                    <div class="status-icon">✗</div>
+                    <h3 class="status-title">Submission Failed</h3>
+                    <p class="status-message" id="contact-error-msg">Failed to connect to backend server.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <footer>
-    <p>© 2026 ORVERA. All Rights Reserved. Designed for a circular future.</p>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand">ORVERA</div>
+                <p class="footer-desc">Crafting the next generation of plant-based everyday luxury essentials. Zero microplastics, zero crop-burning waste.</p>
+            </div>
+            <div>
+                <h4 class="footer-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#home" class="footer-link">Home</a></li>
+                    <li><a href="#about" class="footer-link">About Us</a></li>
+                    <li><a href="#products" class="footer-link">Collections</a></li>
+                    <li><a href="#why-orvera" class="footer-link">Why Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-links">
+                    <li><a href="mailto:orverabottles@gmail.com" class="footer-link">orverabottles@gmail.com</a></li>
+                    <li class="footer-link">Dehradun, Uttarakhand, India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ORVERA. All rights reserved.</p>
+            <p>Designed for a Circular Future</p>
+        </div>
+    </div>
 </footer>
 
 <!-- Newsletter / Contact Modal -->
@@ -4198,6 +5362,84 @@ function getAIResponse(input) {
     // Fallback
     return "That's an interesting question! I am trained specifically on ORVERA's eco-bottle materials, decomposition rates, timeline, and liquid support. Can you ask me about one of those topics, or sign up for our newsletter to get more details?";
 }
+
+
+        // AJAX Contact Form Submission to Java Servlet
+        const inlineContactForm = document.getElementById("contact-form");
+        const inlineSuccessPanel = document.getElementById("contact-success");
+        const inlineErrorPanel = document.getElementById("contact-error");
+        const inlineSuccessMsg = document.getElementById("contact-success-msg");
+        const inlineErrorMsg = document.getElementById("contact-error-msg");
+
+        if (inlineContactForm) {
+            inlineContactForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const submitBtn = document.getElementById("form-submit-btn");
+                const originalBtnText = submitBtn.innerText;
+                submitBtn.innerText = "Sending...";
+                submitBtn.disabled = true;
+
+                const formData = new URLSearchParams();
+                for (const pair of new FormData(inlineContactForm)) {
+                    formData.append(pair[0], pair[1]);
+                }
+
+                fetch(inlineContactForm.action, {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error("Server error");
+                    return response.json();
+                })
+                .then(data => {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    if (data.status === "success") {
+                        if (inlineSuccessMsg) inlineSuccessMsg.innerText = data.message;
+                        inlineSuccessPanel.style.display = "flex";
+                        inlineContactForm.reset();
+                        setTimeout(() => { inlineSuccessPanel.style.display = "none"; }, 5000);
+                    } else {
+                        if (inlineErrorMsg) inlineErrorMsg.innerText = data.message || "An error occurred.";
+                        inlineErrorPanel.style.display = "flex";
+                        setTimeout(() => { inlineErrorPanel.style.display = "none"; }, 5000);
+                    }
+                })
+                .catch(err => {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    // Fallback to offline direct success display
+                    if (inlineSuccessMsg) inlineSuccessMsg.innerText = "Thank you! Your inquiry has been received (Demo).";
+                    inlineSuccessPanel.style.display = "flex";
+                    inlineContactForm.reset();
+                    setTimeout(() => { inlineSuccessPanel.style.display = "none"; }, 5000);
+                });
+            });
+        }
+
+        // Inquire buttons to auto-populate select form field
+        const productInquireBtns = document.querySelectorAll(".product-btn");
+        productInquireBtns.forEach(btn => {
+            btn.addEventListener("click", function() {
+                const interest = this.getAttribute("data-interest");
+                if (interest) {
+                    const selectEl = document.getElementById("form-interest");
+                    if (selectEl) {
+                        selectEl.value = interest;
+                    }
+                    // Scroll smoothly to contact form
+                    const contactSection = document.getElementById("contact");
+                    if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    
 </script>
 </body>
 </html>

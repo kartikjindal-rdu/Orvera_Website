@@ -1,0 +1,92 @@
+Created At: 2026-06-11T07:11:06Z
+Completed At: 2026-06-11T07:11:06Z
+File Path: `file:///C:/Users/HP/.gemini/antigravity/brain/36bc3014-9643-4501-92c8-252e5e420fe8/scratch/merge_site.py`
+Total Lines: 530
+Total Bytes: 32523
+Showing lines 1 to 530
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import re
+2: import os
+3: 
+4: def main():
+5:     old_file = r"C:\Orvera\index_old.html"
+6:     new_file = r"C:\Orvera\WebContent\index.html"
+7:     
+8:     with open(old_file, 'r', encoding='utf-8') as f:
+9:         content = f.read()
+10: 
+11:     # 1. Update Navigation Links
+12:     # Target:
+13:     # <div class="nav-links" id="nav-links">
+14:     # ...
+15:     # <a href="#" class="nav-btn nav-link-item" id="nav-notify-btn">Notify Me</a>
+16:     # </div>
+17:     nav_old = """<div class="nav-links" id="nav-links">
+18:             <a href="#problem-solution" class="nav-link-item">Mission</a>
+19:             <a href="#calculator" class="nav-link-item">Impact</a>
+20:             <a href="#configurator" class="nav-link-item">Configurator</a>
+21:             <a href="#about" class="nav-link-item">About</a>
+22:             <a href="#roadmap" class="nav-link-item">Roadmap</a>
+23:             <a href="#faq" class="nav-link-item">FAQ</a>
+24:             <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+25:                 <span>🎨</span> Earth Theme
+26:             </button>
+27:             <a href="#" class="nav-btn nav-link-item" id="nav-notify-btn">Notify Me</a>
+28:         </div>"""
+29:         
+30:     nav_new = """<div class="nav-links" id="nav-links">
+31:             <a href="#problem-solution" class="nav-link-item">Mission</a>
+32:             <a href="#about" class="nav-link-item">About</a>
+33:             <a href="#products" class="nav-link-item">Products</a>
+34:             <a href="#calculator" class
+<truncated 31539 bytes>
+data.message || "An error occurred.";
+483:                 inlineErrorPanel.style.display = "flex";
+484:                 setTimeout(() => { inlineErrorPanel.style.display = "none"; }, 5000);
+485:             }
+486:         })
+487:         .catch(err => {
+488:             submitBtn.innerText = originalBtnText;
+489:             submitBtn.disabled = false;
+490:             if (inlineErrorMsg) inlineErrorMsg.innerText = "Failed to connect to backend server.";
+491:             inlineErrorPanel.style.display = "flex";
+492:             setTimeout(() => { inlineErrorPanel.style.display = "none"; }, 5000);
+493:         });
+494:     });
+495: }
+496: 
+497: // Inquire buttons to auto-populate select form field
+498: const productInquireBtns = document.querySelectorAll(".product-inquire-btn");
+499: productInquireBtns.forEach(btn => {
+500:     btn.addEventListener("click", function() {
+501:         const interest = this.getAttribute("data-interest");
+502:         const selectEl = document.getElementById("form-interest");
+503:         if (selectEl) {
+504:             selectEl.value = interest;
+505:         }
+506:     });
+507: });
+508: """
+509: 
+510:     script_end_tag = "</script>"
+511:     # Let's insert the AJAX logic just before the script closing tag
+512:     if script_end_tag in content:
+513:         # We find the last occurrence of </script> to insert the code
+514:         parts = content.rsplit(script_end_tag, 1)
+515:         if len(parts) == 2:
+516:             content = parts[0] + "\n" + js_form_code + "\n" + script_end_tag + parts[1]
+517: 
+518:     # Write the merged file to WebContent/index.html
+519:     new_dir = os.path.dirname(new_file)
+520:     if not os.path.exists(new_dir):
+521:         os.makedirs(new_dir)
+522:         
+523:     with open(new_file, 'w', encoding='utf-8') as f:
+524:         f.write(content)
+525:         
+526:     print("HTML merge completed successfully!")
+527: 
+528: if __name__ == "__main__":
+529:     main()
+530: 
+The above content shows the entire, complete file contents of the requested file.
