@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | ORVERA Sustainable Luxury</title>
+    <meta name="description" content="Reach out to ORVERA sales and support to request custom-branded cutlery samples or a wholesale quotation.">
+    <link rel="stylesheet" href="css/style.css?v=5">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                ORVERA
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="why-orvera.html">Why ORVERA</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-icon-btn" aria-label="Open Cart Inquiry" id="cart-trigger">
+                    🛒 <span class="cart-badge" style="display: none;">0</span>
+                </button>
+                <button class="secondary-btn" id="login-trigger-btn" style="padding: 0.65rem 1.25rem;">
+                    Login
+                </button>
+                <a href="contact.html" class="primary-btn">
+                    Request Quote
+                </a>
+                <button class="hamburger" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTACT HERO -->
+    <section class="hero" style="background-image: url('images/hero-bg.jpg?v=4'); min-height: 50vh;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">GET IN TOUCH</span>
+            <h1>Sales & Partnerships</h1>
+            <p>Connect with our design office to request product samples or inquire about custom production runs.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM PREVIEW -->
+    <section class="contact-preview">
+        <div class="container">
+            <h2>Start a Collaboration</h2>
+            <p>Fill out the form below, or reach us directly at <a href="mailto:orverabottles@gmail.com" style="color:var(--gold); font-weight:600; text-decoration:underline;">orverabottles@gmail.com</a>. One of our dedicated brand accounts managers will follow up with you within 24 hours.</p>
+            
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">Full Name</label>
+                    <input type="text" id="contact-name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-email">Email Address</label>
+                    <input type="email" id="contact-email" placeholder="john@company.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contact-company">Company Name</label>
+                    <input type="text" id="contact-company" placeholder="e.g. Grand Banquet Catering">
+                </div>
+                
+                <div class="form-group">
+                    <label for="contact-msg">Message Requirements</label>
+                    <textarea id="contact-msg" rows="5" placeholder="Details about your volume specifications, branding needs, or samples..." required></textarea>
+                </div>
+                
+                <button type="submit" class="primary-btn" style="width:100%; text-align:center;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+            <div>
+                <h3>ORVERA</h3>
+                <p>Premium Eco-Friendly Products For A Sustainable Future.</p>
+                <p>© 2026 ORVERA. All Rights Reserved.</p>
+            </div>
+            <div id="admin-export-controls" style="display: none; gap: 10px; flex-wrap: wrap;">
+                <button id="footer-export-users-btn" class="secondary-btn" style="font-size:10px; padding:6px 12px; border-color:var(--border);">📥 Export User Database (Excel)</button>
+                <button id="footer-export-reviews-btn" class="secondary-btn" style="font-size:10px; padding:6px 12px; border-color:var(--border);">💬 Export Reviews (Excel)</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INQUIRY DRAWER & OVERLAY -->
+    <div class="cart-overlay"></div>
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Inquiry List</h3>
+            <button class="cart-close-btn">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Dynamically populated via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Estimated Value:</span>
+                <span id="cart-total-val">₹0.00</span>
+            </div>
+            <button class="primary-btn" id="submit-inquiry-btn" style="width:100%;">Submit Wholesale Inquiry</button>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div class="review-modal-overlay" id="login-modal-overlay"></div>
+    <div class="review-modal" id="login-modal">
+        <div class="review-modal-header">
+            <h3>Client Portal Login</h3>
+            <button class="review-modal-close" id="login-modal-close">&times;</button>
+        </div>
+        <form id="login-form">
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label for="login-input-name" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Full Name</label>
+                <input type="text" id="login-input-name" placeholder="John Doe" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label for="login-input-email" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Email Address</label>
+                <input type="email" id="login-input-email" placeholder="john@company.com" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label for="login-input-company" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Company Name</label>
+                <input type="text" id="login-input-company" placeholder="e.g. Grand Banquet India" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="login-input-phone" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Phone Number</label>
+                <input type="tel" id="login-input-phone" placeholder="e.g. +91 98765 43210" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <button type="submit" class="primary-btn" style="width: 100%;">Sign In</button>
+        </form>
+    </div>
+
+    <!-- QUICK ACTIONS FLOATING PANEL -->
+    <div class="quick-actions-panel">
+        <button id="theme-toggle" title="Toggle Mode">🌙</button>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Scroll to Top">⬆️</button>
+        <button onclick="document.getElementById('cart-trigger').click()" title="View Inquiry List">🛒</button>
+    </div>
+
+    <script src="js/script.js?v=5"></script>
+</body>
+
+</html>

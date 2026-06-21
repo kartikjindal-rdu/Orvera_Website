@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | ORVERA Sustainable Luxury</title>
+    <meta name="description" content="Learn about ORVERA's journey to create premium eco-friendly dining utensils and packaging solutions that respect the environment.">
+    <link rel="stylesheet" href="css/style.css?v=5">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                ORVERA
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="why-orvera.html">Why ORVERA</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-icon-btn" aria-label="Open Cart Inquiry" id="cart-trigger">
+                    🛒 <span class="cart-badge" style="display: none;">0</span>
+                </button>
+                <button class="secondary-btn" id="login-trigger-btn" style="padding: 0.65rem 1.25rem;">
+                    Login
+                </button>
+                <a href="contact.html" class="primary-btn">
+                    Request Quote
+                </a>
+                <button class="hamburger" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT HERO -->
+    <section class="hero" style="background-image: url('images/hero-bg.jpg?v=4'); min-height: 50vh;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">ABOUT US</span>
+            <h1>Our Mission & Vision</h1>
+            <p>Combining design elegance with absolute sustainability to eliminate plastic waste in premium hospitality.</p>
+        </div>
+    </section>
+
+    <!-- CONTENT SECTION -->
+    <section class="cutlery-highlight">
+        <div class="container cutlery-highlight-grid">
+            <div class="highlight-text">
+                <h3>Crafting a Greener Tomorrow</h3>
+                <p>
+                    At ORVERA, we believe that modern businesses shouldn't have to choose between aesthetic luxury and ecological responsibility. Founded in 2026, we set out to redesign dining essentials—cutlery, bottles, and food packaging—using organic, biodegradable, and circular materials that look and feel premium in every setting.
+                </p>
+                <p>
+                    Every year, billions of single-use plastic utensils end up in landfills and oceans. By upgrading to ORVERA's FSC-certified forest woods, bamboo, and bio-composites, your brand actively participates in restoring natural balance, satisfying corporate ESG targets while elevating customer dining experiences.
+                </p>
+            </div>
+            <div class="highlight-image">
+                <img src="images/about.jpg" alt="Dining Table Setting" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow-light);">
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES SECTION -->
+    <section class="features">
+        <div class="container">
+            <div class="section-heading">
+                <span>OUR VALUES</span>
+                <h2>How We Define Circular Design</h2>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>100% Traceability</h3>
+                    <p>We trace every piece of timber and bamboo back to its sustainable forest origin, ensuring no deforestation occurs.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Zero Toxins</h3>
+                    <p>Our manufacturing uses absolute zero chemical coatings, synthetic glosses, or plastics, remaining completely food-safe.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Premium Durability</h3>
+                    <p>Through high-pressure fiber engineering, our wooden sets are splinter-free and heat-resistant up to 120°C.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Soil-to-Soil Cycle</h3>
+                    <p>Once discarded, our products degrade completely back into organic compost within 90 days, feeding new plant life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Upgrade Your Tableware?</h2>
+            <p>Explore our full line of compostable and customized cutlery sets designed for hotels, venues, and caterers.</p>
+            <a href="products.html" class="primary-btn">View Products</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+            <div>
+                <h3>ORVERA</h3>
+                <p>Premium Eco-Friendly Products For A Sustainable Future.</p>
+                <p>© 2026 ORVERA. All Rights Reserved.</p>
+            </div>
+            <div id="admin-export-controls" style="display: none; gap: 10px; flex-wrap: wrap;">
+                <button id="footer-export-users-btn" class="secondary-btn" style="font-size:10px; padding:6px 12px; border-color:var(--border);">📥 Export User Database (Excel)</button>
+                <button id="footer-export-reviews-btn" class="secondary-btn" style="font-size:10px; padding:6px 12px; border-color:var(--border);">💬 Export Reviews (Excel)</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INQUIRY DRAWER & OVERLAY -->
+    <div class="cart-overlay"></div>
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Inquiry List</h3>
+            <button class="cart-close-btn">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Dynamically populated via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Estimated Value:</span>
+                <span id="cart-total-val">₹0.00</span>
+            </div>
+            <button class="primary-btn" id="submit-inquiry-btn" style="width:100%;">Submit Wholesale Inquiry</button>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div class="review-modal-overlay" id="login-modal-overlay"></div>
+    <div class="review-modal" id="login-modal">
+        <div class="review-modal-header">
+            <h3>Client Portal Login</h3>
+            <button class="review-modal-close" id="login-modal-close">&times;</button>
+        </div>
+        <form id="login-form">
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label for="login-input-name" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Full Name</label>
+                <input type="text" id="login-input-name" placeholder="John Doe" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label for="login-input-email" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Email Address</label>
+                <input type="email" id="login-input-email" placeholder="john@company.com" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label for="login-input-company" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Company Name</label>
+                <input type="text" id="login-input-company" placeholder="e.g. Grand Banquet India" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="login-input-phone" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Phone Number</label>
+                <input type="tel" id="login-input-phone" placeholder="e.g. +91 98765 43210" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <button type="submit" class="primary-btn" style="width: 100%;">Sign In</button>
+        </form>
+    </div>
+
+    <!-- QUICK ACTIONS FLOATING PANEL -->
+    <div class="quick-actions-panel">
+        <button id="theme-toggle" title="Toggle Mode">🌙</button>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Scroll to Top">⬆️</button>
+        <button onclick="document.getElementById('cart-trigger').click()" title="View Inquiry List">🛒</button>
+    </div>
+
+    <script src="js/script.js?v=5"></script>
+</body>
+
+</html>

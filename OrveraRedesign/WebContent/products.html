@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | ORVERA Sustainable Luxury</title>
+    <meta name="description" content="Explore ORVERA's catalog of premium sustainable wooden cutlery, eco bottles, and compostable luxury packaging.">
+    <link rel="stylesheet" href="css/style.css?v=5">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                ORVERA
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="why-orvera.html">Why ORVERA</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="cart-icon-btn" aria-label="Open Cart Inquiry" id="cart-trigger">
+                    🛒 <span class="cart-badge" style="display: none;">0</span>
+                </button>
+                <button class="secondary-btn" id="login-trigger-btn" style="padding: 0.65rem 1.25rem;">
+                    Login
+                </button>
+                <a href="contact.html" class="primary-btn">
+                    Request Quote
+                </a>
+                <button class="hamburger" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- PRODUCTS HERO -->
+    <section class="hero" style="background-image: url('images/hero-bg.jpg?v=4'); min-height: 50vh;">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="hero-tag">OUR CATALOG</span>
+            <h1>Sustainable Luxury Range</h1>
+            <p>High-end eco products engineered for commercial durability and refined aesthetics.</p>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATALOG & FILTERING -->
+    <section class="products-preview">
+        <div class="container">
+            <div class="section-heading">
+                <span>OUR SOLUTIONS</span>
+                <h2>Eco-Luxury Tableware & Accessories</h2>
+            </div>
+
+            <!-- SEARCH BAR -->
+            <div class="search-container">
+                <input type="text" id="catalog-search" class="search-input" placeholder="Search cutlery, bottles, boxes...">
+            </div>
+
+            <!-- FILTER TABS -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="all">All Solutions</button>
+                <button class="filter-btn" data-filter="cutlery">Luxury Cutlery</button>
+                <button class="filter-btn" data-filter="bottles">Eco Bottles</button>
+                <button class="filter-btn" data-filter="packaging">Premium Packaging</button>
+            </div>
+
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card" data-category="cutlery" data-id="cutlery-classic">
+                    <div style="position: relative;">
+                        <button class="compare-badge-btn" data-id="cutlery-classic">Compare</button>
+                        <img src="images/cutlery.jpg" alt="Eco Cutlery">
+                    </div>
+                    <h3>Classic Cutlery Set</h3>
+                    <p>Sustainable birchwood and bamboo cutlery, splinter-free and heavy-duty.</p>
+                    <div class="product-actions">
+                        <span class="product-price" style="font-size: 13px; color: var(--text-muted);">Will update you soon</span>
+                        <button class="add-to-inquiry-btn">Add to Inquiry</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card" data-category="bottles" data-id="bottles-bamboo">
+                    <div style="position: relative;">
+                        <button class="compare-badge-btn" data-id="bottles-bamboo">Compare</button>
+                        <img src="images/bottles.jpg" alt="Eco Bottles">
+                    </div>
+                    <h3>Matte Bamboo Bottle</h3>
+                    <p>Elegant reusable ceramic flask with an organic insulated bamboo lid.</p>
+                    <div class="product-actions">
+                        <span class="product-price" style="font-size: 13px; color: var(--text-muted);">Will update you soon</span>
+                        <button class="add-to-inquiry-btn">Add to Inquiry</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card" data-category="packaging" data-id="packaging-box">
+                    <div style="position: relative;">
+                        <button class="compare-badge-btn" data-id="packaging-box">Compare</button>
+                        <img src="images/packaging.jpg" alt="Eco Packaging">
+                    </div>
+                    <h3>Kraft Luxury Box</h3>
+                    <p>Premium biodegradable kraft boxes, custom-sized and ideal for high-end gifting.</p>
+                    <div class="product-actions">
+                        <span class="product-price" style="font-size: 13px; color: var(--text-muted);">Will update you soon</span>
+                        <button class="add-to-inquiry-btn">Add to Inquiry</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTIMATOR WIDGET & VISUALIZER -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="section-heading">
+                <span>ESTIMATOR WIDGET & VISUALIZER</span>
+                <h2>Customize Your Brand Set</h2>
+            </div>
+            
+            <div class="calculator-wrapper">
+                <div class="calc-inputs">
+                    <h3>Your Custom Requirements</h3>
+                    
+                    <div class="calc-group">
+                        <label for="set-size">Sizing Volume (Pieces / Units)</label>
+                        <div class="range-wrap">
+                            <input type="range" id="set-size" min="100" max="5000" step="50" value="500">
+                            <span class="range-val" id="set-size-val">500</span>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-group">
+                        <label>Metallic & Organic Finishes</label>
+                        <div class="finish-options">
+                            <div class="finish-card selected">
+                                <input type="radio" name="finish" value="silver" checked data-surcharge="0.00">
+                                <h4>Classic Silver</h4>
+                                <span>₹0.00 / pc surcharge</span>
+                            </div>
+                            <div class="finish-card">
+                                <input type="radio" name="finish" value="obsidian" data-surcharge="0.80">
+                                <h4>Matte Obsidian</h4>
+                                <span>+₹0.80 / pc surcharge</span>
+                            </div>
+                            <div class="finish-card">
+                                <input type="radio" name="finish" value="gold" data-surcharge="1.50">
+                                <h4>Champagne Gold</h4>
+                                <span>+₹1.50 / pc surcharge</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="calc-group">
+                        <label class="checkbox-wrap">
+                            <input type="checkbox" id="custom-engraving">
+                            <span>Add custom brand logo laser engraving (+₹1.25 / pc)</span>
+                        </label>
+                    </div>
+
+                    <!-- Visualizer Drag & Drop -->
+                    <div class="visualizer-box" id="visualizer-box">
+                        <div class="visualizer-uploader">
+                            <input type="file" id="logo-upload" accept="image/png, image/jpeg">
+                            <p>📁 Drag & drop your company logo here, or <strong>browse files</strong> to preview engraving on wood.</p>
+                        </div>
+                        <div class="visualizer-canvas-container">
+                            <canvas id="visualizer-canvas" class="visualizer-canvas" width="250" height="350"></canvas>
+                        </div>
+                        <button id="remove-logo" class="remove-logo-btn">Remove Logo</button>
+                    </div>
+
+                    <!-- Eco Freight cost estimator -->
+                    <div class="freight-widget">
+                        <h4>Eco-Freight & Shipping Logistics</h4>
+                        <select id="freight-region" class="freight-select">
+                            <option value="ind">Domestic Standard Cargo (India) - Free</option>
+                            <option value="exp">Express interstate Freight (India) - ₹1,200</option>
+                            <option value="intl">Standard international Shipping - ₹5,000</option>
+                        </select>
+                        <div class="freight-results">
+                            <span>Freight Cost: <strong id="freight-cost">₹0.00 (Free)</strong></span>
+                            <span>Delivery Window: <strong id="freight-time">3-5 Business Days</strong></span>
+                            <span>Carbon Offset: <strong id="freight-offset">12 kg CO2 Offset</strong></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="calc-results">
+                    <div>
+                        <h3>Inquiry Summary</h3>
+                        <div class="result-item">
+                            <span>Selected Volume:</span>
+                            <span id="res-size">500 pieces</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Base Rate (₹6.50/pc):</span>
+                            <span id="res-base-price">₹3,250.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Finish Surcharge:</span>
+                            <span id="res-finish-surcharge">₹0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span>Custom Engraving:</span>
+                            <span id="res-engraving-surcharge">₹0.00</span>
+                        </div>
+                        <div class="result-item total">
+                            <span>Estimated Total:</span>
+                            <span id="res-total-price">₹3,250.00</span>
+                        </div>
+                    </div>
+
+                    <!-- ESG dashboard counters -->
+                    <div style="margin: 25px 0;">
+                        <h4 style="margin-bottom:10px; font-family:'Cormorant Garamond',serif; font-size:16px;">Estimated ESG Impact</h4>
+                        <div class="esg-dashboard">
+                            <div class="esg-stat-card">
+                                <span class="esg-num" id="esg-co2" data-value="0">0 kg</span>
+                                <span>CO2 Offset</span>
+                            </div>
+                            <div class="esg-stat-card">
+                                <span class="esg-num" id="esg-plastics" data-value="0">0 pcs</span>
+                                <span>Plastics Avoided</span>
+                            </div>
+                            <div class="esg-stat-card">
+                                <span class="esg-num" id="esg-trees" data-value="0">0.00 trees</span>
+                                <span>Tree Equivalent</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificate Generator Panel -->
+                    <div class="certificate-panel" style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border-lt);">
+                        <h4 style="margin-bottom:12px; font-family:'Cormorant Garamond',serif; font-size:16px;">Corporate ESG Certificate</h4>
+                        <div class="form-group" style="margin-bottom: 12px;">
+                            <input type="text" id="cert-partner-name" placeholder="Enter Company Name" class="search-input" style="max-width:100%; border-radius:4px; padding:10px 14px; font-size:13px;">
+                        </div>
+                        <button class="primary-btn" id="generate-cert-btn" style="width:100%; text-align:center; font-size:11px;">Generate ESG Certificate</button>
+                    </div>
+
+                    <a href="contact.html" class="primary-btn" style="text-align:center; margin-top:15px; width:100%;">Request Official Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+            <div>
+                <h3>ORVERA</h3>
+                <p>Premium Eco-Friendly Products For A Sustainable Future.</p>
+                <p>© 2026 ORVERA. All Rights Reserved.</p>
+            </div>
+            <div id="admin-export-controls" style="display: none; gap: 10px; flex-wrap: wrap;">
+                <button id="footer-export-users-btn" class="secondary-btn" style="font-size:10px; padding:6px 12px; border-color:var(--border);">📥 Export User Database (Excel)</button>
+                <button id="footer-export-reviews-btn" class="secondary-btn" style="font-size:10px; padding:6px 12px; border-color:var(--border);">💬 Export Reviews (Excel)</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INQUIRY DRAWER & OVERLAY -->
+    <div class="cart-overlay"></div>
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Your Inquiry List</h3>
+            <button class="cart-close-btn">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Dynamically populated via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Estimated Value:</span>
+                <span id="cart-total-val">₹0.00</span>
+            </div>
+            <button class="primary-btn" id="submit-inquiry-btn" style="width:100%;">Submit Wholesale Inquiry</button>
+        </div>
+    </div>
+
+    <!-- COMPARISON MATRIX ELEMENTS -->
+    <div class="compare-bar" id="compare-bar">
+        <span>Selected for comparison: <strong id="compare-count">0</strong> items</span>
+        <button class="compare-bar-btn" id="compare-now-btn">Compare Now</button>
+    </div>
+    
+    <div class="compare-overlay-modal" id="compare-overlay"></div>
+    <div class="compare-modal" id="compare-modal">
+        <div class="compare-modal-header">
+            <h3>Product Comparison Spec Matrix</h3>
+            <button class="compare-modal-close" id="compare-modal-close">&times;</button>
+        </div>
+        <table class="compare-table">
+            <tbody>
+                <!-- Rendered dynamically via JS -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- QUICK ACTIONS FLOATING PANEL -->
+    <div class="quick-actions-panel">
+        <button id="theme-toggle" title="Toggle Mode">🌙</button>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Scroll to Top">⬆️</button>
+        <button onclick="document.getElementById('cart-trigger').click()" title="View Inquiry List">🛒</button>
+    </div>
+
+    <!-- ESG CERTIFICATE MODAL -->
+    <div class="compare-overlay-modal" id="cert-overlay"></div>
+    <div class="compare-modal" id="cert-modal" style="max-width: 600px;">
+        <div class="compare-modal-header">
+            <h3>Your ESG Partnership Certificate</h3>
+            <button class="compare-modal-close" id="cert-modal-close">&times;</button>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+            <div style="width: 100%; overflow-x: auto; text-align: center;">
+                <canvas id="cert-canvas" width="500" height="350" style="border: 1px solid var(--border); border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); max-width: 100%; background: #FAF7F2;"></canvas>
+            </div>
+            <button class="primary-btn" id="download-cert-btn" style="width: 100%; text-align: center;">Download High-Res PNG</button>
+        </div>
+    </div>
+
+    <!-- LOGIN MODAL -->
+    <div class="review-modal-overlay" id="login-modal-overlay"></div>
+    <div class="review-modal" id="login-modal">
+        <div class="review-modal-header">
+            <h3>Client Portal Login</h3>
+            <button class="review-modal-close" id="login-modal-close">&times;</button>
+        </div>
+        <form id="login-form">
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label for="login-input-name" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Full Name</label>
+                <input type="text" id="login-input-name" placeholder="John Doe" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label for="login-input-email" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Email Address</label>
+                <input type="email" id="login-input-email" placeholder="john@company.com" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label for="login-input-company" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Company Name</label>
+                <input type="text" id="login-input-company" placeholder="e.g. Grand Banquet India" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="login-input-phone" style="display:block; margin-bottom:5px; font-size:12px; font-weight:600; color:var(--lt-gray);">Phone Number</label>
+                <input type="tel" id="login-input-phone" placeholder="e.g. +91 98765 43210" required style="width:100%; padding:10px; border:1px solid var(--border); border-radius:4px; font-family:var(--sans); font-size:13px; background:rgba(245,240,232,0.04); color:var(--cream);">
+            </div>
+            <button type="submit" class="primary-btn" style="width: 100%;">Sign In</button>
+        </form>
+    </div>
+
+    <script src="js/script.js?v=5"></script>
+</body>
+
+</html>
