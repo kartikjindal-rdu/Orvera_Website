@@ -2,11 +2,21 @@
 <html lang="en">
 
 <head>
+    <meta name="google-site-verification" content="q0DnRAcOWTRZ2bvA8r0B8q1OcXsxncCIn13MFPBDL-s" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7XBFZFJQV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N7XBFZFJQV');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ | ORVERA Sustainable Luxury</title>
     <meta name="description" content="Find answers to frequently asked questions about ORVERA material certifications, composting, custom branding, and shipping.">
-    <link rel="stylesheet" href="css/style.css?v=5">
+    <link rel="stylesheet" href="css/style.css?v=6">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +25,23 @@
 
 <body>
 
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <span class="preloader-text">Loading... Please wait</span>
+            <div class="preloader-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="container nav-container">
-            <a href="index.html" class="logo">
-                ORVERA
+            <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; vertical-align: middle; line-height: 1;">
+                <img src="images/logo-clean.png?v=7" alt="ORVERA Logo" style="height: 38px; width: auto; object-fit: contain; vertical-align: middle;">
+                <span style="line-height: 1;">ORVERA</span>
             </a>
 
             <nav>
@@ -30,6 +52,8 @@
                     <li><a href="why-orvera.html">Why ORVERA</a></li>
                     <li><a href="faq.html" class="active">FAQ</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li class="mobile-only-action"><button class="secondary-btn login-trigger-btn-mobile" style="width: 100%; padding: 0.65rem 1.25rem; font-weight: 500; font-family: inherit;">Login</button></li>
+                    <li class="mobile-only-action"><a class='primary-btn' href='contact.html' style="width: 100%; text-align: center; display: block; font-weight: 500;">Request Quote</a></li>
                 </ul>
             </nav>
 
@@ -110,17 +134,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 5 -->
-                <div class="faq-item">
-                    <div class="faq-header">
-                        <h3>Where do you ship?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-body">
-                        <p>We provide nationwide shipping across North America and standard international shipping to selected European and Asian locations. Express freight shipping can be arranged for large-scale venues and hospitality clients.</p>
-                    </div>
-                </div>
-
                 <!-- FAQ Item 6 -->
                 <div class="faq-item">
                     <div class="faq-header">
@@ -181,13 +194,13 @@
 
     <!-- FOOTER -->
     <footer>
-        <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+        <div class="container" style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:15px;">
             <div>
-                <h3>ORVERA</h3>
-                <p>Premium Eco-Friendly Products For A Sustainable Future.</p>
-                <p>© 2026 ORVERA. All Rights Reserved.</p>
+                <h3 style="color: var(--primary-gold); margin-bottom: 5px;">ORVERA</h3>
+                <p style="margin-bottom: 5px;">Premium Eco-Friendly Products For A Sustainable Future.</p>
+                <p style="font-size: 12px; opacity: 0.6;">© 2026 ORVERA. All Rights Reserved.</p>
             </div>
-            <div id="admin-export-controls" style="display: none; gap: 10px; flex-wrap: wrap;">
+            <div id="admin-export-controls" style="display: none; gap: 10px; flex-wrap: wrap; justify-content: center;">
                 <button id="footer-export-users-btn" class="secondary-btn" style="font-size:10px; padding:6px 12px; border-color:var(--border);">📥 Export User Database (Excel)</button>
                 <button id="footer-export-reviews-btn" class="secondary-btn" style="font-size:10px; padding:6px 12px; border-color:var(--border);">💬 Export Reviews (Excel)</button>
             </div>
@@ -242,13 +255,8 @@
     </div>
 
     <!-- QUICK ACTIONS FLOATING PANEL -->
-    <div class="quick-actions-panel">
-        <button id="theme-toggle" title="Toggle Mode">🌙</button>
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Scroll to Top">⬆️</button>
-        <button onclick="document.getElementById('cart-trigger').click()" title="View Inquiry List">🛒</button>
-    </div>
 
-    <script src="js/script.js?v=5"></script>
+    <script src="js/script.js?v=8"></script>
 </body>
 
 </html>

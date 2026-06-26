@@ -1,3 +1,11 @@
+
+// Prevent browser auto scroll restoration on reload
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+});
 /* =============================================
    ORVERA — Main JavaScript
    ============================================= */
@@ -36,18 +44,22 @@ window.addEventListener('scroll', () => {
 });
 
 /* ---- MOBILE MENU ---- */
-const toggle = document.querySelector('.nav-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
-toggle?.addEventListener('click', () => {
-  toggle.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-});
-mobileMenu?.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    toggle.classList.remove('open');
-    mobileMenu.classList.remove('open');
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('mobile-open');
   });
-});
+
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('mobile-open');
+    });
+  });
+}
 
 /* ---- SCROLL REVEAL ---- */
 const revealObserver = new IntersectionObserver((entries) => {
@@ -681,11 +693,6 @@ const logoUploadInput = document.getElementById('logo-upload');
 const removeLogoBtn = document.getElementById('remove-logo');
 let uploadedLogoImg = null;
 
-let defaultLogoImg = new Image();
-defaultLogoImg.src = 'images/logo.png';
-defaultLogoImg.onload = () => {
-  if (visualizerCanvas) drawSpoonEngraving();
-};
 
 function initVisualizerCanvas() {
   if (!visualizerCanvas) return;
@@ -699,155 +706,72 @@ function drawSpoonEngraving() {
 
   ctx.clearRect(0, 0, w, h);
 
-  // Plaque dimensions with margins
-  const x = 15;
-  const y = 15;
-  const boardW = w - 30; // 220
-  const boardH = h - 30; // 320
-  const radius = 20;
+  // Helper to remove white/light backgrounds from uploaded images and tint black lines to gold
+  const removeWhiteBackground = (img) => {
+    const tempCanvas = document.createElement('canvas');
+    tempCanvas.width = img.naturalWidth || img.width || 1;
+    tempCanvas.height = img.naturalHeight || img.height || 1;
+    const tempCtx = tempCanvas.getContext('2d');
+    tempCtx.drawImage(img, 0, 0);
 
-  // 1. Draw premium wooden plaque background
-  const grad = ctx.createLinearGradient(x, y, x + boardW, y + boardH);
-  grad.addColorStop(0, '#FAF0E6'); // Very light clean wood start
-  grad.addColorStop(0.5, '#EAD7BF'); // Warm natural wood body
-  grad.addColorStop(1, '#D9C5AE'); // Sophisticated wood end
-  
-  ctx.save();
-  ctx.beginPath();
-  ctx.roundRect(x, y, boardW, boardH, radius);
-  ctx.clip();
+    try {
+      const imgData = tempCtx.getImageData(0, 0, tempCanvas.width, tempCanvas.height);
+      const data = imgData.data;
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i];
+        const g = data[i + 1];
+        const b = data[i + 2];
+        // If the pixel is white/near-white, make it transparent
+        if (r > 200 && g > 200 && b > 200) {
+          data[i + 3] = 0; // Make transparent
+        }
+        // If the pixel is black/near-black, convert to premium gold (#c5a880: R=197, G=168, B=128)
+        else if (r < 60 && g < 60 && b < 60) {
+          data[i] = 197;
+          data[i + 1] = 168;
+          data[i + 2] = 128;
+        }
+      }
+      tempCtx.putImageData(imgData, 0, 0);
+      return tempCanvas;
+    } catch (e) {
+      return img;
+    }
+  };
 
-  // Fill gradient
-  ctx.fillStyle = grad;
-  ctx.fill();
-
-  // Draw organic wood grain lines
-  ctx.strokeStyle = 'rgba(139, 107, 65, 0.05)';
-  ctx.lineWidth = 1.5;
-  
-  // grain line 1
-  ctx.beginPath();
-  ctx.moveTo(35, 15);
-  ctx.bezierCurveTo(70, 100, 50, 250, 80, 335);
-  ctx.stroke();
-
-  // grain line 2
-  ctx.beginPath();
-  ctx.moveTo(110, 15);
-  ctx.bezierCurveTo(140, 120, 120, 220, 150, 335);
-  ctx.stroke();
-
-  // grain line 3
-  ctx.beginPath();
-  ctx.moveTo(180, 15);
-  ctx.bezierCurveTo(210, 110, 190, 240, 220, 335);
-  ctx.stroke();
-
-  // Draw smooth radial 3D vignette shading on wood
-  const shadowGrad = ctx.createRadialGradient(w / 2, h / 2, 80, w / 2, h / 2, 170);
-  shadowGrad.addColorStop(0, 'rgba(0, 0, 0, 0)');
-  shadowGrad.addColorStop(1, 'rgba(139, 107, 65, 0.12)');
-  ctx.fillStyle = shadowGrad;
-  ctx.fillRect(0, 0, w, h);
-
-  ctx.restore(); // End clipping
-
-  // 2. Draw outer plaque borders
-  // Heavy outer border
-  ctx.beginPath();
-  ctx.roundRect(x, y, boardW, boardH, radius);
-  ctx.strokeStyle = '#BCA182';
-  ctx.lineWidth = 4;
-  ctx.stroke();
-
-  // Thin inset frame border
-  ctx.beginPath();
-  ctx.roundRect(x + 10, y + 10, boardW - 20, boardH - 20, radius - 5);
-  ctx.strokeStyle = 'rgba(188, 161, 130, 0.35)';
-  ctx.lineWidth = 1.5;
-  ctx.stroke();
-
-  // Helper function to scale and draw logo engraved (multiply blend mode)
+  // Helper function to scale and draw logo proportionally
   const drawLogoProportionally = (img) => {
     ctx.save();
-    const maxLogoSize = 160;
-    let logoW = maxLogoSize;
-    let logoH = maxLogoSize;
+    const maxLogoW = w - 60; // 30px padding left & right
+    const maxLogoH = h - 60; // 30px padding top & bottom
+    let logoW = maxLogoW;
+    let logoH = maxLogoH;
 
     const wImg = img.naturalWidth || img.width || 1;
     const hImg = img.naturalHeight || img.height || 1;
     const imgRatio = wImg / hImg;
+    const canvasRatio = maxLogoW / maxLogoH;
 
-    if (imgRatio > 1) {
-      logoW = maxLogoSize;
-      logoH = maxLogoSize / imgRatio;
+    if (imgRatio > canvasRatio) {
+      logoW = maxLogoW;
+      logoH = maxLogoW / imgRatio;
     } else {
-      logoH = maxLogoSize;
-      logoW = maxLogoSize * imgRatio;
+      logoH = maxLogoH;
+      logoW = maxLogoH * imgRatio;
     }
 
     const lx = w / 2 - logoW / 2;
     const ly = h / 2 - logoH / 2;
 
-    ctx.globalCompositeOperation = 'multiply';
-    ctx.globalAlpha = 0.75;
+    ctx.globalAlpha = 1.0;
     ctx.drawImage(img, lx, ly, logoW, logoH);
     ctx.restore();
   };
 
-  // 3. Render brand engraving
+  // Render brand logo preview on transparent/green background
   if (uploadedLogoImg) {
-    drawLogoProportionally(uploadedLogoImg);
-  } else if (defaultLogoImg && defaultLogoImg.complete && defaultLogoImg.naturalWidth !== 0) {
-    drawLogoProportionally(defaultLogoImg);
-  } else {
-    // Fallback: draw dynamic ORVERA vector brand logo scaled up
-    ctx.save();
-    ctx.strokeStyle = '#8B6B41';
-    ctx.fillStyle = '#8B6B41';
-    ctx.globalAlpha = 0.70;
-
-    const cx = w / 2;
-    const cy = h / 2 - 25; // center placement
-
-    ctx.translate(cx, cy);
-    ctx.scale(2.2, 2.2);
-
-    // Draw leaf shape
-    ctx.beginPath();
-    ctx.moveTo(0, -25);
-    ctx.quadraticCurveTo(-20, -10, 0, 15);
-    ctx.quadraticCurveTo(20, -10, 0, -25);
-    ctx.stroke();
-    ctx.fill();
-
-    // Leaf center stem
-    ctx.beginPath();
-    ctx.strokeStyle = '#EAD7BF'; // Use wood background tone
-    ctx.lineWidth = 1.5;
-    ctx.moveTo(0, -20);
-    ctx.lineTo(0, 15);
-    ctx.stroke();
-
-    // Leaf side veins
-    ctx.beginPath();
-    ctx.moveTo(0, -10);
-    ctx.lineTo(-8, -15);
-    ctx.moveTo(0, -5);
-    ctx.lineTo(8, -10);
-    ctx.moveTo(0, 2);
-    ctx.lineTo(-6, -3);
-    ctx.moveTo(0, 7);
-    ctx.lineTo(6, 2);
-    ctx.stroke();
-
-    // Text watermark below leaf
-    ctx.font = 'bold 9px Georgia, serif';
-    ctx.fillStyle = '#8B6B41';
-    ctx.textAlign = 'center';
-    ctx.fillText('ORVERA', 0, 32);
-    
-    ctx.restore();
+    const processedLogo = removeWhiteBackground(uploadedLogoImg);
+    drawLogoProportionally(processedLogo);
   }
 }
 
@@ -860,6 +784,8 @@ logoUploadInput?.addEventListener('change', (e) => {
     const img = new Image();
     img.onload = () => {
       uploadedLogoImg = img;
+      const container = document.querySelector('.visualizer-canvas-container');
+      if (container) container.style.display = 'flex';
       drawSpoonEngraving();
       if (removeLogoBtn) removeLogoBtn.style.display = 'inline-block';
     };
@@ -871,6 +797,8 @@ logoUploadInput?.addEventListener('change', (e) => {
 removeLogoBtn?.addEventListener('click', () => {
   uploadedLogoImg = null;
   if (logoUploadInput) logoUploadInput.value = '';
+  const container = document.querySelector('.visualizer-canvas-container');
+  if (container) container.style.display = 'none';
   drawSpoonEngraving();
   if (removeLogoBtn) removeLogoBtn.style.display = 'none';
 });
@@ -879,17 +807,14 @@ removeLogoBtn?.addEventListener('click', () => {
 const visualizerBox = document.getElementById('visualizer-box');
 visualizerBox?.addEventListener('dragover', (e) => {
   e.preventDefault();
-  visualizerBox.style.borderColor = 'var(--gold)';
-  visualizerBox.style.background = 'rgba(139,107,65,0.06)';
+  visualizerBox.classList.add('dragover');
 });
 visualizerBox?.addEventListener('dragleave', () => {
-  visualizerBox.style.borderColor = 'var(--border)';
-  visualizerBox.style.background = 'rgba(15,32,24,0.2)';
+  visualizerBox.classList.remove('dragover');
 });
 visualizerBox?.addEventListener('drop', (e) => {
   e.preventDefault();
-  visualizerBox.style.borderColor = 'var(--border)';
-  visualizerBox.style.background = 'rgba(15,32,24,0.2)';
+  visualizerBox.classList.remove('dragover');
   
   const file = e.dataTransfer.files[0];
   if (file && (file.type === 'image/png' || file.type === 'image/jpeg')) {
@@ -898,6 +823,8 @@ visualizerBox?.addEventListener('drop', (e) => {
       const img = new Image();
       img.onload = () => {
         uploadedLogoImg = img;
+        const container = document.querySelector('.visualizer-canvas-container');
+        if (container) container.style.display = 'flex';
         drawSpoonEngraving();
         if (removeLogoBtn) removeLogoBtn.style.display = 'inline-block';
       };
@@ -1090,20 +1017,7 @@ downloadCertBtn?.addEventListener('click', () => {
   showToast("Certificate downloaded successfully!");
 });
 
-// Mappings for hamburger vs nav-toggle mobile trigger
-const hamburger = document.querySelector('.hamburger');
-if (hamburger && mobileMenu) {
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-  });
-}
-mobileMenu?.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    hamburger?.classList.remove('open');
-    mobileMenu?.classList.remove('open');
-  });
-});
+// Mappings for hamburger handled at the top of the file
 
 // Toast helper utility
 function showToast(message) {
@@ -1225,9 +1139,8 @@ function loadCustomReviews() {
 
 // ---- CLIENT PORTAL LOGIN REGISTRATION ----
 const loginModal = document.getElementById('login-modal');
-const loginOverlay = document.getElementById('login-overlay');
+const loginOverlay = document.getElementById('login-modal-overlay');
 const loginModalClose = document.getElementById('login-modal-close');
-const loginTriggerBtn = document.getElementById('login-trigger-btn');
 
 function openLoginModal() {
   loginModal?.classList.add('open');
@@ -1239,7 +1152,9 @@ function closeLoginModal() {
   loginOverlay?.classList.remove('open');
 }
 
-loginTriggerBtn?.addEventListener('click', openLoginModal);
+document.querySelectorAll('#login-trigger-btn, .login-trigger-btn-mobile').forEach(btn => {
+  btn?.addEventListener('click', openLoginModal);
+});
 loginModalClose?.addEventListener('click', closeLoginModal);
 loginOverlay?.addEventListener('click', closeLoginModal);
 
@@ -1252,14 +1167,14 @@ document.getElementById('login-form')?.addEventListener('submit', function(e) {
   const timestamp = new Date().toISOString();
 
   // Check if admin login
-  if (email.toLowerCase() === 'admin@orvera.com') {
+  if (email.toLowerCase() === 'orverabottles@gmail.com') {
     sessionStorage.setItem('orvera_is_admin', 'true');
     showToast("Logged in as Administrator! Export controls enabled.");
     this.reset();
     closeLoginModal();
-    if (loginTriggerBtn) {
-      loginTriggerBtn.textContent = "Hi, Admin";
-    }
+    document.querySelectorAll('#login-trigger-btn, .login-trigger-btn-mobile').forEach(btn => {
+      btn.textContent = "Hi, Admin";
+    });
     const controls = document.getElementById('admin-export-controls');
     if (controls) {
       controls.style.display = 'flex';
@@ -1275,17 +1190,16 @@ document.getElementById('login-form')?.addEventListener('submit', function(e) {
   this.reset();
   closeLoginModal();
 
-  if (loginTriggerBtn) {
-    loginTriggerBtn.textContent = `Hi, ${name.split(' ')[0]}`;
-  }
+  document.querySelectorAll('#login-trigger-btn, .login-trigger-btn-mobile').forEach(btn => {
+    btn.textContent = `Hi, ${name.split(' ')[0]}`;
+  });
 });
 
 function syncLoggedInState() {
   if (sessionStorage.getItem('orvera_is_admin') === 'true') {
-    const btn = document.getElementById('login-trigger-btn');
-    if (btn) {
+    document.querySelectorAll('#login-trigger-btn, .login-trigger-btn-mobile').forEach(btn => {
       btn.textContent = "Hi, Admin";
-    }
+    });
     const controls = document.getElementById('admin-export-controls');
     if (controls) {
       controls.style.display = 'flex';
@@ -1296,10 +1210,9 @@ function syncLoggedInState() {
   const db = JSON.parse(localStorage.getItem('orvera_client_logins')) || [];
   if (db.length > 0) {
     const lastUser = db[db.length - 1];
-    const btn = document.getElementById('login-trigger-btn');
-    if (btn) {
+    document.querySelectorAll('#login-trigger-btn, .login-trigger-btn-mobile').forEach(btn => {
       btn.textContent = `Hi, ${lastUser.name.split(' ')[0]}`;
-    }
+    });
   }
 }
 
@@ -1403,3 +1316,21 @@ document.addEventListener('DOMContentLoaded', () => {
   syncLoggedInState();
   loadCustomReviews();
 });
+
+// Preloader Fade Out
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    preloader.classList.add('fade-out');
+    setTimeout(() => preloader.remove(), 400);
+  }
+});
+
+// Fallback preloader removal
+setTimeout(() => {
+  const preloader = document.getElementById('preloader');
+  if (preloader) {
+    preloader.classList.add('fade-out');
+    setTimeout(() => preloader.remove(), 400);
+  }
+}, 3500);

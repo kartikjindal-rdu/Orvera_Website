@@ -3,11 +3,21 @@
 <html lang="en">
 
 <head>
+    <meta name="google-site-verification" content="q0DnRAcOWTRZ2bvA8r0B8q1OcXsxncCIn13MFPBDL-s" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N7XBFZFJQV"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-N7XBFZFJQV');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ORVERA | Sustainable Luxury Tableware & Packaging</title>
     <meta name="description" content="Discover premium, eco-friendly luxury cutlery, bottles, and packaging solutions custom-branded for modern conscious businesses.">
-    <link rel="stylesheet" href="css/style.css?v=5">
+    <link rel="stylesheet" href="css/style.css?v=6">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +26,23 @@
 
 <body>
 
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-content">
+            <span class="preloader-text">Loading... Please wait</span>
+            <div class="preloader-dots">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
+
     <!-- NAVBAR -->
     <header class="navbar">
         <div class="container nav-container">
-            <a class='logo' href='index.html'>
-                ORVERA
+            <a href="index.html" class="logo" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none; vertical-align: middle; line-height: 1;">
+                <img src="images/logo-clean.png?v=7" alt="ORVERA Logo" style="height: 38px; width: auto; object-fit: contain; vertical-align: middle;">
+                <span style="line-height: 1;">ORVERA</span>
             </a>
 
             <nav>
@@ -31,6 +53,8 @@
                     <li><a href='why-orvera.html'>Why ORVERA</a></li>
                     <li><a href='faq.html'>FAQ</a></li>
                     <li><a href='contact.html'>Contact</a></li>
+                    <li class="mobile-only-action"><button class="secondary-btn login-trigger-btn-mobile" style="width: 100%; padding: 0.65rem 1.25rem; font-weight: 500; font-family: inherit;">Login</button></li>
+                    <li class="mobile-only-action"><a class='primary-btn' href='contact.html' style="width: 100%; text-align: center; display: block; font-weight: 500;">Request Quote</a></li>
                 </ul>
             </nav>
 
@@ -57,12 +81,12 @@
     <section class="hero" style="background-image: url('images/hero-bg.jpg?v=4');">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">
-                Premium Sustainable Solutions
-            </span>
+            <div class="hero-logo-container" style="margin-bottom: 20px;">
+                <img src="images/logo.png?v=7" alt="ORVERA Logo" class="hero-logo-img" style="max-height: 120px; width: auto; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.15));">
+            </div>
             <h1>
-                Sustainable Choices.<br>
-                Timeless Design.
+                Sustainability Meets<br>
+                Sophistication
             </h1>
             <p>
                 Premium eco-friendly cutlery, bottles and packaging
@@ -99,8 +123,8 @@
                 <div class="feature-card">
                     <h3>Premium Quality</h3>
                     <p>
-                        Elegant, splinter-free products crafted to reflect a refined
-                        and professional brand image.
+                        Premium splinter-free products crafted to deliver elegance,
+                        quality, and a distinguished brand experience.
                     </p>
                 </div>
                 <div class="feature-card">
@@ -123,13 +147,10 @@
 
     <!-- ABOUT PREVIEW -->
     <section class="about-preview">
-        <div class="container about-grid">
-            <div class="about-image" style="display: flex; justify-content: center; align-items: center; background: var(--bg-white); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: var(--shadow-light);">
-                <img src="images/logo.png" alt="ORVERA Logo" class="about-logo-img" style="max-width: 280px; width: 100%; height: auto;">
-            </div>
-            <div class="about-content">
+        <div class="container">
+            <div class="about-content-centered">
                 <span>ABOUT ORVERA</span>
-                <h2>Sustainability Meets Sophistication</h2>
+                <h2>Sustainable Choices. Timeless Design.</h2>
                 <p>
                     ORVERA was founded with a simple belief that sustainability should never compromise quality.
                     We provide eco-conscious solutions that help hospitality, catering, and retail brands build a responsible future while maintaining a premium customer experience.
@@ -302,12 +323,12 @@
 
                     <!-- Visualizer Drag & Drop -->
                     <div class="visualizer-box" id="visualizer-box">
-                        <div class="visualizer-uploader">
+                        <label for="logo-upload" class="visualizer-uploader" style="display: block; cursor: pointer;">
                             <input type="file" id="logo-upload" accept="image/png, image/jpeg">
-                            <p>📁 Drag & drop your company logo here, or <strong>browse files</strong> to preview engraving on wood.</p>
-                        </div>
+                            <p>📁 Drag & drop your company logo here, or <strong>browse files</strong> to preview branding on packaging.</p>
+                        </label>
                         <div class="visualizer-canvas-container">
-                            <canvas id="visualizer-canvas" class="visualizer-canvas" width="250" height="350"></canvas>
+                            <canvas id="visualizer-canvas" class="visualizer-canvas" width="450" height="250"></canvas>
                         </div>
                         <button id="remove-logo" class="remove-logo-btn">Remove Logo</button>
                     </div>
@@ -371,19 +392,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Certificate Generator Panel -->
-                    <div class="certificate-panel" style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--border-lt);">
-                        <h4 style="margin-bottom:12px; font-family:'Cormorant Garamond',serif; font-size:16px;">Corporate ESG Certificate</h4>
-                        <div class="form-group" style="margin-bottom: 12px;">
-                            <input type="text" id="cert-partner-name" placeholder="Enter Company Name" class="search-input" style="max-width:100%; border-radius:4px; padding:10px 14px; font-size:13px;">
-                        </div>
-                        <button class="primary-btn" id="generate-cert-btn" style="width:100%; text-align:center; font-size:11px;">Generate ESG Certificate</button>
-                    </div>
-
-                    <a class='primary-btn' href='contact.html' style='text-align:center; margin-top:15px; width:100%;'>Request Official Quote</a>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -538,8 +546,7 @@
     <section class="reviews-section">
         <div class="container">
             <div class="section-heading">
-                <span>CLIENT FEEDBACK</span>
-                <h2>Trusted by Premium Hospitality</h2>
+                <h2>Client Feedback</h2>
             </div>
             
             <div class="reviews-wrapper">
@@ -710,17 +717,6 @@
                     </div>
                 </div>
 
-                <!-- FAQ Item 5 -->
-                <div class="faq-item">
-                    <div class="faq-header">
-                        <h3>Where do you ship?</h3>
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-body">
-                        <p>We provide nationwide shipping across North America and standard international shipping to selected European and Asian locations. Express freight shipping can be arranged for large-scale venues and hospitality clients.</p>
-                    </div>
-                </div>
-
                 <!-- FAQ Item 6 -->
                 <div class="faq-item">
                     <div class="faq-header">
@@ -792,30 +788,15 @@
         </div>
     </section>
 
-    <!-- ESG CERTIFICATE MODAL -->
-    <div class="compare-overlay-modal" id="cert-overlay"></div>
-    <div class="compare-modal" id="cert-modal" style="max-width: 600px;">
-        <div class="compare-modal-header">
-            <h3>Your ESG Partnership Certificate</h3>
-            <button class="compare-modal-close" id="cert-modal-close">&times;</button>
-        </div>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-            <div style="width: 100%; overflow-x: auto; text-align: center;">
-                <canvas id="cert-canvas" width="500" height="350" style="border: 1px solid var(--border); border-radius: 4px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); max-width: 100%; background: #FAF7F2;"></canvas>
-            </div>
-            <button class="primary-btn" id="download-cert-btn" style="width: 100%; text-align: center;">Download High-Res PNG</button>
-        </div>
-    </div>
-
     <!-- FOOTER -->
     <footer>
-        <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px;">
+        <div class="container" style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:15px;">
             <div>
-                <h3>ORVERA</h3>
-                <p>Premium Eco-Friendly Products For A Sustainable Future.</p>
-                <p>© 2026 ORVERA. All Rights Reserved.</p>
+                <h3 style="color: var(--primary-gold); margin-bottom: 5px;">ORVERA</h3>
+                <p style="margin-bottom: 5px;">Premium Eco-Friendly Products For A Sustainable Future.</p>
+                <p style="font-size: 12px; opacity: 0.6;">© 2026 ORVERA. All Rights Reserved.</p>
             </div>
-            <div id="admin-export-controls" style="display: none; gap: 10px; flex-wrap: wrap;">
+            <div id="admin-export-controls" style="display: none; gap: 10px; flex-wrap: wrap; justify-content: center;">
                 <button id="footer-export-users-btn" class="secondary-btn" style="font-size:10px; padding:6px 12px; border-color:var(--border);">📥 Export User Database (Excel)</button>
                 <button id="footer-export-reviews-btn" class="secondary-btn" style="font-size:10px; padding:6px 12px; border-color:var(--border);">💬 Export Reviews (Excel)</button>
             </div>
@@ -895,13 +876,8 @@
     </div>
 
     <!-- QUICK ACTIONS FLOATING PANEL -->
-    <div class="quick-actions-panel">
-        <button id="theme-toggle" title="Toggle Mode">🌙</button>
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Scroll to Top">⬆️</button>
-        <button onclick="document.getElementById('cart-trigger').click()" title="View Inquiry List">🛒</button>
-    </div>
 
-    <script src="js/script.js?v=5"></script>
+    <script src="js/script.js?v=8"></script>
 </body>
 
 </html>
